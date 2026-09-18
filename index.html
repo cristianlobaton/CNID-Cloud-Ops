@@ -1,0 +1,3693 @@
+<!DOCTYPE html>
+<html lang="es"><head><style id="qw-theme">:root {
+  --color-bg: #121218;
+  --color-text: #e4e4ed;
+  --color-navbar-bg: #1a1a24;
+  --color-bg-chat-view: #121218;
+  --color-bg-secondary: #1a1a24;
+  --color-bg-tertiary: #1e1e2a;
+  --color-bg-hover: #2a2a38;
+  --color-surface: #1e1e2a;
+  --color-surface-hover: #2a2a38;
+  --color-surface-active: #353546;
+  --color-border: #ffffff1f;
+  --color-border-light: #ffffff0f;
+  --color-border-strong: #3a3a4e;
+  --color-primary: #8575ff;
+  --color-primary-dark: #4200db;
+  --color-primary-light: #8575ff;
+  --color-primary-bg: color-mix(in srgb, #8575ff 15%, transparent);
+  --color-primary-hover-border: #4200db;
+  --color-nav-icon-active: #8575ff;
+  --color-nav-hover-border: #8575ff;
+  --color-primary-alpha-3: color-mix(in srgb, #8575ff 3%, transparent);
+  --color-primary-alpha-5: color-mix(in srgb, #8575ff 5%, transparent);
+  --color-primary-alpha-8: color-mix(in srgb, #8575ff 8%, transparent);
+  --color-primary-alpha-12: color-mix(in srgb, #8575ff 12%, transparent);
+  --color-primary-alpha-15: color-mix(in srgb, #8575ff 15%, transparent);
+  --color-primary-alpha-20: color-mix(in srgb, #8575ff 20%, transparent);
+  --color-primary-alpha-25: color-mix(in srgb, #8575ff 25%, transparent);
+  --color-primary-alpha-30: color-mix(in srgb, #8575ff 30%, transparent);
+  --color-primary-alpha-40: color-mix(in srgb, #8575ff 40%, transparent);
+  --color-primary-alpha-50: color-mix(in srgb, #8575ff 50%, transparent);
+  --color-primary-alpha-60: color-mix(in srgb, #8575ff 60%, transparent);
+  --color-primary-subtle: color-mix(in srgb, #8575ff 25%, transparent);
+  --color-primary-border: color-mix(in srgb, #8575ff 50%, transparent);
+  --color-focus-ring: color-mix(in srgb, #8575ff 60%, transparent);
+  --color-sidebar-hover: color-mix(in srgb, #8575ff 15%, transparent);
+  --block-hover-outline: 1px dashed color-mix(in srgb, #8575ff 50%, transparent);
+  --block-selected-outline: 1px solid #8575ff;
+  --block-selection-outline-offset: 2px;
+  --block-selected-halo: 0 0 8px color-mix(in srgb, #8575ff 40%, transparent);
+  --color-accent: #8575ff;
+  --color-accent-foreground: #8575ff;
+  --color-accent-dark: #4200db;
+  --color-accent-light: color-mix(in srgb, #8575ff 15%, transparent);
+  --color-accent-inverse: #fff;
+  --color-link: #8575ff;
+  --color-primary-gradient-end: color-mix(in srgb, #8575ff 35%, transparent);
+  --color-primary-bg-solid: #1a1530;
+  --color-user-bubble: #333843;
+  --color-user-bubble-text: #e4e4ed;
+  --color-text-secondary: #a0a0b4;
+  --color-text-tertiary: #8a8a9a;
+  --color-text-muted: #6e6e82;
+  --color-text-on-primary: #fff;
+  --color-success: #4ade80;
+  --color-success-dark: #00802f;
+  --color-success-light: #d9ffd6;
+  --color-success-hover: #005c26;
+  --color-success-bg: #1c2c22;
+  --color-success-border: #0e3d1c;
+  --color-success-foreground: #4ade80;
+  --color-success-dark-foreground: #00802f;
+  --color-success-text: #4ade80;
+  --color-error: #ff6b6b;
+  --color-error-dark: #db0000;
+  --color-error-light: #ffe0e0;
+  --color-error-hover: #3b1a24;
+  --color-error-bg: #3b1a24;
+  --color-error-border: #5e1a24;
+  --color-error-active-border: #db0000;
+  --color-error-foreground: #ff6b6b;
+  --color-error-dark-foreground: #db0000;
+  --color-error-inverse: #fff;
+  --color-error-text: #ff6b6b;
+  --color-warning: #fbbf24;
+  --color-warning-dark: #573a00;
+  --color-warning-light: #fffbbd;
+  --color-warning-hover: #db9200;
+  --color-warning-bg: #3d3520;
+  --color-warning-border: #5e4a1a;
+  --color-warning-foreground: #fbbf24;
+  --color-warning-dark-foreground: #573a00;
+  --color-warning-inverse: #573a00;
+  --color-surface-warning: #fffbbd;
+  --color-text-warning: #573a00;
+  --color-info: #60a5fa;
+  --color-info-dark: #006ce0;
+  --color-info-light: #d1f1ff;
+  --color-info-hover: #003b8f;
+  --color-info-bg: #1a2a42;
+  --color-info-border: #0f3d6e;
+  --color-info-foreground: #60a5fa;
+  --color-info-dark-foreground: #002a66;
+  --color-info-inverse: #fff;
+  --color-overlay: #000000b3;
+  --color-shadow: #0000004d;
+  --color-hover: #ffffff0d;
+  --color-tooltip-bg: #1e1e2af2;
+  --color-tooltip-text: #e4e4ed;
+  --color-voice-purple: #8575ff;
+  --color-voice-purple-dark: #4200db;
+  --color-voice-purple-light: #8575ff;
+  --color-voice-red: #ff6b6b;
+  --color-voice-red-dark: #db0000;
+  --color-voice-amber: #fbbf24;
+  --color-voice-purple-glow: #8575ff66;
+  --color-voice-red-glow: #db000066;
+  --font-sans: "Amazon Ember", "Helvetica Neue", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: "SF Mono", "Monaco", "Menlo", "Consolas", monospace;
+  --text-2xs: .5625rem;
+  --text-xs: .625rem;
+  --text-sm: .6875rem;
+  --text-base: .75rem;
+  --text-md: .8125rem;
+  --text-lg: .875rem;
+  --text-xl: 1rem;
+  --text-2xl: 1.125rem;
+  --text-3xl: 1.25rem;
+  --text-4xl: 1.5rem;
+  --text-5xl: 2rem;
+  --spacing-1: calc(.25rem * 1);
+  --spacing-1-5: calc(.25rem * 1.5);
+  --spacing-2: calc(.25rem * 2);
+  --spacing-3: calc(.25rem * 3);
+  --spacing-4: calc(.25rem * 4);
+  --spacing-5: calc(.25rem * 5);
+  --spacing-6: calc(.25rem * 6);
+  --spacing-7: calc(.25rem * 7);
+  --spacing-8: calc(.25rem * 8);
+  --spacing-9: calc(.25rem * 9);
+  --spacing-10: calc(.25rem * 10);
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-card: 12px;
+  --radius-lg: 16px;
+  --radius-pill: 8px;
+  --shadow-sm: 0 1px 2px #0003;
+  --shadow-md: 0 4px 12px #0000004d;
+  --color-success-bg-solid: #1a3d28;
+  --color-error-bg-solid: #4a2028;
+  --color-error-border-solid: #5e1a24;
+  --color-warning-bg-solid: #4a3a1e;
+  --color-warning-text: #fbbf24;
+  --color-info-bg-solid: #1a3050;
+  --color-info-bg-solid-alt: #222240;
+  --color-info-text: #60a5fa;
+  --color-info-text-alt: #818cf8;
+  --color-emerald: #34d399;
+  --color-teal: #5eead4;
+  --color-code-bg: #1e1e2a;
+  --color-code-header-bg: #252535;
+  --color-code-text: #e4e4ed;
+  --color-code-border: #2e2e3e;
+  --color-code-muted: #6e6e82;
+  --color-inline-code-bg: #1e1e2a;
+  --color-inline-code-text: #e4e4ed;
+  --color-inline-code-border: #2e2e3e;
+  --color-scrollbar-thumb: #3a3a4e;
+  --color-scrollbar-track: transparent;
+  --color-graph-node-text: #e4e4ed;
+  --color-graph-node-text-dim: #6e6e82;
+  --color-graph-edge-default: #6e6e82;
+  --color-graph-edge-cross: #f39c12;
+  --color-graph-edge-text: #a0a0b4;
+  --color-graph-edge-stroke: #1a1a24;
+  --color-graph-highlight-bg: #ff6b6b;
+  --color-graph-highlight-border: #e74c3c;
+  --color-graph-search-bg: gold;
+  --color-graph-search-border: orange;
+  --color-graph-focus-border: #f44;
+  --color-graph-external-border: #6e6e82;
+  --color-graph-cat-file: #5dade2;
+  --color-graph-cat-folder: #aab7b8;
+  --color-graph-cat-file-aggregate: #5499c7;
+  --color-graph-cat-class: #bb8fce;
+  --color-graph-cat-function: #58d68d;
+  --color-graph-cat-method: #48c9b0;
+  --color-graph-cat-variable: #f5b041;
+  --color-graph-cat-import: #eb984e;
+  --color-graph-cat-module: #7e8ce0;
+  --color-graph-cat-concept: #ec7063;
+  --color-graph-cat-person: #ff8a8a;
+  --color-graph-cat-org: #76d7c4;
+  --color-graph-cat-organization: #76d7c4;
+  --color-graph-cat-product: #b8b0fe;
+  --color-graph-cat-metric: #fea0c0;
+  --color-graph-cat-location: #7e9bb5;
+  --color-graph-cat-date: #f092c0;
+  --color-graph-cat-code: #5dade2;
+  --color-graph-cat-doc: #aab7b8;
+  --color-graph-cat-url: #45d6b5;
+  --color-graph-cat-email: #8e7cf7;
+  --color-graph-cat-unknown: #d5dbdb;
+  --color-graph-rel-contains: #d5dbdb;
+  --color-graph-rel-extends: #bb8fce;
+  --color-graph-rel-implements: #5dade2;
+  --color-graph-rel-imports: #eb984e;
+  --color-graph-rel-uses: #58d68d;
+  --color-graph-rel-calls: #52be80;
+  --color-graph-rel-references: #f5b041;
+  --color-graph-rel-related-to: #aab7b8;
+  --color-graph-rel-works-on: #ec7063;
+  --color-graph-rel-owns: #48c9b0;
+  --color-graph-rel-depends-on: #eb984e;
+  --color-graph-rel-parent-of: #d5dbdb;
+  --qs-content: #fff;
+  --qs-main: #fff;
+  --qs-primary-foreground: #131920;
+  --qs-secondary-foreground: #656871;
+  --qs-tertiary-foreground: #6e6e82;
+  --qs-placeholder-foreground: #8c8c94;
+  --qs-divider: #dedee3;
+  --qs-default-border: #8c8c94;
+  --qs-neutral-soft: #b4b4bb;
+  --qs-neutral-gray-50: #1e1e2a;
+  --qs-tertiary-background: #1e1e2a;
+  --qs-action-hover: #f3f3f7;
+  --qs-primary-default: #4200db;
+  --qs-primary-dark: #35009e;
+  --qs-primary-light: #e8e6ff;
+  --qs-success-default: #00802f;
+  --qs-error-default: #db0000;
+  --qs-font-sans: "Amazon Ember", "Helvetica Neue", "Segoe UI", Helvetica, Arial, sans-serif;
+  --safe-top: 0px;
+  --safe-bottom: 0px;
+  --safe-left: 0px;
+  --safe-right: 0px;
+  --qs-font-family: "Amazon Ember", "Helvetica Neue", "Segoe UI", Helvetica, Arial, sans-serif;
+  --qs-font-base-letter-spacing: .15px;
+  --qs-shadow-sm: 0 0 2px 0 #00000029, 0 0 4px 0 #00000029;
+  --qs-shadow-md: 0 0 2px 0 #00000029, 0 2px 8px 1px #00000029;
+  --qs-shadow-lg: 0 4px 16px 4px #00000029, 0 2px 6px 1px #00000029;
+  --qs-shadow-xl: 0 4px 8px 2px #00000029, 0 6px 20px 4px #00000029;
+  --qs-width-modal-sm: 384px;
+  --qs-width-modal-md: 600px;
+  --qs-width-modal-lg: 1136px;
+  --qs-grid-gap: 16px;
+  --qs-grid-gap-xl: 24px;
+  --qs-primary-medium: #8575ff;
+  --qs-primary-inverse: #fff;
+  --qs-neutral-lightest: #f9f9fb;
+  --qs-neutral-light: #f3f3f7;
+  --qs-neutral-default: #dedee3;
+  --qs-neutral-medium: #8c8c94;
+  --qs-neutral-deep: #656871;
+  --qs-neutral-dark: #333843;
+  --qs-neutral-strong: #131920;
+  --qs-neutral-white: #fff;
+  --qs-neutral-black: #000;
+  --qs-success-medium: #005c26;
+  --qs-success-dark: #00471e;
+  --qs-success-light: #d9ffd6;
+  --qs-success-inverse: #fff;
+  --qs-info-default: #006ce0;
+  --qs-info-medium: #003b8f;
+  --qs-info-dark: #002a66;
+  --qs-info-light: #d1f1ff;
+  --qs-info-inverse: #fff;
+  --qs-warning-default: #f2b100;
+  --qs-warning-medium: #db9200;
+  --qs-warning-dark: #573a00;
+  --qs-warning-light: #fffbbd;
+  --qs-warning-inverse: #573a00;
+  --qs-warning-experimental: #f2b100;
+  --qs-warning-experimental-light: #fffbbd;
+  --qs-warning-experimental-light-foreground: #fffbbd;
+  --qs-error-medium: #900;
+  --qs-error-dark: #700000;
+  --qs-error-light: #ffe0e0;
+  --qs-error-inverse: #fff;
+  --qs-connection-default: #db3300;
+  --qs-connection-soft: #ff997a;
+  --qs-connection-light: #ffe0d6;
+  --qs-connection-dark: #661800;
+  --qs-automation-default: #b3008f;
+  --qs-automation-medium: #d600ba;
+  --qs-automation-soft: #ff94f1;
+  --qs-automation-light: #ffe0fb;
+  --qs-automation-dark: #660052;
+  --qs-insight-default: #a000b8;
+  --qs-insight-soft: #f299ff;
+  --qs-insight-light: #fce6ff;
+  --qs-insight-dark: #590066;
+  --qs-visualization-default: #7300e5;
+  --qs-visualization-soft: #d4a8ff;
+  --qs-visualization-light: #f2e5ff;
+  --qs-visualization-dark: #45008a;
+  --qs-spice: #ff9800;
+  --qs-coachmark: #006ce0;
+  --qs-brand: #fff;
+  --qs-brand-foreground: #131920;
+  --qs-brand-navbar: #131920;
+  --qs-brand-navbar-foreground: #fff;
+  --qs-brand-navbar-light: #dedee3;
+  --qs-brand-navbar-dark: #000;
+  --qs-application-navbar: #4200db;
+  --qs-application-navbar-foreground: #fff;
+  --qs-application-navbar-light: #e8e6ff;
+  --qs-application-navbar-dark: #35009e;
+  --qs-dimension: #4200db;
+  --qs-dimension-foreground: #fff;
+  --qs-dimension-experimental: #4200db;
+  --qs-dimension-experimental-foreground: #4200db;
+  --qs-measure: #00802f;
+  --qs-measure-foreground: #fff;
+  --qs-measure-experimental: #f2b100;
+  --qs-measure-experimental-foreground: #f2b100;
+  --qs-content-inverse: #333843;
+  --qs-content-inverse-active: #131920;
+  --qs-secondary: #dedee3;
+  --qs-disabled: #8c8c94;
+  --qs-divider-light: #f3f3f7;
+  --qs-hover-border: #333843;
+  --qs-active-border: #4200db;
+  --qs-disabled-border: #dedee3;
+  --qs-error-border: #ffe0e0;
+  --qs-error-active-border: #db0000;
+  --qs-disabled-foreground: #b4b4bb;
+  --qs-primary-inverse-foreground: #fff;
+  --qs-error-foreground: #db0000;
+  --qs-contrast-foreground: #131920;
+  --qs-main-foreground: #131920;
+  --qs-main-secondary-foreground: #656871;
+  --qs-action-disabled: #f3f3f7;
+  --qs-action-active: #e8e6ff;
+  --qs-default-badge: #dedee3;
+  --qs-tag-default: #dedee3;
+  --qs-tag-soft-border: #b4b4bb;
+  --qs-focus-offset: 1px;
+  --qs-toggle-tile-sm: calc(.25rem * 8);
+  --qs-toggle-tile-md: calc(.25rem * 12);
+  --qs-toggle-tile-lg: calc(.25rem * 15);
+  --qs-shadow-pin-right: inset 4px 0 4px -4px #00000029;
+  --qs-shadow-pin-left: inset -4px 0 4px -4px #00000029;
+  --react-pdf-text-layer: 1;
+  --highlight-bg-color: #b400aa;
+  --highlight-selected-bg-color: #006400;
+  --react-pdf-annotation-layer: 1;
+  --annotation-unfocused-field-background: url("data:image/svg+xml;charset=UTF-8,<svg width='1px' height='1px' xmlns='http://www.w3.org/2000/svg'><rect width='100%' height='100%' style='fill:rgba(0, 54, 255, 0.13);'/></svg>");
+  --input-focus-border-color: Highlight;
+  --input-focus-outline: 1px solid Canvas;
+  --input-unfocused-border-color: transparent;
+  --input-disabled-border-color: transparent;
+  --input-hover-border-color: black;
+  --link-outline: none;
+  color-scheme: dark;
+}
+body { background: var(--color-bg); color: var(--color-text); }
+a { color: var(--color-link, var(--color-primary)); }</style>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CNID Cloud Ops</title>
+
+<script src="https://cdn.jsdelivr.net/npm/react@18/umd/react.production.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/react-dom@18/umd/react-dom.production.min.js"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+
+<style>
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{--bg:#0F1417;--sf:#171D21;--sa:#1B2226;--bd:#262E33;--bl:#323C42;--tx:#E8EAEB;--tm:#8B959B;--tf:#5C666C;--ac:#E8A33D;--ok:#4FAE7C;--er:#E1584A;--in:#5B8DBE}
+
+body{font-family:'IBM Plex Sans',system-ui,sans-serif;background:var(--bg);color:var(--tx);margin:0;overflow:hidden}
+
+::-webkit-scrollbar{width:7px}::-webkit-scrollbar-thumb{background:var(--bl);border-radius:4px}::-webkit-scrollbar-track{background:transparent}
+
+input:focus,select:focus,textarea:focus{border-color:var(--ac)!important;outline:none}
+
+.app{display:flex;width:100vw;height:100vh}
+
+.sb{width:220px;flex-shrink:0;border-right:1px solid var(--bd);background:var(--sf);display:flex;flex-direction:column}
+
+.sb-hd{padding:20px;border-bottom:1px solid var(--bd)}
+
+.sb-t{font-size:14px;font-weight:600;letter-spacing:.5px}.sb-st{font-size:12px;color:var(--tf);margin-top:2px}
+
+.sb-nav{flex:1;padding:12px 0}
+
+.nb{width:100%;display:flex;align-items:center;gap:10px;padding:10px 20px;font-size:14px;text-align:left;border:none;cursor:pointer;background:0 0;color:var(--tm);border-right:2px solid transparent;transition:all .15s;font-family:inherit}
+
+.nb:hover{color:var(--tx);background:rgba(232,163,61,.04)}.nb.on{color:var(--ac);background:rgba(232,163,61,.08);border-right-color:var(--ac)}
+
+.sb-ft{padding:16px;border-top:1px solid var(--bd);display:flex;flex-direction:column;gap:8px}
+
+.mn{flex:1;padding:24px;overflow-y:auto}
+
+.cd{background:var(--sf);border:1px solid var(--bd);border-radius:8px;padding:20px}.cd.np{padding:0;overflow:hidden}
+
+.bg{display:inline-block;font-size:12px;font-weight:500;padding:2px 8px;border-radius:4px}
+
+.bg-ok{background:rgba(79,174,124,.14);color:var(--ok)}.bg-er{background:rgba(225,88,74,.14);color:var(--er)}.bg-mt{background:rgba(139,149,155,.14);color:var(--tm)}.bg-ac{background:rgba(232,163,61,.14);color:var(--ac)}
+
+.bt{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:500;padding:8px 12px;border-radius:6px;border:none;cursor:pointer;transition:opacity .15s;font-family:inherit}
+
+.bt:hover{opacity:.85}.bt:disabled{opacity:.4;cursor:not-allowed}
+
+.bt-p{background:var(--ac);color:#1A1204}.bt-g{background:0 0;color:var(--tx);border:1px solid var(--bd)}.bt-d{background:0 0;color:var(--er);border:1px solid rgba(225,88,74,.4)}
+
+.ip,.sl,.ta{width:100%;font-size:14px;padding:8px 12px;border-radius:6px;border:1px solid var(--bd);background:var(--sa);color:var(--tx);font-family:inherit}.ta{resize:vertical;min-height:70px}
+
+.fd{margin-bottom:12px}.fl{display:block;font-size:12px;font-weight:500;color:var(--tm);margin-bottom:4px}
+
+table{width:100%;border-collapse:collapse;font-size:14px}thead tr{background:var(--sa)}th{text-align:left;padding:12px 16px;font-weight:500;color:var(--tf);font-size:13px}
+
+td{padding:12px 16px;border-top:1px solid var(--bd)}tr:hover td{background:rgba(255,255,255,.015)}
+
+.mo{position:fixed;inset:0;z-index:50;display:flex;align-items:center;justify-content:center;padding:16px;background:rgba(6,8,9,.65)}
+
+.md{width:100%;max-width:440px;background:var(--sf);border:1px solid var(--bl);border-radius:8px;max-height:85vh;overflow-y:auto}
+
+.mh{display:flex;align-items:center;padding:16px 20px;border-bottom:1px solid var(--bd)}.mh h3{flex:1;font-size:16px;font-weight:600}
+
+.mc{background:none;border:none;cursor:pointer;color:var(--tm);font-size:18px;padding:4px}.mb{padding:20px}
+
+.kg{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:24px}
+
+.kc{padding:16px!important}.kl{font-size:12px;color:var(--tf)}.kv{font-size:20px;font-weight:600;font-family:'IBM Plex Mono',monospace;margin-top:4px}
+
+.cg{display:grid;grid-template-columns:2fr 1fr;gap:16px}
+
+.hr{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;flex-wrap:wrap;gap:12px}
+
+.mono{font-family:'IBM Plex Mono',monospace}
+
+.lk{color:var(--in);text-decoration:underline dotted;cursor:pointer;background:none;border:none;font:inherit}
+
+.fe{display:flex;gap:8px;justify-content:flex-end}
+
+.ax{display:flex;gap:8px;justify-content:flex-end}
+
+.ib{background:none;border:none;cursor:pointer;font-size:14px;padding:4px}
+
+.ai{display:flex;align-items:flex-start;gap:8px;font-size:14px;color:var(--tm);margin-bottom:10px}
+
+.fb{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+
+.mi{border-left:2px solid var(--ac);padding-left:12px;margin-bottom:12px}
+
+.md-d{font-size:12px;color:var(--tf);margin-bottom:2px}.md-p{font-size:14px;color:var(--tx)}.md-r{font-size:12px;color:var(--tm);margin-top:2px}
+
+.pb{width:100%;height:8px;background:var(--bd);border-radius:4px;overflow:hidden}
+
+.pf{height:100%;border-radius:4px;transition:width .3s}
+
+@media(max-width:900px){.kg{grid-template-columns:repeat(3,1fr)}.cg{grid-template-columns:1fr}}
+
+@media(max-width:640px){.kg{grid-template-columns:repeat(2,1fr)}.sb{width:56px}.sb .sb-t,.sb .sb-st,.sb .nl,.sb-ft{display:none}}
+
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+
+<body>
+
+<div id="root"></div>
+
+<script>
+
+var h = React.createElement;
+
+var useState = React.useState;
+
+var useEffect = React.useEffect;
+
+var useMemo = React.useMemo;
+
+
+
+/* helpers */
+
+var STORAGE_KEY = 'cnid-cloud-data-v1';
+
+/* ===== Supabase (persistencia en la nube) ===== */
+var SUPABASE_URL = 'https://moraiypkqdawtfbcqmuj.supabase.co';
+var SUPABASE_KEY = 'sb_publishable_d09i29byJg3EtTZBM58bfg_TjLg5YwJ';
+var ROW_ID = 'main';
+var sb = null;
+try { if(window.supabase){ sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY); } } catch(e){ console.warn('Supabase no disponible', e); }
+
+/* Cargar estado desde Supabase (async). Devuelve el objeto data o null. */
+async function loadFromCloud(){
+  if(!sb) return null;
+  try {
+    var res = await sb.from('app_state').select('data').eq('id', ROW_ID).single();
+    if(res.error){ console.warn('loadFromCloud error', res.error); return null; }
+    if(res.data && res.data.data && Object.keys(res.data.data).length > 0) return res.data.data;
+    return null;
+  } catch(e){ console.warn('loadFromCloud excepción', e); return null; }
+}
+/* Guardar estado en Supabase (async, fire-and-forget). */
+async function saveToCloud(data){
+  if(!sb) return;
+  try { await sb.from('app_state').upsert({ id: ROW_ID, data: data, updated_at: new Date().toISOString() }); }
+  catch(e){ console.warn('saveToCloud excepción', e); }
+}
+
+var _mem = {};
+
+var store = {
+
+  get: function(k) {
+
+    try { var v = localStorage.getItem(k); return v; }
+
+    catch(e) { return _mem[k] || null; }
+
+  },
+
+  set: function(k, v) {
+
+    try { localStorage.setItem(k, v); }
+
+    catch(e) { _mem[k] = v; }
+
+  }
+
+};
+
+function loadData() {
+
+  try { var s = store.get(STORAGE_KEY); if(s) return JSON.parse(s); } catch(e) {}
+
+  return null;
+
+}
+
+function resetData() {
+
+  try { store.set(STORAGE_KEY, ''); } catch(e) {}
+
+  return buildDemo();
+
+}
+
+function saveData(data) { try { store.set(STORAGE_KEY, JSON.stringify(data)); } catch(e) {} }
+
+function uid(){return 'id-'+Date.now()+'-'+Math.random().toString(36).slice(2)}
+
+function fmtUSD(n){return new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',minimumFractionDigits:2,maximumFractionDigits:2}).format(Number(n)||0)}
+
+function fmtDate(iso){if(!iso)return'\u2014';try{var d=new Date(iso+'T00:00:00');return d.toLocaleDateString('es-CO',{day:'2-digit',month:'short',year:'numeric'})}catch(e){return iso}}
+
+function daysUntil(iso){var t=new Date();t.setHours(0,0,0,0);return Math.round((new Date(iso+'T00:00:00')-t)/86400000)}
+
+function ic(name,sz){return h('i',{className:'fa-solid fa-'+name,style:{fontSize:sz||14}})}
+
+
+
+/* demo data */
+
+function buildDemo(){
+
+  var pmas=[
+
+    { id:'pma-co', name:'PMA CNID CO', accountId:'693892047857', region:'us-east-1', status:'Activa' },
+    { id:'pma-pe', name:'PMA CNID PE', accountId:'981421757472', region:'sa-east-1', status:'Activa' },
+    { id:'pma-atlas', name:'PMA Atlas', accountId:'739275481021', region:'us-east-1', status:'Activa' }
+
+  ];
+
+  var clients=[];
+
+  var accounts=[
+
+    {id:'acc-co-1',accountId:'958719817359',name:'958719817359 - Redacted',clientId:'',pmaId:'pma-co',status:'Activa'},
+
+    {id:'acc-co-2',accountId:'741611468011',name:'Servicio Geologico Colombiano',clientId:'',pmaId:'pma-co',status:'Activa'},
+
+    {id:'acc-co-3',accountId:'025066257521',name:'infotrack_migracion_prd',clientId:'',pmaId:'pma-co',status:'Activa'},
+
+    {id:'acc-co-4',accountId:'598528074319',name:'598528074319 - Redacted',clientId:'',pmaId:'pma-co',status:'Activa'},
+
+    {id:'acc-co-5',accountId:'693892047857',name:'CNID_CO',clientId:'',pmaId:'pma-co',status:'Activa'},
+
+    {id:'acc-co-6',accountId:'832435226648',name:'832435226648 - Redacted',clientId:'',pmaId:'pma-co',status:'Activa'},
+
+    {id:'acc-co-7',accountId:'154766307251',name:'Informacion Localizada SAS',clientId:'',pmaId:'pma-co',status:'Activa'},
+
+    {id:'acc-co-8',accountId:'663997915324',name:'663997915324 - Redacted',clientId:'',pmaId:'pma-co',status:'Activa'},
+
+    {id:'acc-co-9',accountId:'767397818504',name:'lissa_infra_prd',clientId:'',pmaId:'pma-co',status:'Activa'},
+
+    {id:'acc-co-10',accountId:'939780545354',name:'cnid_rpa_prd',clientId:'',pmaId:'pma-co',status:'Activa'},
+
+    {id:'acc-co-11',accountId:'977438203831',name:'opensky_app_prd',clientId:'',pmaId:'pma-co',status:'Activa'},
+
+    {id:'acc-co-12',accountId:'785882169494',name:'ecco_app_prd',clientId:'',pmaId:'pma-co',status:'Activa'},
+
+    {id:'acc-co-13',accountId:'211125431846',name:'cnid_Geofy_prd',clientId:'',pmaId:'pma-co',status:'Activa'},
+
+    {id:'acc-co-14',accountId:'880066020305',name:'880066020305 - Redacted',clientId:'',pmaId:'pma-co',status:'Activa'},
+
+    {id:'acc-co-15',accountId:'607846254505',name:'Opensky Consultores',clientId:'',pmaId:'pma-co',status:'Activa'},
+
+    {id:'acc-co-16',accountId:'676695493440',name:'onixdigital.co',clientId:'',pmaId:'pma-co',status:'Activa'},
+
+    {id:'acc-co-17',accountId:'959115801178',name:'959115801178 - Redacted',clientId:'',pmaId:'pma-co',status:'Activa'},
+
+    {id:'acc-co-18',accountId:'298501598510',name:'ucqn_storage_prd',clientId:'',pmaId:'pma-co',status:'Activa'},
+
+    {id:'acc-co-19',accountId:'892031199428',name:'Dev Liftit Team',clientId:'',pmaId:'pma-co',status:'Activa'},
+
+    {id:'acc-co-20',accountId:'712034899474',name:'cemue',clientId:'',pmaId:'pma-co',status:'Activa'},
+
+    {id:'acc-co-21',accountId:'168335226676',name:'UT_Ser_Soacha',clientId:'',pmaId:'pma-co',status:'Activa'},
+
+    {id:'acc-co-22',accountId:'215452281008',name:'Log Archive',clientId:'',pmaId:'pma-co',status:'Activa'},
+
+    {id:'acc-co-23',accountId:'604872061952',name:'Cruservi',clientId:'',pmaId:'pma-co',status:'Activa'},
+
+    {id:'acc-co-24',accountId:'728629252603',name:'728629252603 - Redacted',clientId:'',pmaId:'pma-co',status:'Activa'},
+
+    {id:'acc-co-25',accountId:'937700074637',name:'cnid_webpage_prd',clientId:'',pmaId:'pma-co',status:'Activa'},
+
+    {id:'acc-co-26',accountId:'481314886095',name:'Credivalores',clientId:'',pmaId:'pma-co',status:'Activa'},
+
+    {id:'acc-co-27',accountId:'886436954117',name:'crusardi_storage_prd',clientId:'',pmaId:'pma-co',status:'Activa'},
+
+    {id:'acc-co-28',accountId:'653347132762',name:'Efecty',clientId:'',pmaId:'pma-co',status:'Activa'},
+
+    {id:'acc-co-29',accountId:'060795914396',name:'060795914396 - Redacted',clientId:'',pmaId:'pma-co',status:'Activa'},
+
+    {id:'acc-co-30',accountId:'916979467195',name:'Geolocator',clientId:'',pmaId:'pma-co',status:'Activa'},
+
+    {id:'acc-co-31',accountId:'431549480883',name:'Nutresa',clientId:'',pmaId:'pma-co',status:'Activa'},
+
+    {id:'acc-co-32',accountId:'425026231163',name:'425026231163 - Redacted',clientId:'',pmaId:'pma-co',status:'Activa'},
+
+    {id:'acc-co-33',accountId:'559050204882',name:'cemue_rpa_poc',clientId:'',pmaId:'pma-co',status:'Activa'},
+
+    {id:'acc-co-34',accountId:'058264350864',name:'adhd_web_prd',clientId:'',pmaId:'pma-co',status:'Activa'},
+
+    {id:'acc-co-35',accountId:'112975984292',name:'francisco_mateus_proaia',clientId:'',pmaId:'pma-co',status:'Activa'},
+
+    {id:'acc-co-36',accountId:'024405409613',name:'atlas_ia_poc',clientId:'',pmaId:'pma-co',status:'Activa'},
+
+    {id:'acc-co-37',accountId:'382084303229',name:'Liftit Infra',clientId:'',pmaId:'pma-co',status:'Activa'},
+
+    {id:'acc-co-38',accountId:'564682286107',name:'Rutero',clientId:'',pmaId:'pma-co',status:'Activa'},
+
+    {id:'acc-co-39',accountId:'739275443853',name:'bancomachala_rpa_dev',clientId:'',pmaId:'pma-co',status:'Activa'},
+
+    {id:'acc-co-40',accountId:'025066256883',name:'dinet_ml_poc',clientId:'',pmaId:'pma-co',status:'Activa'},
+
+    {id:'acc-co-41',accountId:'783493066955',name:'Audit',clientId:'',pmaId:'pma-co',status:'Activa'},
+
+    {id:'acc-co-42',accountId:'693211791639',name:'taylor_prd',clientId:'',pmaId:'pma-co',status:'Activa'},
+
+    {id:'acc-co-43',accountId:'228287342318',name:'Proyecto_Cepei',clientId:'',pmaId:'pma-co',status:'Activa'},
+
+    {id:'acc-co-44',accountId:'314181159334',name:'colourrepublic_marketplace_rpa',clientId:'',pmaId:'pma-co',status:'Activa'},
+
+    {id:'acc-co-45',accountId:'013115036531',name:'Servi_Pruebas',clientId:'',pmaId:'pma-co',status:'Activa'},
+
+    {id:'acc-co-46',accountId:'471112597674',name:'HunterEcu_DRS_PoC',clientId:'',pmaId:'pma-co',status:'Activa'},
+
+    {id:'acc-co-47',accountId:'695394391631',name:'sumimas_infra_poc',clientId:'',pmaId:'pma-co',status:'Activa'},
+
+    {id:'acc-co-48',accountId:'759448530781',name:'cnid_2Delivery_Desarrollo',clientId:'',pmaId:'pma-co',status:'Activa'},
+
+    {id:'acc-co-49',accountId:'223510079659',name:'umb_marketplace_rpa',clientId:'',pmaId:'pma-co',status:'Activa'},
+
+    {id:'acc-co-50',accountId:'036430315603',name:'cnid_rpa_ca',clientId:'',pmaId:'pma-co',status:'Activa'},
+
+    {id:'acc-co-51',accountId:'653614598455',name:'DCMarketplace',clientId:'',pmaId:'pma-co',status:'Activa'},
+
+    {id:'acc-co-52',accountId:'212051644334',name:'andirent_ml_poc',clientId:'',pmaId:'pma-co',status:'Activa'},
+
+    {id:'acc-co-53',accountId:'110084921334',name:'cnid_2delivery_dev',clientId:'',pmaId:'pma-co',status:'Activa'},
+
+    {id:'acc-co-54',accountId:'058375533075',name:'messer_map',clientId:'',pmaId:'pma-co',status:'Activa'},
+
+    {id:'acc-co-55',accountId:'011215723237',name:'jdf_app_prd',clientId:'',pmaId:'pma-co',status:'Activa'},
+
+    {id:'acc-co-56',accountId:'183192392422',name:'moderna_marketplace_rpa',clientId:'',pmaId:'pma-co',status:'Activa'},
+
+    {id:'acc-co-57',accountId:'058914805578',name:'sgcdan',clientId:'',pmaId:'pma-co',status:'Activa'},
+
+    {id:'acc-co-58',accountId:'807019191177',name:'Petplus',clientId:'',pmaId:'pma-co',status:'Activa'},
+    {id:'acc-pe-1',accountId:'959105915101',name:'CARSEG',clientId:'',pmaId:'pma-pe',status:'Activa'},
+    {id:'acc-pe-2',accountId:'067075807924',name:'admin',clientId:'',pmaId:'pma-pe',status:'Activa'},
+    {id:'acc-pe-3',accountId:'981421757472',name:'CNID_PE',clientId:'',pmaId:'pma-pe',status:'Activa'},
+    {id:'acc-pe-4',accountId:'575108933376',name:'Taxi4209000',clientId:'',pmaId:'pma-pe',status:'Activa'},
+    {id:'acc-pe-5',accountId:'359478566939',name:'ialertt',clientId:'',pmaId:'pma-pe',status:'Activa'},
+    {id:'acc-pe-6',accountId:'432023396552',name:'taxsatelyfranjafucsia',clientId:'',pmaId:'pma-pe',status:'Activa'},
+    {id:'acc-pe-7',accountId:'459441115871',name:'459441115871 - Redacted',clientId:'',pmaId:'pma-pe',status:'Activa'},
+    {id:'acc-pe-8',accountId:'105760376113',name:'105760376113 - Redacted',clientId:'',pmaId:'pma-pe',status:'Activa'},
+    {id:'acc-pe-9',accountId:'796973484447',name:'piwi.delivery',clientId:'',pmaId:'pma-pe',status:'Activa'},
+    {id:'acc-pe-10',accountId:'880969027439',name:'Taxi Corporativo',clientId:'',pmaId:'pma-pe',status:'Activa'},
+    {id:'acc-pe-11',accountId:'558395119634',name:'558395119634 - Redacted',clientId:'',pmaId:'pma-pe',status:'Activa'},
+    {id:'acc-pe-12',accountId:'397372466921',name:'INVERSIONES MOLINA TOURS S.A.C.',clientId:'',pmaId:'pma-pe',status:'Activa'},
+    {id:'acc-pe-13',accountId:'508992910827',name:'508992910827 - Redacted',clientId:'',pmaId:'pma-pe',status:'Activa'},
+    {id:'acc-pe-14',accountId:'059180250519',name:'ransa_rpa_prd',clientId:'',pmaId:'pma-pe',status:'Activa'},
+    {id:'acc-pe-15',accountId:'767828729777',name:'transportaa_rpa_prd',clientId:'',pmaId:'pma-pe',status:'Activa'},
+    {id:'acc-pe-16',accountId:'724420151489',name:'Log Archive',clientId:'',pmaId:'pma-pe',status:'Activa'},
+    {id:'acc-pe-17',accountId:'112167197511',name:'Audit',clientId:'',pmaId:'pma-pe',status:'Activa'},
+    {id:'acc-pe-18',accountId:'800759855350',name:'cajaarequipa_marketplace_rpa',clientId:'',pmaId:'pma-pe',status:'Activa'},
+    {id:'acc-pe-19',accountId:'720644165942',name:'hermes_map_poc',clientId:'',pmaId:'pma-pe',status:'Activa'},
+    {id:'acc-pe-20',accountId:'294944667966',name:'mgindusol_rpa_poc',clientId:'',pmaId:'pma-pe',status:'Activa'},
+    {id:'acc-pe-21',accountId:'018546476549',name:'Taxi Directo',clientId:'',pmaId:'pma-pe',status:'Activa'},
+    {id:'acc-pe-22',accountId:'375461734509',name:'Celima',clientId:'',pmaId:'pma-pe',status:'Activa'},
+    {id:'acc-pe-23',accountId:'966063511394',name:'efletexia',clientId:'',pmaId:'pma-pe',status:'Activa'},
+    {id:'acc-at-1',accountId:'111450735474',name:'co ATLAS NEXUS',clientId:'',pmaId:'pma-atlas',status:'Activa'},
+    {id:'acc-at-2',accountId:'376147271705',name:'co TVA',clientId:'',pmaId:'pma-atlas',status:'Activa'},
+    {id:'acc-at-3',accountId:'992234856565',name:'datawarehouse_atlas',clientId:'',pmaId:'pma-atlas',status:'Activa'},
+    {id:'acc-at-4',accountId:'969516594335',name:'Activos-interno',clientId:'',pmaId:'pma-atlas',status:'Activa'},
+    {id:'acc-at-5',accountId:'739275481021',name:'Atlas-Transvalores',clientId:'',pmaId:'pma-atlas',status:'Activa'},
+    {id:'acc-at-6',accountId:'144337253013',name:'co Atlas Modernizacion POC',clientId:'',pmaId:'pma-atlas',status:'Activa'}
+
+  ];
+
+  var costs=[
+
+    {id:uid(),accountId:'acc-co-1',month:'2026-06',gross:15154.2,sppPct:8,sppUsd:1212.34,activateCredits:0,net:13941.86},
+
+    {id:uid(),accountId:'acc-co-2',month:'2026-06',gross:1718.58,sppPct:8,sppUsd:137.49,activateCredits:0,net:1581.09},
+
+    {id:uid(),accountId:'acc-co-3',month:'2026-06',gross:3868.51,sppPct:8,sppUsd:309.48,activateCredits:0,net:3559.03},
+
+    {id:uid(),accountId:'acc-co-4',month:'2026-06',gross:7396.14,sppPct:8,sppUsd:591.69,activateCredits:0,net:6804.45},
+
+    {id:uid(),accountId:'acc-co-5',month:'2026-06',gross:1207.64,sppPct:8,sppUsd:96.61,activateCredits:0,net:1111.03},
+
+    {id:uid(),accountId:'acc-co-6',month:'2026-06',gross:2974.07,sppPct:8,sppUsd:237.93,activateCredits:0,net:2736.14},
+
+    {id:uid(),accountId:'acc-co-7',month:'2026-06',gross:939.63,sppPct:8,sppUsd:75.17,activateCredits:0,net:864.46},
+
+    {id:uid(),accountId:'acc-co-8',month:'2026-06',gross:2574.53,sppPct:8,sppUsd:205.96,activateCredits:0,net:2368.57},
+
+    {id:uid(),accountId:'acc-co-9',month:'2026-06',gross:586.2,sppPct:8,sppUsd:46.9,activateCredits:0,net:539.3},
+
+    {id:uid(),accountId:'acc-co-10',month:'2026-06',gross:590.09,sppPct:8,sppUsd:47.21,activateCredits:0,net:542.88},
+
+    {id:uid(),accountId:'acc-co-11',month:'2026-06',gross:523.7,sppPct:8,sppUsd:41.9,activateCredits:0,net:481.8},
+
+    {id:uid(),accountId:'acc-co-12',month:'2026-06',gross:322.24,sppPct:8,sppUsd:25.78,activateCredits:0,net:296.46},
+
+    {id:uid(),accountId:'acc-co-13',month:'2026-06',gross:216.21,sppPct:8,sppUsd:17.3,activateCredits:0,net:198.91},
+
+    {id:uid(),accountId:'acc-co-14',month:'2026-06',gross:739.18,sppPct:8,sppUsd:59.13,activateCredits:0,net:680.05},
+
+    {id:uid(),accountId:'acc-co-15',month:'2026-06',gross:214.62,sppPct:8,sppUsd:17.17,activateCredits:0,net:197.45},
+
+    {id:uid(),accountId:'acc-co-17',month:'2026-06',gross:543.28,sppPct:8,sppUsd:43.46,activateCredits:0,net:499.82},
+
+    {id:uid(),accountId:'acc-co-18',month:'2026-06',gross:168.07,sppPct:8,sppUsd:13.45,activateCredits:0,net:154.62},
+
+    {id:uid(),accountId:'acc-co-19',month:'2026-06',gross:110.87,sppPct:8,sppUsd:8.87,activateCredits:0,net:102.0},
+
+    {id:uid(),accountId:'acc-co-20',month:'2026-06',gross:98.83,sppPct:8,sppUsd:7.91,activateCredits:0,net:90.92},
+
+    {id:uid(),accountId:'acc-co-21',month:'2026-06',gross:79.0,sppPct:8,sppUsd:6.32,activateCredits:0,net:72.68},
+
+    {id:uid(),accountId:'acc-co-22',month:'2026-06',gross:25.89,sppPct:8,sppUsd:2.07,activateCredits:0,net:23.82},
+
+    {id:uid(),accountId:'acc-co-23',month:'2026-06',gross:22.57,sppPct:8,sppUsd:1.81,activateCredits:0,net:20.76},
+
+    {id:uid(),accountId:'acc-co-24',month:'2026-06',gross:62.95,sppPct:8,sppUsd:5.04,activateCredits:0,net:57.91},
+
+    {id:uid(),accountId:'acc-co-25',month:'2026-06',gross:14.79,sppPct:8,sppUsd:1.18,activateCredits:0,net:13.61},
+
+    {id:uid(),accountId:'acc-co-26',month:'2026-06',gross:13.48,sppPct:8,sppUsd:1.08,activateCredits:0,net:12.4},
+
+    {id:uid(),accountId:'acc-co-27',month:'2026-06',gross:12.77,sppPct:8,sppUsd:1.02,activateCredits:0,net:11.75},
+
+    {id:uid(),accountId:'acc-co-28',month:'2026-06',gross:12.64,sppPct:8,sppUsd:1.01,activateCredits:0,net:11.63},
+
+    {id:uid(),accountId:'acc-co-29',month:'2026-06',gross:32.28,sppPct:8,sppUsd:2.58,activateCredits:0,net:29.7},
+
+    {id:uid(),accountId:'acc-co-30',month:'2026-06',gross:9.45,sppPct:8,sppUsd:0.76,activateCredits:0,net:8.69},
+
+    {id:uid(),accountId:'acc-co-31',month:'2026-06',gross:12.9,sppPct:8,sppUsd:1.03,activateCredits:0,net:11.87},
+
+    {id:uid(),accountId:'acc-co-32',month:'2026-06',gross:20.87,sppPct:8,sppUsd:1.67,activateCredits:0,net:19.2},
+
+    {id:uid(),accountId:'acc-co-33',month:'2026-06',gross:6.45,sppPct:8,sppUsd:0.52,activateCredits:0,net:5.93},
+
+    {id:uid(),accountId:'acc-co-34',month:'2026-06',gross:5.35,sppPct:8,sppUsd:0.43,activateCredits:0,net:4.92},
+
+    {id:uid(),accountId:'acc-co-35',month:'2026-06',gross:4.37,sppPct:8,sppUsd:0.35,activateCredits:0,net:4.02},
+
+    {id:uid(),accountId:'acc-co-36',month:'2026-06',gross:4.3,sppPct:8,sppUsd:0.34,activateCredits:0,net:3.96},
+
+    {id:uid(),accountId:'acc-co-37',month:'2026-06',gross:3.21,sppPct:8,sppUsd:0.26,activateCredits:0,net:2.95},
+
+    {id:uid(),accountId:'acc-co-38',month:'2026-06',gross:2.28,sppPct:8,sppUsd:0.18,activateCredits:0,net:2.1},
+
+    {id:uid(),accountId:'acc-co-39',month:'2026-06',gross:2.31,sppPct:8,sppUsd:0.18,activateCredits:0,net:2.13},
+
+    {id:uid(),accountId:'acc-co-40',month:'2026-06',gross:1.24,sppPct:8,sppUsd:0.1,activateCredits:0,net:1.14},
+
+    {id:uid(),accountId:'acc-co-41',month:'2026-06',gross:0.82,sppPct:8,sppUsd:0.07,activateCredits:0,net:0.75},
+
+    {id:uid(),accountId:'acc-co-42',month:'2026-06',gross:0.8,sppPct:8,sppUsd:0.06,activateCredits:0,net:0.74},
+
+    {id:uid(),accountId:'acc-co-43',month:'2026-06',gross:0.73,sppPct:8,sppUsd:0.06,activateCredits:0,net:0.67},
+
+    {id:uid(),accountId:'acc-co-44',month:'2026-06',gross:0.72,sppPct:8,sppUsd:0.06,activateCredits:0,net:0.66},
+
+    {id:uid(),accountId:'acc-co-45',month:'2026-06',gross:0.72,sppPct:8,sppUsd:0.06,activateCredits:0,net:0.66},
+
+    {id:uid(),accountId:'acc-co-46',month:'2026-06',gross:0.69,sppPct:8,sppUsd:0.06,activateCredits:0,net:0.63},
+
+    {id:uid(),accountId:'acc-co-47',month:'2026-06',gross:0.7,sppPct:8,sppUsd:0.06,activateCredits:0,net:0.64},
+
+    {id:uid(),accountId:'acc-co-48',month:'2026-06',gross:0.7,sppPct:8,sppUsd:0.06,activateCredits:0,net:0.64},
+
+    {id:uid(),accountId:'acc-co-49',month:'2026-06',gross:0.7,sppPct:8,sppUsd:0.06,activateCredits:0,net:0.64},
+
+    {id:uid(),accountId:'acc-co-50',month:'2026-06',gross:0.7,sppPct:8,sppUsd:0.06,activateCredits:0,net:0.64},
+
+    {id:uid(),accountId:'acc-co-51',month:'2026-06',gross:0.7,sppPct:8,sppUsd:0.06,activateCredits:0,net:0.64},
+
+    {id:uid(),accountId:'acc-co-52',month:'2026-06',gross:0.68,sppPct:8,sppUsd:0.05,activateCredits:0,net:0.63},
+
+    {id:uid(),accountId:'acc-co-53',month:'2026-06',gross:0.69,sppPct:8,sppUsd:0.06,activateCredits:0,net:0.63},
+
+    {id:uid(),accountId:'acc-co-54',month:'2026-06',gross:0.7,sppPct:8,sppUsd:0.06,activateCredits:0,net:0.64},
+
+    {id:uid(),accountId:'acc-co-55',month:'2026-06',gross:0.69,sppPct:8,sppUsd:0.06,activateCredits:0,net:0.63},
+
+    {id:uid(),accountId:'acc-co-56',month:'2026-06',gross:0.66,sppPct:8,sppUsd:0.05,activateCredits:0,net:0.61},
+
+    {id:uid(),accountId:'acc-co-57',month:'2026-06',gross:0.03,sppPct:8,sppUsd:0.0,activateCredits:0,net:0.03},
+
+    {id:uid(),accountId:'acc-co-1',month:'2026-07',gross:317.35,sppPct:8,sppUsd:25.39,activateCredits:0,net:291.96},
+
+    {id:uid(),accountId:'acc-co-2',month:'2026-07',gross:1728.43,sppPct:8,sppUsd:138.27,activateCredits:0,net:1590.16},
+
+    {id:uid(),accountId:'acc-co-3',month:'2026-07',gross:3861.63,sppPct:8,sppUsd:308.93,activateCredits:0,net:3552.7},
+
+    {id:uid(),accountId:'acc-co-4',month:'2026-07',gross:354.48,sppPct:8,sppUsd:28.36,activateCredits:0,net:326.12},
+
+    {id:uid(),accountId:'acc-co-5',month:'2026-07',gross:1060.49,sppPct:8,sppUsd:84.84,activateCredits:0,net:975.65},
+
+    {id:uid(),accountId:'acc-co-6',month:'2026-07',gross:61.48,sppPct:8,sppUsd:4.92,activateCredits:0,net:56.56},
+
+    {id:uid(),accountId:'acc-co-7',month:'2026-07',gross:1010.47,sppPct:8,sppUsd:80.84,activateCredits:0,net:929.63},
+
+    {id:uid(),accountId:'acc-co-8',month:'2026-07',gross:78.86,sppPct:8,sppUsd:6.31,activateCredits:0,net:72.55},
+
+    {id:uid(),accountId:'acc-co-9',month:'2026-07',gross:609.58,sppPct:8,sppUsd:48.77,activateCredits:0,net:560.81},
+
+    {id:uid(),accountId:'acc-co-10',month:'2026-07',gross:588.56,sppPct:8,sppUsd:47.08,activateCredits:0,net:541.48},
+
+    {id:uid(),accountId:'acc-co-11',month:'2026-07',gross:541.11,sppPct:8,sppUsd:43.29,activateCredits:0,net:497.82},
+
+    {id:uid(),accountId:'acc-co-12',month:'2026-07',gross:329.63,sppPct:8,sppUsd:26.37,activateCredits:0,net:303.26},
+
+    {id:uid(),accountId:'acc-co-13',month:'2026-07',gross:222.68,sppPct:8,sppUsd:17.81,activateCredits:0,net:204.87},
+
+    {id:uid(),accountId:'acc-co-14',month:'2026-07',gross:15.58,sppPct:8,sppUsd:1.25,activateCredits:0,net:14.33},
+
+    {id:uid(),accountId:'acc-co-15',month:'2026-07',gross:256.79,sppPct:8,sppUsd:20.54,activateCredits:0,net:236.25},
+
+    {id:uid(),accountId:'acc-co-17',month:'2026-07',gross:11.92,sppPct:8,sppUsd:0.95,activateCredits:0,net:10.97},
+
+    {id:uid(),accountId:'acc-co-18',month:'2026-07',gross:190.24,sppPct:8,sppUsd:15.22,activateCredits:0,net:175.02},
+
+    {id:uid(),accountId:'acc-co-19',month:'2026-07',gross:186.69,sppPct:8,sppUsd:14.93,activateCredits:0,net:171.76},
+
+    {id:uid(),accountId:'acc-co-20',month:'2026-07',gross:101.77,sppPct:8,sppUsd:8.14,activateCredits:0,net:93.63},
+
+    {id:uid(),accountId:'acc-co-21',month:'2026-07',gross:79.9,sppPct:8,sppUsd:6.39,activateCredits:0,net:73.51},
+
+    {id:uid(),accountId:'acc-co-22',month:'2026-07',gross:23.76,sppPct:8,sppUsd:1.9,activateCredits:0,net:21.86},
+
+    {id:uid(),accountId:'acc-co-23',month:'2026-07',gross:22.42,sppPct:8,sppUsd:1.79,activateCredits:0,net:20.63},
+
+    {id:uid(),accountId:'acc-co-25',month:'2026-07',gross:16.59,sppPct:8,sppUsd:1.33,activateCredits:0,net:15.26},
+
+    {id:uid(),accountId:'acc-co-26',month:'2026-07',gross:13.32,sppPct:8,sppUsd:1.07,activateCredits:0,net:12.25},
+
+    {id:uid(),accountId:'acc-co-27',month:'2026-07',gross:12.86,sppPct:8,sppUsd:1.03,activateCredits:0,net:11.83},
+
+    {id:uid(),accountId:'acc-co-28',month:'2026-07',gross:12.38,sppPct:8,sppUsd:0.99,activateCredits:0,net:11.39},
+
+    {id:uid(),accountId:'acc-co-30',month:'2026-07',gross:9.24,sppPct:8,sppUsd:0.74,activateCredits:0,net:8.5},
+
+    {id:uid(),accountId:'acc-co-31',month:'2026-07',gross:6.76,sppPct:8,sppUsd:0.54,activateCredits:0,net:6.22},
+
+    {id:uid(),accountId:'acc-co-33',month:'2026-07',gross:6.61,sppPct:8,sppUsd:0.53,activateCredits:0,net:6.08},
+
+    {id:uid(),accountId:'acc-co-34',month:'2026-07',gross:5.42,sppPct:8,sppUsd:0.43,activateCredits:0,net:4.99},
+
+    {id:uid(),accountId:'acc-co-35',month:'2026-07',gross:4.49,sppPct:8,sppUsd:0.36,activateCredits:0,net:4.13},
+
+    {id:uid(),accountId:'acc-co-36',month:'2026-07',gross:4.31,sppPct:8,sppUsd:0.34,activateCredits:0,net:3.97},
+
+    {id:uid(),accountId:'acc-co-37',month:'2026-07',gross:3.19,sppPct:8,sppUsd:0.26,activateCredits:0,net:2.93},
+
+    {id:uid(),accountId:'acc-co-38',month:'2026-07',gross:2.67,sppPct:8,sppUsd:0.21,activateCredits:0,net:2.46},
+
+    {id:uid(),accountId:'acc-co-39',month:'2026-07',gross:2.32,sppPct:8,sppUsd:0.19,activateCredits:0,net:2.13},
+
+    {id:uid(),accountId:'acc-co-40',month:'2026-07',gross:1.09,sppPct:8,sppUsd:0.09,activateCredits:0,net:1.0},
+
+    {id:uid(),accountId:'acc-co-41',month:'2026-07',gross:0.86,sppPct:8,sppUsd:0.07,activateCredits:0,net:0.79},
+
+    {id:uid(),accountId:'acc-co-42',month:'2026-07',gross:0.77,sppPct:8,sppUsd:0.06,activateCredits:0,net:0.71},
+
+    {id:uid(),accountId:'acc-co-43',month:'2026-07',gross:0.72,sppPct:8,sppUsd:0.06,activateCredits:0,net:0.66},
+
+    {id:uid(),accountId:'acc-co-44',month:'2026-07',gross:0.72,sppPct:8,sppUsd:0.06,activateCredits:0,net:0.66},
+
+    {id:uid(),accountId:'acc-co-45',month:'2026-07',gross:0.7,sppPct:8,sppUsd:0.06,activateCredits:0,net:0.64},
+
+    {id:uid(),accountId:'acc-co-46',month:'2026-07',gross:0.71,sppPct:8,sppUsd:0.06,activateCredits:0,net:0.65},
+
+    {id:uid(),accountId:'acc-co-47',month:'2026-07',gross:0.7,sppPct:8,sppUsd:0.06,activateCredits:0,net:0.64},
+
+    {id:uid(),accountId:'acc-co-48',month:'2026-07',gross:0.7,sppPct:8,sppUsd:0.06,activateCredits:0,net:0.64},
+
+    {id:uid(),accountId:'acc-co-49',month:'2026-07',gross:0.7,sppPct:8,sppUsd:0.06,activateCredits:0,net:0.64},
+
+    {id:uid(),accountId:'acc-co-50',month:'2026-07',gross:0.7,sppPct:8,sppUsd:0.06,activateCredits:0,net:0.64},
+
+    {id:uid(),accountId:'acc-co-51',month:'2026-07',gross:0.7,sppPct:8,sppUsd:0.06,activateCredits:0,net:0.64},
+
+    {id:uid(),accountId:'acc-co-52',month:'2026-07',gross:0.71,sppPct:8,sppUsd:0.06,activateCredits:0,net:0.65},
+
+    {id:uid(),accountId:'acc-co-53',month:'2026-07',gross:0.7,sppPct:8,sppUsd:0.06,activateCredits:0,net:0.64},
+
+    {id:uid(),accountId:'acc-co-54',month:'2026-07',gross:0.69,sppPct:8,sppUsd:0.06,activateCredits:0,net:0.63},
+
+    {id:uid(),accountId:'acc-co-55',month:'2026-07',gross:0.69,sppPct:8,sppUsd:0.06,activateCredits:0,net:0.63},
+
+    {id:uid(),accountId:'acc-co-56',month:'2026-07',gross:0.7,sppPct:8,sppUsd:0.06,activateCredits:0,net:0.64},
+
+    {id:uid(),accountId:'acc-co-57',month:'2026-07',gross:0.03,sppPct:8,sppUsd:0.0,activateCredits:0,net:0.03},
+
+    {id:uid(),accountId:'acc-co-2',month:'2026-08',gross:9475.12,sppPct:8,sppUsd:758.01,activateCredits:0,net:8717.11},
+
+    {id:uid(),accountId:'acc-co-3',month:'2026-08',gross:3837.39,sppPct:8,sppUsd:306.99,activateCredits:0,net:3530.4},
+
+    {id:uid(),accountId:'acc-co-5',month:'2026-08',gross:1439.4,sppPct:8,sppUsd:115.15,activateCredits:0,net:1324.25},
+
+    {id:uid(),accountId:'acc-co-7',month:'2026-08',gross:1019.89,sppPct:8,sppUsd:81.59,activateCredits:0,net:938.3},
+
+    {id:uid(),accountId:'acc-co-9',month:'2026-08',gross:606.19,sppPct:8,sppUsd:48.49,activateCredits:0,net:557.7},
+
+    {id:uid(),accountId:'acc-co-10',month:'2026-08',gross:560.4,sppPct:8,sppUsd:44.83,activateCredits:0,net:515.57},
+
+    {id:uid(),accountId:'acc-co-11',month:'2026-08',gross:540.82,sppPct:8,sppUsd:43.27,activateCredits:0,net:497.55},
+
+    {id:uid(),accountId:'acc-co-12',month:'2026-08',gross:285.33,sppPct:8,sppUsd:22.83,activateCredits:0,net:262.5},
+
+    {id:uid(),accountId:'acc-co-13',month:'2026-08',gross:371.36,sppPct:8,sppUsd:29.71,activateCredits:0,net:341.65},
+
+    {id:uid(),accountId:'acc-co-15',month:'2026-08',gross:221.94,sppPct:8,sppUsd:17.75,activateCredits:0,net:204.19},
+
+    {id:uid(),accountId:'acc-co-16',month:'2026-08',gross:613.52,sppPct:8,sppUsd:49.08,activateCredits:0,net:564.44},
+
+    {id:uid(),accountId:'acc-co-18',month:'2026-08',gross:193.96,sppPct:8,sppUsd:15.52,activateCredits:0,net:178.44},
+
+    {id:uid(),accountId:'acc-co-19',month:'2026-08',gross:143.65,sppPct:8,sppUsd:11.49,activateCredits:0,net:132.16},
+
+    {id:uid(),accountId:'acc-co-20',month:'2026-08',gross:101.94,sppPct:8,sppUsd:8.16,activateCredits:0,net:93.78},
+
+    {id:uid(),accountId:'acc-co-21',month:'2026-08',gross:81.58,sppPct:8,sppUsd:6.53,activateCredits:0,net:75.05},
+
+    {id:uid(),accountId:'acc-co-22',month:'2026-08',gross:23.47,sppPct:8,sppUsd:1.88,activateCredits:0,net:21.59},
+
+    {id:uid(),accountId:'acc-co-23',month:'2026-08',gross:22.25,sppPct:8,sppUsd:1.78,activateCredits:0,net:20.47},
+
+    {id:uid(),accountId:'acc-co-25',month:'2026-08',gross:17.58,sppPct:8,sppUsd:1.41,activateCredits:0,net:16.17},
+
+    {id:uid(),accountId:'acc-co-26',month:'2026-08',gross:13.09,sppPct:8,sppUsd:1.05,activateCredits:0,net:12.04},
+
+    {id:uid(),accountId:'acc-co-27',month:'2026-08',gross:12.54,sppPct:8,sppUsd:1.0,activateCredits:0,net:11.54},
+
+    {id:uid(),accountId:'acc-co-28',month:'2026-08',gross:12.23,sppPct:8,sppUsd:0.98,activateCredits:0,net:11.25},
+
+    {id:uid(),accountId:'acc-co-30',month:'2026-08',gross:9.07,sppPct:8,sppUsd:0.73,activateCredits:0,net:8.34},
+
+    {id:uid(),accountId:'acc-co-31',month:'2026-08',gross:5.26,sppPct:8,sppUsd:0.42,activateCredits:0,net:4.84},
+
+    {id:uid(),accountId:'acc-co-33',month:'2026-08',gross:6.58,sppPct:8,sppUsd:0.53,activateCredits:0,net:6.05},
+
+    {id:uid(),accountId:'acc-co-34',month:'2026-08',gross:5.46,sppPct:8,sppUsd:0.44,activateCredits:0,net:5.02},
+
+    {id:uid(),accountId:'acc-co-35',month:'2026-08',gross:4.46,sppPct:8,sppUsd:0.36,activateCredits:0,net:4.1},
+
+    {id:uid(),accountId:'acc-co-36',month:'2026-08',gross:4.27,sppPct:8,sppUsd:0.34,activateCredits:0,net:3.93},
+
+    {id:uid(),accountId:'acc-co-37',month:'2026-08',gross:3.17,sppPct:8,sppUsd:0.25,activateCredits:0,net:2.92},
+
+    {id:uid(),accountId:'acc-co-38',month:'2026-08',gross:2.62,sppPct:8,sppUsd:0.21,activateCredits:0,net:2.41},
+
+    {id:uid(),accountId:'acc-co-39',month:'2026-08',gross:2.27,sppPct:8,sppUsd:0.18,activateCredits:0,net:2.09},
+
+    {id:uid(),accountId:'acc-co-40',month:'2026-08',gross:1.13,sppPct:8,sppUsd:0.09,activateCredits:0,net:1.04},
+
+    {id:uid(),accountId:'acc-co-41',month:'2026-08',gross:0.78,sppPct:8,sppUsd:0.06,activateCredits:0,net:0.72},
+
+    {id:uid(),accountId:'acc-co-42',month:'2026-08',gross:0.72,sppPct:8,sppUsd:0.06,activateCredits:0,net:0.66},
+
+    {id:uid(),accountId:'acc-co-43',month:'2026-08',gross:0.71,sppPct:8,sppUsd:0.06,activateCredits:0,net:0.65},
+
+    {id:uid(),accountId:'acc-co-44',month:'2026-08',gross:0.68,sppPct:8,sppUsd:0.05,activateCredits:0,net:0.63},
+
+    {id:uid(),accountId:'acc-co-45',month:'2026-08',gross:0.67,sppPct:8,sppUsd:0.05,activateCredits:0,net:0.62},
+
+    {id:uid(),accountId:'acc-co-46',month:'2026-08',gross:0.68,sppPct:8,sppUsd:0.05,activateCredits:0,net:0.63},
+
+    {id:uid(),accountId:'acc-co-47',month:'2026-08',gross:0.68,sppPct:8,sppUsd:0.05,activateCredits:0,net:0.63},
+
+    {id:uid(),accountId:'acc-co-48',month:'2026-08',gross:0.68,sppPct:8,sppUsd:0.05,activateCredits:0,net:0.63},
+
+    {id:uid(),accountId:'acc-co-49',month:'2026-08',gross:0.67,sppPct:8,sppUsd:0.05,activateCredits:0,net:0.62},
+
+    {id:uid(),accountId:'acc-co-50',month:'2026-08',gross:0.67,sppPct:8,sppUsd:0.05,activateCredits:0,net:0.62},
+
+    {id:uid(),accountId:'acc-co-51',month:'2026-08',gross:0.66,sppPct:8,sppUsd:0.05,activateCredits:0,net:0.61},
+
+    {id:uid(),accountId:'acc-co-52',month:'2026-08',gross:0.66,sppPct:8,sppUsd:0.05,activateCredits:0,net:0.61},
+
+    {id:uid(),accountId:'acc-co-53',month:'2026-08',gross:0.66,sppPct:8,sppUsd:0.05,activateCredits:0,net:0.61},
+
+    {id:uid(),accountId:'acc-co-54',month:'2026-08',gross:0.64,sppPct:8,sppUsd:0.05,activateCredits:0,net:0.59},
+
+    {id:uid(),accountId:'acc-co-55',month:'2026-08',gross:0.66,sppPct:8,sppUsd:0.05,activateCredits:0,net:0.61},
+
+    {id:uid(),accountId:'acc-co-56',month:'2026-08',gross:0.67,sppPct:8,sppUsd:0.05,activateCredits:0,net:0.62},
+
+    {id:uid(),accountId:'acc-co-57',month:'2026-08',gross:0.01,sppPct:8,sppUsd:0.0,activateCredits:0,net:0.01},
+
+    {id:uid(),accountId:'acc-co-58',month:'2026-08',gross:0.01,sppPct:8,sppUsd:0.0,activateCredits:0,net:0.01},
+    {id:uid(),accountId:'acc-pe-1',month:'2026-06',gross:5948.83,sppPct:8,sppUsd:475.91,activateCredits:0,net:5472.92},
+    {id:uid(),accountId:'acc-pe-2',month:'2026-06',gross:1304.94,sppPct:8,sppUsd:104.4,activateCredits:0,net:1200.54},
+    {id:uid(),accountId:'acc-pe-3',month:'2026-06',gross:1551.56,sppPct:8,sppUsd:124.13,activateCredits:0,net:1427.43},
+    {id:uid(),accountId:'acc-pe-4',month:'2026-06',gross:697.69,sppPct:8,sppUsd:55.81,activateCredits:0,net:641.88},
+    {id:uid(),accountId:'acc-pe-5',month:'2026-06',gross:470.35,sppPct:8,sppUsd:37.63,activateCredits:0,net:432.72},
+    {id:uid(),accountId:'acc-pe-6',month:'2026-06',gross:437.01,sppPct:8,sppUsd:34.96,activateCredits:0,net:402.05},
+    {id:uid(),accountId:'acc-pe-7',month:'2026-06',gross:297.66,sppPct:8,sppUsd:23.81,activateCredits:0,net:273.85},
+    {id:uid(),accountId:'acc-pe-8',month:'2026-06',gross:196.77,sppPct:8,sppUsd:15.74,activateCredits:0,net:181.03},
+    {id:uid(),accountId:'acc-pe-9',month:'2026-06',gross:218.19,sppPct:8,sppUsd:17.46,activateCredits:0,net:200.73},
+    {id:uid(),accountId:'acc-pe-10',month:'2026-06',gross:248.64,sppPct:8,sppUsd:19.89,activateCredits:0,net:228.75},
+    {id:uid(),accountId:'acc-pe-11',month:'2026-06',gross:157.62,sppPct:8,sppUsd:12.61,activateCredits:0,net:145.01},
+    {id:uid(),accountId:'acc-pe-12',month:'2026-06',gross:96.44,sppPct:8,sppUsd:7.72,activateCredits:0,net:88.72},
+    {id:uid(),accountId:'acc-pe-13',month:'2026-06',gross:90.29,sppPct:8,sppUsd:7.22,activateCredits:0,net:83.07},
+    {id:uid(),accountId:'acc-pe-14',month:'2026-06',gross:23.81,sppPct:8,sppUsd:1.9,activateCredits:0,net:21.91},
+    {id:uid(),accountId:'acc-pe-15',month:'2026-06',gross:16.45,sppPct:8,sppUsd:1.32,activateCredits:0,net:15.13},
+    {id:uid(),accountId:'acc-pe-16',month:'2026-06',gross:10.19,sppPct:8,sppUsd:0.82,activateCredits:0,net:9.37},
+    {id:uid(),accountId:'acc-pe-17',month:'2026-06',gross:0.51,sppPct:8,sppUsd:0.04,activateCredits:0,net:0.47},
+    {id:uid(),accountId:'acc-pe-18',month:'2026-06',gross:0.42,sppPct:8,sppUsd:0.03,activateCredits:0,net:0.39},
+    {id:uid(),accountId:'acc-pe-19',month:'2026-06',gross:0.41,sppPct:8,sppUsd:0.03,activateCredits:0,net:0.38},
+    {id:uid(),accountId:'acc-pe-20',month:'2026-06',gross:0.42,sppPct:8,sppUsd:0.03,activateCredits:0,net:0.39},
+    {id:uid(),accountId:'acc-pe-21',month:'2026-06',gross:0.41,sppPct:8,sppUsd:0.03,activateCredits:0,net:0.38},
+    {id:uid(),accountId:'acc-pe-1',month:'2026-07',gross:5535.55,sppPct:8,sppUsd:442.84,activateCredits:0,net:5092.71},
+    {id:uid(),accountId:'acc-pe-2',month:'2026-07',gross:1339.1,sppPct:8,sppUsd:107.13,activateCredits:0,net:1231.97},
+    {id:uid(),accountId:'acc-pe-3',month:'2026-07',gross:308.42,sppPct:8,sppUsd:24.67,activateCredits:0,net:283.75},
+    {id:uid(),accountId:'acc-pe-4',month:'2026-07',gross:717.16,sppPct:8,sppUsd:57.37,activateCredits:0,net:659.79},
+    {id:uid(),accountId:'acc-pe-5',month:'2026-07',gross:551.25,sppPct:8,sppUsd:44.1,activateCredits:0,net:507.15},
+    {id:uid(),accountId:'acc-pe-6',month:'2026-07',gross:470.03,sppPct:8,sppUsd:37.6,activateCredits:0,net:432.43},
+    {id:uid(),accountId:'acc-pe-7',month:'2026-07',gross:287.42,sppPct:8,sppUsd:22.99,activateCredits:0,net:264.43},
+    {id:uid(),accountId:'acc-pe-8',month:'2026-07',gross:272.56,sppPct:8,sppUsd:21.8,activateCredits:0,net:250.76},
+    {id:uid(),accountId:'acc-pe-9',month:'2026-07',gross:244.96,sppPct:8,sppUsd:19.6,activateCredits:0,net:225.36},
+    {id:uid(),accountId:'acc-pe-10',month:'2026-07',gross:216.36,sppPct:8,sppUsd:17.31,activateCredits:0,net:199.05},
+    {id:uid(),accountId:'acc-pe-11',month:'2026-07',gross:159.48,sppPct:8,sppUsd:12.76,activateCredits:0,net:146.72},
+    {id:uid(),accountId:'acc-pe-12',month:'2026-07',gross:97.96,sppPct:8,sppUsd:7.84,activateCredits:0,net:90.12},
+    {id:uid(),accountId:'acc-pe-13',month:'2026-07',gross:92.16,sppPct:8,sppUsd:7.37,activateCredits:0,net:84.79},
+    {id:uid(),accountId:'acc-pe-14',month:'2026-07',gross:24.09,sppPct:8,sppUsd:1.93,activateCredits:0,net:22.16},
+    {id:uid(),accountId:'acc-pe-15',month:'2026-07',gross:16.75,sppPct:8,sppUsd:1.34,activateCredits:0,net:15.41},
+    {id:uid(),accountId:'acc-pe-16',month:'2026-07',gross:10.35,sppPct:8,sppUsd:0.83,activateCredits:0,net:9.52},
+    {id:uid(),accountId:'acc-pe-17',month:'2026-07',gross:0.57,sppPct:8,sppUsd:0.05,activateCredits:0,net:0.52},
+    {id:uid(),accountId:'acc-pe-18',month:'2026-07',gross:0.49,sppPct:8,sppUsd:0.04,activateCredits:0,net:0.45},
+    {id:uid(),accountId:'acc-pe-19',month:'2026-07',gross:0.48,sppPct:8,sppUsd:0.04,activateCredits:0,net:0.44},
+    {id:uid(),accountId:'acc-pe-20',month:'2026-07',gross:0.49,sppPct:8,sppUsd:0.04,activateCredits:0,net:0.45},
+    {id:uid(),accountId:'acc-pe-21',month:'2026-07',gross:0.46,sppPct:8,sppUsd:0.04,activateCredits:0,net:0.42},
+    {id:uid(),accountId:'acc-pe-23',month:'2026-07',gross:0.29,sppPct:8,sppUsd:0.02,activateCredits:0,net:0.27},
+    {id:uid(),accountId:'acc-pe-1',month:'2026-08',gross:4891.02,sppPct:8,sppUsd:391.28,activateCredits:0,net:4499.74},
+    {id:uid(),accountId:'acc-pe-2',month:'2026-08',gross:1344.58,sppPct:8,sppUsd:107.57,activateCredits:0,net:1237.01},
+    {id:uid(),accountId:'acc-pe-3',month:'2026-08',gross:315.61,sppPct:8,sppUsd:25.25,activateCredits:0,net:290.36},
+    {id:uid(),accountId:'acc-pe-4',month:'2026-08',gross:715.68,sppPct:8,sppUsd:57.25,activateCredits:0,net:658.43},
+    {id:uid(),accountId:'acc-pe-5',month:'2026-08',gross:680.71,sppPct:8,sppUsd:54.46,activateCredits:0,net:626.25},
+    {id:uid(),accountId:'acc-pe-6',month:'2026-08',gross:474.62,sppPct:8,sppUsd:37.97,activateCredits:0,net:436.65},
+    {id:uid(),accountId:'acc-pe-7',month:'2026-08',gross:282.25,sppPct:8,sppUsd:22.58,activateCredits:0,net:259.67},
+    {id:uid(),accountId:'acc-pe-8',month:'2026-08',gross:287.14,sppPct:8,sppUsd:22.97,activateCredits:0,net:264.17},
+    {id:uid(),accountId:'acc-pe-9',month:'2026-08',gross:244.38,sppPct:8,sppUsd:19.55,activateCredits:0,net:224.83},
+    {id:uid(),accountId:'acc-pe-10',month:'2026-08',gross:198.28,sppPct:8,sppUsd:15.86,activateCredits:0,net:182.42},
+    {id:uid(),accountId:'acc-pe-11',month:'2026-08',gross:160.0,sppPct:8,sppUsd:12.8,activateCredits:0,net:147.2},
+    {id:uid(),accountId:'acc-pe-12',month:'2026-08',gross:98.15,sppPct:8,sppUsd:7.85,activateCredits:0,net:90.3},
+    {id:uid(),accountId:'acc-pe-13',month:'2026-08',gross:92.14,sppPct:8,sppUsd:7.37,activateCredits:0,net:84.77},
+    {id:uid(),accountId:'acc-pe-14',month:'2026-08',gross:24.06,sppPct:8,sppUsd:1.93,activateCredits:0,net:22.13},
+    {id:uid(),accountId:'acc-pe-15',month:'2026-08',gross:16.7,sppPct:8,sppUsd:1.34,activateCredits:0,net:15.36},
+    {id:uid(),accountId:'acc-pe-16',month:'2026-08',gross:10.36,sppPct:8,sppUsd:0.83,activateCredits:0,net:9.53},
+    {id:uid(),accountId:'acc-pe-17',month:'2026-08',gross:0.5,sppPct:8,sppUsd:0.04,activateCredits:0,net:0.46},
+    {id:uid(),accountId:'acc-pe-18',month:'2026-08',gross:0.45,sppPct:8,sppUsd:0.04,activateCredits:0,net:0.41},
+    {id:uid(),accountId:'acc-pe-19',month:'2026-08',gross:0.47,sppPct:8,sppUsd:0.04,activateCredits:0,net:0.43},
+    {id:uid(),accountId:'acc-pe-20',month:'2026-08',gross:0.45,sppPct:8,sppUsd:0.04,activateCredits:0,net:0.41},
+    {id:uid(),accountId:'acc-pe-21',month:'2026-08',gross:0.45,sppPct:8,sppUsd:0.04,activateCredits:0,net:0.41},
+    {id:uid(),accountId:'acc-pe-22',month:'2026-08',gross:0.31,sppPct:8,sppUsd:0.02,activateCredits:0,net:0.29},
+    {id:uid(),accountId:'acc-pe-23',month:'2026-08',gross:0.01,sppPct:8,sppUsd:0.0,activateCredits:0,net:0.01},
+    {id:uid(),accountId:'acc-at-1',month:'2026-06',gross:1884.1,sppPct:8,sppUsd:150.73,activateCredits:0,net:1733.37},
+    {id:uid(),accountId:'acc-at-2',month:'2026-06',gross:1469.22,sppPct:8,sppUsd:117.54,activateCredits:0,net:1351.68},
+    {id:uid(),accountId:'acc-at-3',month:'2026-06',gross:293.88,sppPct:8,sppUsd:23.51,activateCredits:0,net:270.37},
+    {id:uid(),accountId:'acc-at-4',month:'2026-06',gross:109.61,sppPct:8,sppUsd:8.77,activateCredits:0,net:100.84},
+    {id:uid(),accountId:'acc-at-5',month:'2026-06',gross:157.86,sppPct:8,sppUsd:12.63,activateCredits:0,net:145.23},
+    {id:uid(),accountId:'acc-at-6',month:'2026-06',gross:0.09,sppPct:8,sppUsd:0.01,activateCredits:0,net:0.08},
+    {id:uid(),accountId:'acc-at-1',month:'2026-07',gross:2090.07,sppPct:8,sppUsd:167.21,activateCredits:0,net:1922.86},
+    {id:uid(),accountId:'acc-at-2',month:'2026-07',gross:1446.57,sppPct:8,sppUsd:115.73,activateCredits:0,net:1330.84},
+    {id:uid(),accountId:'acc-at-3',month:'2026-07',gross:22.39,sppPct:8,sppUsd:1.79,activateCredits:0,net:20.6},
+    {id:uid(),accountId:'acc-at-4',month:'2026-07',gross:112.88,sppPct:8,sppUsd:9.03,activateCredits:0,net:103.85},
+    {id:uid(),accountId:'acc-at-5',month:'2026-07',gross:69.11,sppPct:8,sppUsd:5.53,activateCredits:0,net:63.58},
+    {id:uid(),accountId:'acc-at-6',month:'2026-07',gross:0.1,sppPct:8,sppUsd:0.01,activateCredits:0,net:0.09},
+    {id:uid(),accountId:'acc-at-1',month:'2026-08',gross:2253.2,sppPct:8,sppUsd:180.26,activateCredits:0,net:2072.94},
+    {id:uid(),accountId:'acc-at-2',month:'2026-08',gross:1724.09,sppPct:8,sppUsd:137.93,activateCredits:0,net:1586.16},
+    {id:uid(),accountId:'acc-at-3',month:'2026-08',gross:32.5,sppPct:8,sppUsd:2.6,activateCredits:0,net:29.9},
+    {id:uid(),accountId:'acc-at-4',month:'2026-08',gross:112.85,sppPct:8,sppUsd:9.03,activateCredits:0,net:103.82},
+    {id:uid(),accountId:'acc-at-5',month:'2026-08',gross:74.92,sppPct:8,sppUsd:5.99,activateCredits:0,net:68.93},
+    {id:uid(),accountId:'acc-at-6',month:'2026-08',gross:0.1,sppPct:8,sppUsd:0.01,activateCredits:0,net:0.09}
+
+  ];
+
+  var credits=[];
+
+  var movements=[];
+
+
+
+  var controlCuentas=[
+
+    {id:'ctrl-1',gmail:'aws',alias:'aws_servinformacion',cuentaAws:'servinformacion_geoviz_prd',pma:'Ingram',accountId:'060795914396',estado:'Activa',obs:'Se migro a Ingram'},
+
+    {id:'ctrl-2',gmail:'aws',alias:'nutresa_aws',cuentaAws:'Nutresa',pma:'Col',accountId:'431549480883',estado:'Activa',obs:''},
+
+    {id:'ctrl-3',gmail:'aws',alias:'aws_rutero',cuentaAws:'Rutero',pma:'Col',accountId:'564682286107',estado:'Activa',obs:''},
+
+    {id:'ctrl-4',gmail:'aws',alias:'audit',cuentaAws:'Audit',pma:'Col',accountId:'783493066955',estado:'Activa',obs:''},
+
+    {id:'ctrl-5',gmail:'aws',alias:'log-archive',cuentaAws:'Log Archive',pma:'Col',accountId:'215452281008',estado:'Activa',obs:''},
+
+    {id:'ctrl-6',gmail:'aws',alias:'farmacias_peruanas',cuentaAws:'cnid_2Delivery_Produccion',pma:'Ingram',accountId:'425026231163',estado:'Activa',obs:'Se migro a Ingram'},
+
+    {id:'ctrl-7',gmail:'aws',alias:'aws_utsersoacha',cuentaAws:'UT_Ser_Soacha',pma:'Col',accountId:'168335226676',estado:'Activa',obs:''},
+
+    {id:'ctrl-8',gmail:'aws',alias:'aws_2delivery',cuentaAws:'cnid_2Delivery_Desarrollo',pma:'Col',accountId:'759448530781',estado:'Activa',obs:''},
+
+    {id:'ctrl-9',gmail:'aws',alias:'aws_rpa',cuentaAws:'cnid_rpa_prd',pma:'Col',accountId:'939780545354',estado:'Activa',obs:''},
+
+    {id:'ctrl-10',gmail:'aws',alias:'aws_moderna',cuentaAws:'moderna_marketplace_rpa',pma:'Col',accountId:'183192392422',estado:'Activa',obs:''},
+
+    {id:'ctrl-11',gmail:'aws',alias:'aws_ransa',cuentaAws:'ransa_rpa_prd',pma:'Pe',accountId:'059180250519',estado:'Activa',obs:''},
+
+    {id:'ctrl-12',gmail:'aws',alias:'aws_servi_ds',cuentaAws:'servinformacion_dr_dev',pma:'Ingram',accountId:'728629252603',estado:'Activa',obs:'Se migro a Ingram'},
+
+    {id:'ctrl-13',gmail:'aws',alias:'aws_2delivery_dev',cuentaAws:'cnid_2delivery_dev',pma:'Col',accountId:'110084921334',estado:'Activa',obs:''},
+
+    {id:'ctrl-14',gmail:'aws',alias:'aws_taylor',cuentaAws:'taylor_prd',pma:'Col',accountId:'693211791639',estado:'Activa',obs:''},
+
+    {id:'ctrl-15',gmail:'aws',alias:'aws_andirent',cuentaAws:'andirent_ml_poc',pma:'Col',accountId:'212051644334',estado:'Activa',obs:''},
+
+    {id:'ctrl-16',gmail:'aws',alias:'aws_universidad_mb',cuentaAws:'umb_marketplace_rpa',pma:'Col',accountId:'223510079659',estado:'Activa',obs:''},
+
+    {id:'ctrl-17',gmail:'aws',alias:'aws_messer',cuentaAws:'messer_map',pma:'Col',accountId:'058375533075',estado:'Activa',obs:''},
+
+    {id:'ctrl-18',gmail:'aws',alias:'aws_global_connect',cuentaAws:'GLOBAL_CONNECT_MAIN',pma:'GLOBAL_CONNECT_MAIN',accountId:'350139131138',estado:'Activa',obs:''},
+
+    {id:'ctrl-19',gmail:'aws',alias:'aws_toyota_main',cuentaAws:'TOYOTA_MAIN',pma:'TOYOTA_MAIN',accountId:'978758799886',estado:'Activa',obs:''},
+
+    {id:'ctrl-20',gmail:'aws',alias:'aws_jdf',cuentaAws:'jdf_app_prd',pma:'Col',accountId:'011215723237',estado:'Activa',obs:''},
+
+    {id:'ctrl-21',gmail:'aws',alias:'aws_synlab_cerebro',cuentaAws:'synlab_agenteIA',pma:'CNID_INT',accountId:'108181825508',estado:'Activa',obs:''},
+
+    {id:'ctrl-22',gmail:'aws',alias:'aws_cnid_billing',cuentaAws:'AWS_Billing_Transfer',pma:'AWS_Billing_Transfer',accountId:'014205307153',estado:'Activa',obs:''},
+
+    {id:'ctrl-23',gmail:'aws',alias:'aws_hermes',cuentaAws:'hermes_map_poc',pma:'Pe',accountId:'720644165942',estado:'Activa',obs:''},
+
+    {id:'ctrl-24',gmail:'aws',alias:'aws_cnid_co',cuentaAws:'CNID_CO',pma:'Col',accountId:'693892047857',estado:'Activa',obs:''},
+
+    {id:'ctrl-25',gmail:'aws',alias:'aws_pruebas_ac',cuentaAws:'cnid_pruebas_ac',pma:'CNID_INT',accountId:'642825398759',estado:'Suspendida',obs:''},
+
+    {id:'ctrl-26',gmail:'aws',alias:'aws_matrixmd',cuentaAws:'BIGENICS - MATRIXMD',pma:'Col',accountId:'991025134201',estado:'Eliminada',obs:''},
+
+    {id:'ctrl-27',gmail:'aws',alias:'aws_distribuidora_hb',cuentaAws:'distribuidorahb_marketplace_rpa',pma:'Col',accountId:'438719798111',estado:'Eliminada',obs:''},
+
+    {id:'ctrl-28',gmail:'aws',alias:'aws_motos',cuentaAws:'elpaisa_chatbot_poc',pma:'Col',accountId:'692648989788',estado:'Eliminada',obs:''},
+
+    {id:'ctrl-29',gmail:'aws',alias:'aws_rayogas',cuentaAws:'rayogas_aws_poc',pma:'Col',accountId:'956092367478',estado:'Eliminada',obs:''},
+
+    {id:'ctrl-30',gmail:'aws',alias:'aws_solventa',cuentaAws:'Solventa_Peru',pma:'Col',accountId:'832435226648',estado:'Migrada',obs:'Se migro el usuario root al cliente aws_832435226648@solventa.com'},
+
+    {id:'ctrl-31',gmail:'aws',alias:'aws_app_delivery',cuentaAws:'E-delivery',pma:'Col',accountId:'278015605944',estado:'Migrada',obs:'Cambio nombre y correo electronico a cnid_transfer'},
+
+    {id:'ctrl-32',gmail:'aws',alias:'aws_toyota',cuentaAws:'TOYOTA_MAIN_PRUEBAS',pma:'TOYOTA_MAIN_PRUEBAS',accountId:'014205307153',estado:'Migrada',obs:'Eliminar porque paso a ser aws_cnid_billing'},
+
+    {id:'ctrl-33',gmail:'aws',alias:'aws_italfoods',cuentaAws:'italfoods_ml_poc',pma:'Col',accountId:'036430315603',estado:'Migrada',obs:'Se cambio a aws_cnid_rpa_ca'},
+
+    {id:'ctrl-34',gmail:'aws',alias:'aws_proa',cuentaAws:'Sin cuenta',pma:'',accountId:'',estado:'Eliminada',obs:''},
+
+    {id:'ctrl-35',gmail:'aws',alias:'aws_bdguidance',cuentaAws:'Sin cuenta',pma:'',accountId:'',estado:'Eliminada',obs:''},
+
+    {id:'ctrl-36',gmail:'aws',alias:'aws_pruebas',cuentaAws:'Sin cuenta',pma:'',accountId:'',estado:'Eliminada',obs:''},
+
+    {id:'ctrl-37',gmail:'aws',alias:'aws_servinformacion_pruebas',cuentaAws:'Sin cuenta',pma:'',accountId:'',estado:'Eliminada',obs:''},
+
+    {id:'ctrl-38',gmail:'aws',alias:'aws_liftit',cuentaAws:'Sin cuenta',pma:'',accountId:'',estado:'Eliminada',obs:''},
+
+    {id:'ctrl-39',gmail:'aws',alias:'aws_avanbox',cuentaAws:'Eliminar',pma:'',accountId:'',estado:'Eliminada',obs:''},
+
+    {id:'ctrl-40',gmail:'aws',alias:'aws_sac_seguridad',cuentaAws:'Eliminar',pma:'',accountId:'',estado:'Eliminada',obs:''},
+
+    {id:'ctrl-41',gmail:'aws',alias:'aws_opxis_',cuentaAws:'Eliminar',pma:'',accountId:'',estado:'Eliminada',obs:''},
+
+    {id:'ctrl-42',gmail:'aws',alias:'aws_rastreo_',cuentaAws:'Eliminar',pma:'',accountId:'',estado:'Eliminada',obs:''},
+
+    {id:'ctrl-43',gmail:'aws',alias:'aws_fivefit',cuentaAws:'Eliminar',pma:'',accountId:'',estado:'Eliminada',obs:''},
+
+    {id:'ctrl-44',gmail:'aws',alias:'aws_solventa_2',cuentaAws:'Eliminar',pma:'',accountId:'',estado:'Eliminada',obs:''},
+
+    {id:'ctrl-45',gmail:'aws',alias:'aws_russellbedfordcol',cuentaAws:'Sin cuenta',pma:'',accountId:'',estado:'Eliminada',obs:''},
+
+    {id:'ctrl-46',gmail:'aws',alias:'Aws_alcaldiaconcordia',cuentaAws:'Eliminar',pma:'',accountId:'',estado:'Eliminada',obs:''},
+
+    {id:'ctrl-47',gmail:'aws',alias:'aws_kamila',cuentaAws:'Eliminar',pma:'',accountId:'',estado:'Eliminada',obs:''},
+
+    {id:'ctrl-48',gmail:'aws',alias:'aws_abb',cuentaAws:'Eliminar',pma:'',accountId:'',estado:'Eliminada',obs:''},
+
+    {id:'ctrl-49',gmail:'aws',alias:'aws_servi_rep',cuentaAws:'servinformacion_replicacion_prd',pma:'',accountId:'',estado:'Eliminada',obs:''},
+
+    {id:'ctrl-50',gmail:'aws',alias:'aws_welink',cuentaAws:'Eliminar',pma:'',accountId:'',estado:'Eliminada',obs:''},
+
+    {id:'ctrl-51',gmail:'aws2',alias:'aws_serv_efecty',cuentaAws:'Efecty',pma:'Col',accountId:'653347132762',estado:'Activa',obs:''},
+
+    {id:'ctrl-52',gmail:'aws2',alias:'aws_serv_geolocator',cuentaAws:'Geolocator',pma:'Col',accountId:'916979467195',estado:'Activa',obs:''},
+
+    {id:'ctrl-53',gmail:'aws2',alias:'aws_serv_credivalores',cuentaAws:'Credivalores',pma:'Col',accountId:'481314886095',estado:'Activa',obs:''},
+
+    {id:'ctrl-54',gmail:'aws2',alias:'aws_ecco',cuentaAws:'ecco_app_prd',pma:'Col',accountId:'785882169494',estado:'Activa',obs:''},
+
+    {id:'ctrl-55',gmail:'aws2',alias:'aws_cnid_web',cuentaAws:'cnid_webpage_prd',pma:'Col',accountId:'937700074637',estado:'Activa',obs:''},
+
+    {id:'ctrl-56',gmail:'aws2',alias:'aws_ucqn',cuentaAws:'ucqn_storage_prd',pma:'Col',accountId:'298501598510',estado:'Activa',obs:''},
+
+    {id:'ctrl-57',gmail:'aws2',alias:'cnid_tolacator_prd',cuentaAws:'cnid_Geofy_prd',pma:'Col',accountId:'211125431846',estado:'Activa',obs:''},
+
+    {id:'ctrl-58',gmail:'aws2',alias:'hunterecu_drs_poc',cuentaAws:'HunterEcu_DRS_PoC',pma:'Col',accountId:'471112597674',estado:'Activa',obs:''},
+
+    {id:'ctrl-59',gmail:'aws2',alias:'aws_web_fundacion_ADHD',cuentaAws:'adhd_web_prd',pma:'Col',accountId:'058264350864',estado:'Activa',obs:''},
+
+    {id:'ctrl-60',gmail:'aws2',alias:'aws_lissa',cuentaAws:'lissa_infra_prd',pma:'Col',accountId:'767397818504',estado:'Activa',obs:''},
+
+    {id:'ctrl-61',gmail:'aws2',alias:'aws_cnid_marketplace',cuentaAws:'Cuenta Marketplace',pma:'Marketplace',accountId:'010526254206',estado:'Activa',obs:''},
+
+    {id:'ctrl-62',gmail:'aws2',alias:'aws_infotrack_merlin',cuentaAws:'infotrack_migracion_prd',pma:'Col',accountId:'025066257521',estado:'Activa',obs:''},
+
+    {id:'ctrl-63',gmail:'aws2',alias:'aws_transportaa',cuentaAws:'transportaa_rpa_prd',pma:'Pe',accountId:'767828729777',estado:'Activa',obs:''},
+
+    {id:'ctrl-64',gmail:'aws2',alias:'aws_banco_machala',cuentaAws:'bancomachala_rpa_dev',pma:'Col',accountId:'739275443853',estado:'Eliminada',obs:'revisar para eliminar'},
+
+    {id:'ctrl-65',gmail:'aws2',alias:'aws_cemue',cuentaAws:'cemue_rpa_poc',pma:'Col',accountId:'559050204882',estado:'Activa',obs:''},
+
+    {id:'ctrl-66',gmail:'aws2',alias:'aws_crediminuto',cuentaAws:'crediminuto',pma:'Crediminuto',accountId:'070601114562',estado:'Activa',obs:''},
+
+    {id:'ctrl-67',gmail:'aws2',alias:'aws_crusardi',cuentaAws:'crusardi_storage_prd',pma:'Col',accountId:'886436954117',estado:'Activa',obs:''},
+
+    {id:'ctrl-68',gmail:'aws2',alias:'aws_atlas',cuentaAws:'Atlas-Transvalores',pma:'Atlas',accountId:'739275481021',estado:'Activa',obs:''},
+
+    {id:'ctrl-69',gmail:'aws2',alias:'aws_blindcreator',cuentaAws:'blindcreator.com',pma:'BlindCreator',accountId:'696144082470',estado:'Activa',obs:''},
+
+    {id:'ctrl-70',gmail:'aws2',alias:'aws_sumimas',cuentaAws:'sumimas_infra_poc',pma:'Col',accountId:'695394391631',estado:'Activa',obs:''},
+
+    {id:'ctrl-71',gmail:'aws2',alias:'aws_atlas_ia',cuentaAws:'atlas_ia_poc',pma:'Col',accountId:'024405409613',estado:'Activa',obs:''},
+
+    {id:'ctrl-72',gmail:'aws2',alias:'aws_mg_indusol',cuentaAws:'mgindusol_rpa_poc',pma:'Pe',accountId:'294944667966',estado:'Activa',obs:''},
+
+    {id:'ctrl-73',gmail:'aws2',alias:'aws_cnid_observability',cuentaAws:'CNID_Observability',pma:'CNID_INT',accountId:'542508027528',estado:'Activa',obs:''},
+
+    {id:'ctrl-74',gmail:'aws2',alias:'aws_colour_republic',cuentaAws:'colourrepublic_marketplace_rpa',pma:'Col',accountId:'314181159334',estado:'Activa',obs:''},
+
+    {id:'ctrl-75',gmail:'aws2',alias:'aws_apn_management',cuentaAws:'APN_Management_Account',pma:'APN_Management_Account',accountId:'564325283036',estado:'Activa',obs:''},
+
+    {id:'ctrl-76',gmail:'aws2',alias:'aws_cnid_rpa_ca',cuentaAws:'cnid_rpa_ca',pma:'Col',accountId:'036430315603',estado:'Activa',obs:'Marketplace RPA Caja Arequipa'},
+
+    {id:'ctrl-77',gmail:'aws2',alias:'aws_cnid_odoo',cuentaAws:'cnid_odoo_prd',pma:'Col',accountId:'440939369257',estado:'Eliminada',obs:''},
+
+    {id:'ctrl-78',gmail:'aws2',alias:'aws_gcg',cuentaAws:'gcg_map',pma:'Col',accountId:'397535937630',estado:'Eliminada',obs:''},
+
+    {id:'ctrl-79',gmail:'aws2',alias:'aws_solventa_mexico',cuentaAws:'solventa_mexico',pma:'Col',accountId:'880066020305',estado:'Migrada',obs:'Se migro el usuario root al cliente aws_880066020305@solventa.com'},
+
+    {id:'ctrl-80',gmail:'aws2',alias:'aws_solventa_col_per_mex',cuentaAws:'Solventa_col_per_mex',pma:'Col',accountId:'959115801178',estado:'Migrada',obs:'Se migro el usuario root al cliente aws_959115801178@solventa.com'},
+
+    {id:'ctrl-81',gmail:'aws2',alias:'aws_dinet_ml',cuentaAws:'dinet_ml_poc',pma:'Col',accountId:'',estado:'Eliminada',obs:''},
+
+    {id:'ctrl-82',gmail:'aws2',alias:'aws_INDEXA_PoC',cuentaAws:'Eliminar',pma:'',accountId:'',estado:'Eliminada',obs:''},
+
+    {id:'ctrl-83',gmail:'aws2',alias:'aws_jumio',cuentaAws:'Eliminar',pma:'',accountId:'',estado:'Eliminada',obs:''},
+
+    {id:'ctrl-84',gmail:'aws2',alias:'aws_appstream_transolicar',cuentaAws:'Eliminar',pma:'',accountId:'',estado:'Eliminada',obs:''},
+
+    {id:'ctrl-85',gmail:'aws2',alias:'aws_savingtheamazon',cuentaAws:'Eliminar',pma:'',accountId:'',estado:'Eliminada',obs:''},
+
+    {id:'ctrl-86',gmail:'aws2',alias:'aws_triplea',cuentaAws:'eliminar',pma:'',accountId:'',estado:'Eliminada',obs:''},
+
+    {id:'ctrl-87',gmail:'aws2',alias:'aws_automotores_toyota',cuentaAws:'AutomotoresToyota_RDS_PoC',pma:'',accountId:'',estado:'Eliminada',obs:''},
+
+    {id:'ctrl-88',gmail:'aws2',alias:'aws_penagos_hermanos',cuentaAws:'Eliminar',pma:'',accountId:'',estado:'Eliminada',obs:''},
+
+    {id:'ctrl-89',gmail:'aws2',alias:'aws_redal',cuentaAws:'Eliminar',pma:'',accountId:'',estado:'Eliminada',obs:''},
+
+    {id:'ctrl-90',gmail:'aws2',alias:'aws_decrim_lawyers',cuentaAws:'esperar migracion',pma:'',accountId:'',estado:'Eliminada',obs:''},
+
+    {id:'ctrl-91',gmail:'aws2',alias:'aws_decrim_2',cuentaAws:'esperar migracion',pma:'',accountId:'',estado:'Eliminada',obs:''},
+
+    {id:'ctrl-92',gmail:'aws2',alias:'aws_gesfisalud',cuentaAws:'gesfisalud_app_prd',pma:'',accountId:'',estado:'Eliminada',obs:''},
+
+    {id:'ctrl-93',gmail:'aws2',alias:'decrim_lawyers',cuentaAws:'esperar migracion',pma:'',accountId:'',estado:'Eliminada',obs:''},
+
+    {id:'ctrl-94',gmail:'aws2',alias:'workshop_blockchain_1',cuentaAws:'workshop_blockchain_1',pma:'',accountId:'',estado:'Eliminada',obs:''},
+
+    {id:'ctrl-95',gmail:'aws2',alias:'workshop_blockchain_2',cuentaAws:'workshop_blockchain_2',pma:'',accountId:'',estado:'Eliminada',obs:''},
+
+    {id:'ctrl-96',gmail:'aws2',alias:'workshop_blockchain_3',cuentaAws:'workshop_blockchain_3',pma:'',accountId:'',estado:'Eliminada',obs:''},
+
+    {id:'ctrl-97',gmail:'aws2',alias:'workshop_blockchain_4',cuentaAws:'workshop_blockchain_4',pma:'',accountId:'',estado:'Eliminada',obs:''},
+
+    {id:'ctrl-98',gmail:'aws2',alias:'aws_finaktiva',cuentaAws:'finaktiva_rpa_prd',pma:'',accountId:'',estado:'Eliminada',obs:''},
+
+    {id:'ctrl-99',gmail:'CNID Peru',alias:'cnidperu',cuentaAws:'CNID_PE',pma:'Pe',accountId:'981421757472',estado:'Activa',obs:''},
+
+    {id:'ctrl-100',gmail:'CNID Peru',alias:'log-archive-peru',cuentaAws:'',pma:'Pe',accountId:'724420151489',estado:'Activa',obs:''},
+
+    {id:'ctrl-101',gmail:'CNID Peru',alias:'audit-peru',cuentaAws:'',pma:'Pe',accountId:'112167197511',estado:'Activa',obs:''},
+
+    {id:'ctrl-102',gmail:'CNID Peru',alias:'cnid-int',cuentaAws:'CNID_INT',pma:'CNID_INT',accountId:'703595888373',estado:'Activa',obs:''},
+
+    {id:'ctrl-103',gmail:'CNID Peru',alias:'log-archive-cnid-int',cuentaAws:'Log Archive',pma:'CNID_INT',accountId:'331185322534',estado:'Activa',obs:''},
+
+    {id:'ctrl-104',gmail:'CNID Peru',alias:'audit-cnid-int',cuentaAws:'Audit',pma:'CNID_INT',accountId:'243855654850',estado:'Activa',obs:''},
+
+    {id:'ctrl-105',gmail:'CNID Peru',alias:'aws_sandbox',cuentaAws:'sandbox_genia',pma:'CNID_INT',accountId:'493263629840',estado:'Activa',obs:''},
+
+    {id:'ctrl-106',gmail:'CNID Peru',alias:'aws_servinformacion_bot',cuentaAws:'servinformacion_bot_faq',pma:'CNID_INT',accountId:'464994449078',estado:'Activa',obs:''},
+
+    {id:'ctrl-107',gmail:'CNID Peru',alias:'aws_savingtheamazon_bot',cuentaAws:'savingtheamazon_bot',pma:'CNID_INT',accountId:'276553701421',estado:'Activa',obs:''},
+
+    {id:'ctrl-108',gmail:'CNID Peru',alias:'aws_maestrosdc',cuentaAws:'maestrosdc_documentos_ia',pma:'CNID_INT',accountId:'138008498306',estado:'Activa',obs:''},
+
+    {id:'ctrl-109',gmail:'CNID Peru',alias:'aws_geodatamaps_mcp',cuentaAws:'geodatamaps_mcp',pma:'CNID_INT',accountId:'925323749210',estado:'Activa',obs:''},
+
+    {id:'ctrl-110',gmail:'CNID Peru',alias:'aws_puppis',cuentaAws:'PUPPIS_MAIN',pma:'PUPPIS_MAIN',accountId:'438186829378',estado:'Activa',obs:''},
+
+    {id:'ctrl-111',gmail:'CNID Peru',alias:'aws_gptfy',cuentaAws:'GPTFY_MAIN',pma:'GPTFY_MAIN',accountId:'706755099555',estado:'Activa',obs:''},
+
+    {id:'ctrl-112',gmail:'CNID Peru',alias:'aws_natclar',cuentaAws:'SG NATCLAR SAC',pma:'SG NATCLAR SAC',accountId:'106774395775',estado:'Activa',obs:''},
+
+    {id:'ctrl-113',gmail:'CNID Peru',alias:'aws_caja_arequipa',cuentaAws:'cajaarequipa_marketplace_rpa',pma:'Pe',accountId:'800759855350',estado:'Activa',obs:''},
+
+    {id:'ctrl-114',gmail:'CNID Peru',alias:'aws_tourplania',cuentaAws:'cnid_tourplania',pma:'CNID_INT',accountId:'732088327349',estado:'Activa',obs:''},
+
+    {id:'ctrl-115',gmail:'CNID Peru',alias:'quick-user',cuentaAws:'',pma:'',accountId:'',estado:'Activa',obs:'Usuario para acceso a Quick Suite'},
+
+    {id:'ctrl-116',gmail:'CNID Peru',alias:'aws_demo_ia',cuentaAws:'aws_demos_ia',pma:'CNID_INT',accountId:'030179311059',estado:'Activa',obs:''},
+
+    {id:'ctrl-117',gmail:'CNID Peru',alias:'aws_cnid_transfer',cuentaAws:'CNID Billing Transfer',pma:'CNID Billing Transfer',accountId:'278015605944',estado:'Activa',obs:'Esta cuenta esta recibiendo los BT de los Clientes'},
+
+    {id:'ctrl-118',gmail:'CNID Peru',alias:'aws_solventa_main',cuentaAws:'SOLVENTA_MAIN',pma:'',accountId:'065194293073',estado:'Activa',obs:''},
+
+    {id:'ctrl-119',gmail:'CNID Peru',alias:'CNID-CO-USD-TransferBilling',cuentaAws:'CNID-CO-USD-TransferBilling',pma:'CNID-CO-USD-TransferBilling',accountId:'719514706522',estado:'Migrada',obs:'Ingram'},
+
+    {id:'ctrl-120',gmail:'CNID Peru',alias:'aws_sgcdan',cuentaAws:'sgcdan',pma:'Col',accountId:'058914805578',estado:'Activa',obs:''},
+
+    {id:'ctrl-121',gmail:'CNID Peru',alias:'nueva_pma_test',cuentaAws:'',pma:'',accountId:'645920623915',estado:'Activa',obs:''},
+
+    {id:'ctrl-122',gmail:'CNID Peru',alias:'aws_efletexia',cuentaAws:'efletexia',pma:'Pe',accountId:'966063511394',estado:'Activa',obs:''},
+
+    {id:'ctrl-123',gmail:'CNID Peru',alias:'aws_celima',cuentaAws:'Celima',pma:'Pe',accountId:'375461734509',estado:'Activa',obs:''},
+
+    {id:'ctrl-124',gmail:'CNID Peru',alias:'aws_siedevs',cuentaAws:'Siedevs',pma:'Siedevs',accountId:'716587458869',estado:'Activa',obs:''},
+
+    {id:'ctrl-125',gmail:'CNID Peru',alias:'aws_pma_peru',cuentaAws:'',pma:'',accountId:'732088327349',estado:'Migrada',obs:'Paso a ser aws_tourplania@cnid.co'},
+
+    {id:'ctrl-126',gmail:'CNID Peru',alias:'log-archive-capacitaciones',cuentaAws:'',pma:'',accountId:'',estado:'Eliminada',obs:''},
+
+    {id:'ctrl-127',gmail:'CNID Peru',alias:'audit-capacitaciones',cuentaAws:'',pma:'',accountId:'',estado:'Eliminada',obs:''},
+
+    {id:'ctrl-128',gmail:'CNID Mintic',alias:'cnid.mintic',cuentaAws:'MINTIC_MAIN',pma:'MINTIC_MAIN',accountId:'094840069802',estado:'Activa',obs:''},
+
+    {id:'ctrl-129',gmail:'CNID Mintic',alias:'aws_mintic_gov',cuentaAws:'MINTIC.GOV.CO',pma:'MINTIC_MAIN',accountId:'016160764335',estado:'Activa',obs:''},
+
+    {id:'ctrl-130',gmail:'CNID Mintic',alias:'aws_mintic_and_redam2',cuentaAws:'Agencia Nacional Digital - AND REDAM2',pma:'MINTIC_MAIN',accountId:'505823513850',estado:'Activa',obs:''},
+
+    {id:'ctrl-131',gmail:'CNID Mintic',alias:'aws_mintic_cia_prod',cuentaAws:'MINISTERIO TECNOLOGIA - PROD - Ciudades IA',pma:'MINTIC_MAIN',accountId:'390402541743',estado:'Activa',obs:''},
+
+    {id:'ctrl-132',gmail:'CNID Mintic',alias:'aws_mintic_mia_prod',cuentaAws:'MINISTERIO TECNOLOGIA - PROD - Modelos IA',pma:'MINTIC_MAIN',accountId:'008971644308',estado:'Activa',obs:''},
+
+    {id:'ctrl-133',gmail:'CNID Mintic',alias:'aws_mintic_preprod',cuentaAws:'MINTIC Preproduccion',pma:'MINTIC_MAIN',accountId:'986204831618',estado:'Activa',obs:''},
+
+    {id:'ctrl-134',gmail:'CNID Mintic',alias:'aws_mintic_and_redam1',cuentaAws:'Agencia Nacional Digital - AND REDAM1',pma:'MINTIC_MAIN',accountId:'037243314518',estado:'Activa',obs:''},
+
+    {id:'ctrl-135',gmail:'CNID Mintic',alias:'aws_mintic_and_redam4',cuentaAws:'Agencia Nacional Digital - AND REDAM4',pma:'MINTIC_MAIN',accountId:'578491441601',estado:'Activa',obs:''},
+
+    {id:'ctrl-136',gmail:'CNID Mintic',alias:'aws_mintic_and_redam3',cuentaAws:'Agencia Nacional Digital AND REDAM3',pma:'MINTIC_MAIN',accountId:'237069775380',estado:'Activa',obs:''},
+
+    {id:'ctrl-137',gmail:'CNID Mintic',alias:'aws_mintic_prueba',cuentaAws:'MINTIC Prueba',pma:'MINTIC_MAIN',accountId:'880155458182',estado:'Activa',obs:''},
+
+    {id:'ctrl-138',gmail:'CNID Mintic',alias:'aws_mintic_backup',cuentaAws:'MINTIC Backup',pma:'MINTIC_MAIN',accountId:'891377141506',estado:'Activa',obs:''},
+
+    {id:'ctrl-139',gmail:'CNID Mintic',alias:'aws_mintic_cn4',cuentaAws:'MTC - Prod - Caso Negocio 4',pma:'MINTIC_MAIN',accountId:'325204716230',estado:'Activa',obs:''},
+
+    {id:'ctrl-140',gmail:'CNID Mintic',alias:'aws_infotic',cuentaAws:'INFOTIC_MAIN',pma:'INFOTIC_MAIN',accountId:'454996813556',estado:'Activa',obs:''},
+
+    {id:'ctrl-141',gmail:'CNID Mintic',alias:'aws_account1',cuentaAws:'Account1',pma:'Account1',accountId:'429842292399',estado:'Revisar',obs:'Recuperar'},
+
+    {id:'ctrl-142',gmail:'CNID Mintic',alias:'aws_avanzza',cuentaAws:'Avanzza',pma:'Avanzza',accountId:'352602573282',estado:'Migrada',obs:'Ingram'},
+
+    {id:'ctrl-143',gmail:'CNID Mintic',alias:'aws_account3',cuentaAws:'Account3',pma:'',accountId:'',estado:'Migrada',obs:'Se cambio a Siedevs'},
+
+    {id:'ctrl-144',gmail:'CNID Mintic',alias:'aws_servientrega',cuentaAws:'Servientrega',pma:'Servientrega',accountId:'312957452708',estado:'BT',obs:'Billing Transfer hacia 278015605944'},
+
+    {id:'ctrl-145',gmail:'CNID Mintic',alias:'aws_account5',cuentaAws:'Account5',pma:'Account5',accountId:'837933861259',estado:'BT',obs:'Billing Transfer hacia 278015605944'},
+
+    {id:'ctrl-146',gmail:'CNID Mintic',alias:'aws_account6',cuentaAws:'Account6',pma:'Account6',accountId:'035920994291',estado:'BT',obs:'Billing Transfer hacia 278015605944'},
+
+    {id:'ctrl-147',gmail:'CNID Mintic',alias:'aws_account7',cuentaAws:'Account7',pma:'Account7',accountId:'087898216090',estado:'BT',obs:'Billing Transfer hacia 278015605944'},
+
+    {id:'ctrl-148',gmail:'CNID Mintic',alias:'aws_account8',cuentaAws:'Account8',pma:'Account8',accountId:'528235769616',estado:'BT',obs:'Billing Transfer hacia 278015605944'},
+
+    {id:'ctrl-149',gmail:'CNID Mintic',alias:'aws_account9',cuentaAws:'Account9',pma:'Account9',accountId:'480582411920',estado:'BT',obs:'Se retiro por limite de Billing Transfer'},
+
+    {id:'ctrl-150',gmail:'CNID Mintic',alias:'aws_account10',cuentaAws:'Account10',pma:'Account10',accountId:'596220055595',estado:'BT',obs:'Billing Transfer hacia 278015605944'},
+
+    {id:'ctrl-151',gmail:'CNID Mintic',alias:'aws_multinet',cuentaAws:'Multinet',pma:'Multinet',accountId:'429842292399',estado:'Migrada',obs:'Ingram'},
+
+    {id:'ctrl-152',gmail:'CNID Mintic',alias:'aws_petplus',cuentaAws:'Petplus',pma:'Col',accountId:'807019191177',estado:'Eliminada',obs:'Cerrada en espera ser eliminada'},
+
+    {id:'ctrl-153',gmail:'CNID Mintic',alias:'aws_petplus_co',cuentaAws:'Petplus',pma:'Puppis',accountId:'298521810781',estado:'Activa',obs:''},
+
+    {id:'ctrl-154',gmail:'CNID Mintic',alias:'log-archive-riopaila',cuentaAws:'INFOTIC_MAIN',pma:'INFOTIC_MAIN',accountId:'',estado:'Eliminada',obs:''},
+
+    {id:'ctrl-155',gmail:'CNID Mintic',alias:'audit-riopaila',cuentaAws:'INFOTIC_MAIN',pma:'INFOTIC_MAIN',accountId:'',estado:'Eliminada',obs:''},
+
+    {id:'ctrl-156',gmail:'',alias:'brayan.quiroga@cnid.co',cuentaAws:'CNID Capacitaciones',pma:'CNID_INT',accountId:'383717966188',estado:'Activa',obs:''},
+
+    {id:'ctrl-157',gmail:'',alias:'transfer@cnid.co',cuentaAws:'Test-BT',pma:'Test-BT',accountId:'652386518409',estado:'Activa',obs:''}
+
+  ];
+
+
+
+  return{pmas:pmas,accounts:accounts,clients:clients,costs:costs,credits:credits,movements:movements,checklists:{},checklistTemplate:DEFAULT_CHECKLIST_TEMPLATE,controlCuentas:controlCuentas,taskLists:[
+    {id:'tl-1',name:'General',color:'var(--ac)'},
+    {id:'tl-2',name:'Facturación',color:'var(--in)'},
+    {id:'tl-3',name:'Clientes',color:'var(--ok)'}
+  ],tasks:[
+    {id:'tsk-1',listId:'tl-1',title:'Revisar costos de agosto',desc:'',priority:'alta',dueDate:'2026-09-10',done:false,createdAt:'2026-09-01'},
+    {id:'tsk-2',listId:'tl-2',title:'Enviar facturas a Billing',desc:'Incluir facturas de Perú',priority:'media',dueDate:'2026-09-08',done:false,createdAt:'2026-09-01'},
+    {id:'tsk-3',listId:'tl-3',title:'Migrar cuenta BlindCreator',desc:'Coordinar con el cliente',priority:'baja',dueDate:'',done:false,createdAt:'2026-09-02'}
+  ]};
+
+}
+
+
+
+/* Generic UI */
+
+function Badge(p){
+
+  var m={'success':'bg-ok','danger':'bg-er','muted':'bg-mt','accent':'bg-ac'};
+
+  return h('span',{className:'bg '+(m[p.tone]||'bg-mt')},p.children);
+
+}
+
+function Btn(p){
+
+  var m={primary:'bt-p',ghost:'bt-g',danger:'bt-d'};
+
+  return h('button',{type:p.type||'button',disabled:p.disabled,className:'bt '+(m[p.variant]||'bt-p'),onClick:p.onClick,style:p.style},p.children);
+
+}
+
+function Modal(p){
+
+  return h('div',{className:'mo',onClick:p.onClose},
+
+    h('div',{className:'md',onClick:function(e){e.stopPropagation()}},
+
+      h('div',{className:'mh'},h('h3',null,p.title),h('button',{className:'mc',onClick:p.onClose},'\u2715')),
+
+      h('div',{className:'mb'},p.children)
+
+    )
+
+  );
+
+}
+
+function Field(p){return h('div',{className:'fd'},h('label',{className:'fl'},p.label),p.children)}
+
+function ConfirmDel(p){
+
+  return h(Modal,{title:'Confirmar eliminaci\u00f3n',onClose:p.onCancel},
+
+    h('p',{style:{fontSize:14,color:'var(--tm)',marginBottom:20}},'\u00bfSeguro que deseas eliminar ',h('strong',{style:{color:'var(--tx)'}},p.label),'? No se puede deshacer.'),
+
+    h('div',{className:'fe'},h(Btn,{variant:'ghost',onClick:p.onCancel},'Cancelar'),h(Btn,{variant:'danger',onClick:p.onConfirm},'Eliminar'))
+
+  );
+
+}
+
+
+
+var NAV=[
+
+  {key:'dashboard',label:'Dashboard',icon:'gauge-high'},
+
+  {key:'pmas',label:'PMAs',icon:'server'},
+
+  {key:'accounts',label:'Cuentas',icon:'database'},
+
+  {key:'clients',label:'Clientes',icon:'users'},
+
+  {key:'costs',label:'Costos',icon:'dollar-sign'},
+
+  {key:'credits',label:'Cr\u00e9ditos',icon:'gift'},
+
+  {key:'checklist',label:'Facturaci\u00f3n',icon:'list-check'},
+
+  {key:'control',label:'Control Ctas',icon:'address-book'},
+  {key:'tasks',label:'Tareas',icon:'square-check'}
+
+];
+
+
+
+/* ===== DASHBOARD ===== */
+
+function DashboardView(p){
+
+  var data=p.data;
+
+  var months=[];var seen={};data.costs.forEach(function(c){if(!seen[c.month]){seen[c.month]=1;months.push(c.month)}});months.sort();
+
+  var lastM=months[months.length-1]||'';
+
+  var gastoMes=0;data.costs.forEach(function(c){if(c.month===lastM)gastoMes+=c.net});
+
+  var credRest=0;data.credits.forEach(function(c){credRest+=(c.total-c.consumed)});
+
+  var chartData=months.map(function(m){var t=0;data.costs.forEach(function(c){if(c.month===m)t+=c.net});return{mes:m.slice(5)+'/'+m.slice(2,4),gasto:Math.round(t)}});
+
+
+
+  var alerts=[];
+
+  data.credits.forEach(function(c){
+
+    var dl=daysUntil(c.endDate);var acc=null;
+
+    data.accounts.forEach(function(a){if(a.id===c.accountId)acc=a});
+
+    var pct=c.total>0?((c.total-c.consumed)/c.total)*100:0;
+
+    if(dl<=30)alerts.push({type:dl<0?'danger':'warning',text:'Cr\u00e9dito de '+(acc?acc.name:'cuenta')+' vence en '+dl+' d\u00eda(s)'});
+
+    if(pct<20)alerts.push({type:'warning',text:'Cr\u00e9dito de '+(acc?acc.name:'cuenta')+' tiene solo '+pct.toFixed(0)+'% de saldo'});
+
+  });
+
+
+
+  var kpis=[
+
+    {label:'Total PMAs',value:data.pmas.length},
+
+    {label:'Total Cuentas',value:data.accounts.length},
+
+    {label:'Total Clientes',value:data.clients.length},
+
+    {label:'Gasto del mes',value:fmtUSD(gastoMes)},
+
+    {label:'Cr\u00e9ditos restantes',value:fmtUSD(credRest)}
+
+  ];
+
+
+
+  /* Simple bar chart using SVG */
+
+  var maxVal=1;chartData.forEach(function(d){if(d.gasto>maxVal)maxVal=d.gasto});
+
+  var barW=Math.floor(400/chartData.length)-8;
+
+  var chartH=200;
+
+
+
+  return h('div',null,
+
+    h('h1',{style:{fontSize:18,fontWeight:600,marginBottom:4}},'Dashboard'),
+
+    h('p',{style:{fontSize:14,color:'var(--tm)',marginBottom:24}},'Resumen general de PMAs, cuentas y facturaci\u00f3n.'),
+
+    h('div',{className:'kg'},kpis.map(function(k){
+
+      return h('div',{key:k.label,className:'cd kc'},h('div',{className:'kl'},k.label),h('div',{className:'kv'},k.value));
+
+    })),
+
+    h('div',{className:'cg'},
+
+      h('div',{className:'cd'},
+
+        h('div',{style:{fontSize:14,fontWeight:500,marginBottom:16}},'Gasto mensual (\u00faltimos 6 meses)'),
+
+        h('svg',{viewBox:'0 0 440 '+(chartH+40),style:{width:'100%',maxHeight:280}},
+
+          chartData.map(function(d,i){
+
+            var bh=Math.round((d.gasto/maxVal)*chartH);
+
+            var x=20+i*(barW+8);
+
+            return h('g',{key:i},
+
+              h('rect',{x:x,y:chartH-bh+10,width:barW,height:bh,rx:3,fill:'var(--ac)'}),
+
+              h('text',{x:x+barW/2,y:chartH+28,textAnchor:'middle',fill:'var(--tf)',fontSize:11},d.mes),
+
+              h('text',{x:x+barW/2,y:chartH-bh+4,textAnchor:'middle',fill:'var(--tm)',fontSize:10},fmtUSD(d.gasto).replace('$',''))
+
+            );
+
+          })
+
+        )
+
+      ),
+
+      h('div',{className:'cd'},
+
+        h('div',{style:{fontSize:14,fontWeight:500,marginBottom:16}},'Alertas'),
+
+        alerts.length===0
+
+          ?h('div',{style:{fontSize:14,color:'var(--tf)'}},'Sin alertas activas.')
+
+          :alerts.map(function(a,i){
+
+            return h('div',{key:i,className:'ai'},
+
+              h('span',{style:{flexShrink:0,marginTop:2,color:a.type==='danger'?'var(--er)':'var(--ac)'}},ic('triangle-exclamation',14)),
+
+              h('span',null,a.text)
+
+            );
+
+          }),
+
+        h('button',{onClick:function(){p.onNav('pmas')},style:{marginTop:16,fontSize:12,color:'var(--in)',background:'none',border:'none',cursor:'pointer',fontFamily:'inherit',display:'flex',alignItems:'center',gap:4}},
+
+          'Ver PMAs ',ic('chevron-right',12))
+
+      )
+
+    )
+
+  );
+
+}
+
+
+
+/* ===== PMAs ===== */
+
+function PmasView(p){
+
+  var data=p.data,update=p.update;
+
+  var s=useState(null);var modal=s[0],setModal=s[1];
+
+  var s2=useState(null);var delTarget=s2[0],setDelTarget=s2[1];
+
+
+
+  function accCount(pid){var n=0;data.accounts.forEach(function(a){if(a.pmaId===pid)n++});return n}
+
+  function savePma(pma){
+
+    if(pma.id&&data.pmas.some(function(x){return x.id===pma.id})){
+
+      update({pmas:data.pmas.map(function(x){return x.id===pma.id?pma:x})});
+
+    }else{
+
+      update({pmas:data.pmas.concat([Object.assign({},pma,{id:uid()})])});
+
+    }
+
+    setModal(null);
+
+  }
+
+  function delPma(id){
+
+    update({pmas:data.pmas.filter(function(x){return x.id!==id}),
+
+            accounts:data.accounts.map(function(a){return a.pmaId===id?Object.assign({},a,{pmaId:null}):a})});
+
+    setDelTarget(null);
+
+  }
+
+
+
+  return h('div',null,
+
+    h('div',{className:'hr'},
+
+      h('div',null,h('h1',{style:{fontSize:18,fontWeight:600}},'PMAs'),h('p',{style:{fontSize:14,color:'var(--tm)'}},'Paying Member Accounts del programa SPP.')),
+
+      h(Btn,{onClick:function(){setModal({mode:'new',pma:{name:'',accountId:'',region:'us-east-1',status:'Activa'}})}},ic('plus',14),' Nueva PMA')
+
+    ),
+
+    h('div',{className:'cd np'},
+
+      h('table',null,
+
+        h('thead',null,h('tr',null,['Nombre','Account ID','Regi\u00f3n','Estado','Cuentas',''].map(function(x){return h('th',{key:x},x)}))),
+
+        h('tbody',null,
+
+          data.pmas.map(function(pm){
+
+            return h('tr',{key:pm.id},
+
+              h('td',{style:{color:'var(--tx)'}},pm.name),
+
+              h('td',{className:'mono',style:{color:'var(--tm)'}},pm.accountId),
+
+              h('td',{style:{color:'var(--tm)'}},pm.region),
+
+              h('td',null,h(Badge,{tone:pm.status==='Activa'?'success':'muted'},pm.status)),
+
+              h('td',null,h('button',{className:'lk',onClick:function(){p.onViewAccounts(pm.id)}},accCount(pm.id)+' cuentas')),
+
+              h('td',null,h('div',{className:'ax'},
+
+                h('button',{className:'ib',style:{color:'var(--tm)'},onClick:function(){setModal({mode:'edit',pma:Object.assign({},pm)})}},ic('pen-to-square')),
+
+                h('button',{className:'ib',style:{color:'var(--er)'},onClick:function(){setDelTarget(pm)}},ic('trash'))
+
+              ))
+
+            );
+
+          }),
+
+          data.pmas.length===0?h('tr',null,h('td',{colSpan:6,style:{textAlign:'center',padding:'32px 16px',color:'var(--tf)'}},'No hay PMAs registradas.')):null
+
+        )
+
+      )
+
+    ),
+
+    modal?h(Modal,{title:modal.mode==='new'?'Nueva PMA':'Editar PMA',onClose:function(){setModal(null)}},
+
+      h(PmaForm,{pma:modal.pma,onSave:savePma,onCancel:function(){setModal(null)}})):null,
+
+    delTarget?h(ConfirmDel,{label:delTarget.name,onConfirm:function(){delPma(delTarget.id)},onCancel:function(){setDelTarget(null)}}):null
+
+  );
+
+}
+
+function PmaForm(p){
+
+  var s=useState(p.pma);var form=s[0],setForm=s[1];
+
+  function set(k,v){var n=Object.assign({},form);n[k]=v;setForm(n)}
+
+  return h('form',{onSubmit:function(e){e.preventDefault();p.onSave(form)}},
+
+    h(Field,{label:'Nombre'},h('input',{className:'ip',required:true,value:form.name,onChange:function(e){set('name',e.target.value)}})),
+
+    h(Field,{label:'Account ID (12 d\u00edgitos)'},h('input',{className:'ip',required:true,value:form.accountId,onChange:function(e){set('accountId',e.target.value)}})),
+
+    h(Field,{label:'Regi\u00f3n'},h('input',{className:'ip',required:true,value:form.region,onChange:function(e){set('region',e.target.value)}})),
+
+    h(Field,{label:'Estado'},h('select',{className:'sl',value:form.status,onChange:function(e){set('status',e.target.value)}},h('option',null,'Activa'),h('option',null,'Inactiva'))),
+
+    h('div',{className:'fe',style:{marginTop:16}},h(Btn,{variant:'ghost',onClick:p.onCancel},'Cancelar'),h(Btn,{type:'submit'},'Guardar'))
+
+  );
+
+}
+
+
+
+/* ===== ACCOUNTS ===== */
+
+function AccountsView(p){
+
+  var data=p.data,update=p.update;
+
+  var s1=useState(null);var modal=s1[0],setModal=s1[1];
+
+  var s2=useState(null);var moveM=s2[0],setMoveM=s2[1];
+
+  var s3=useState(null);var histFor=s3[0],setHistFor=s3[1];
+
+  var s4=useState(null);var delT=s4[0],setDelT=s4[1];
+
+  var s5=useState('');var search=s5[0],setSearch=s5[1];
+
+
+
+  function cliName(id){var c=null;data.clients.forEach(function(x){if(x.id===id)c=x});return c?c.name:'\u2014'}
+
+  function pmaName(id){var c=null;data.pmas.forEach(function(x){if(x.id===id)c=x});return c?c.name:'\u2014 sin asignar \u2014'}
+
+
+
+  var filtered=data.accounts.filter(function(a){
+
+    if(p.pmaFilter&&a.pmaId!==p.pmaFilter)return false;
+
+    if(search&&(a.name+' '+a.accountId).toLowerCase().indexOf(search.toLowerCase())<0)return false;
+
+    return true;
+
+  });
+
+
+
+  function saveAcc(acc){
+
+    if(acc.id&&data.accounts.some(function(x){return x.id===acc.id})){
+
+      update({accounts:data.accounts.map(function(x){return x.id===acc.id?acc:x})});
+
+    }else{
+
+      update({accounts:data.accounts.concat([Object.assign({},acc,{id:uid()})])});
+
+    }
+
+    setModal(null);
+
+  }
+
+  function delAcc(id){update({accounts:data.accounts.filter(function(x){return x.id!==id})});setDelT(null)}
+
+  function moveAcc(accountId,toPmaId,reason){
+
+    var acc=null;data.accounts.forEach(function(a){if(a.id===accountId)acc=a});
+
+    var mv={id:uid(),accountId:accountId,fromPmaId:acc?acc.pmaId:null,toPmaId:toPmaId,date:new Date().toISOString().slice(0,10),reason:reason};
+
+    update({accounts:data.accounts.map(function(a){return a.id===accountId?Object.assign({},a,{pmaId:toPmaId}):a}),movements:data.movements.concat([mv])});
+
+    setMoveM(null);
+
+  }
+
+
+
+  var emptyAcc={accountId:'',name:'',clientId:'',pmaId:p.pmaFilter||'',status:'Activa'};
+
+
+
+  return h('div',null,
+
+    h('div',{className:'hr'},
+
+      h('div',null,h('h1',{style:{fontSize:18,fontWeight:600}},'Cuentas'),h('p',{style:{fontSize:14,color:'var(--tm)'}},'Linked accounts vinculadas a PMAs y clientes.')),
+
+      h(Btn,{onClick:function(){setModal({mode:'new',account:emptyAcc})}},ic('plus',14),' Nueva Cuenta')
+
+    ),
+
+    h('div',{className:'fb'},
+
+      h('input',{className:'ip',style:{maxWidth:300},placeholder:'Buscar por nombre o Account ID\u2026',value:search,onChange:function(e){setSearch(e.target.value)}}),
+
+      p.pmaFilter?h('button',{style:{fontSize:12,color:'var(--in)',background:'none',border:'none',cursor:'pointer',fontFamily:'inherit'},onClick:p.clearFilter},'Filtrando por '+pmaName(p.pmaFilter)+' \u2715'):null
+
+    ),
+
+    h('div',{className:'cd np'},
+
+      h('table',null,
+
+        h('thead',null,h('tr',null,['Account ID','Nombre','Cliente','PMA','Estado',''].map(function(x){return h('th',{key:x},x)}))),
+
+        h('tbody',null,
+
+          filtered.map(function(a){
+
+            return h('tr',{key:a.id},
+
+              h('td',{className:'mono',style:{color:'var(--tm)'}},a.accountId),
+
+              h('td',{style:{color:'var(--tx)'}},a.name),
+
+              h('td',{style:{color:'var(--tm)'}},cliName(a.clientId)),
+
+              h('td',{style:{color:'var(--tm)'}},pmaName(a.pmaId)),
+
+              h('td',null,h(Badge,{tone:a.status==='Activa'?'success':a.status==='Suspendida'?'danger':'muted'},a.status)),
+
+              h('td',null,h('div',{className:'ax'},
+
+                h('button',{className:'ib',style:{color:'var(--in)'},onClick:function(){setMoveM(a)},title:'Mover de PMA'},ic('right-left')),
+
+                h('button',{className:'ib',style:{color:'var(--tm)'},onClick:function(){setHistFor(a)},title:'Historial'},ic('clock-rotate-left')),
+
+                h('button',{className:'ib',style:{color:'var(--tm)'},onClick:function(){setModal({mode:'edit',account:Object.assign({},a)})},title:'Editar'},ic('pen-to-square')),
+
+                h('button',{className:'ib',style:{color:'var(--er)'},onClick:function(){setDelT(a)},title:'Eliminar'},ic('trash'))
+
+              ))
+
+            );
+
+          }),
+
+          filtered.length===0?h('tr',null,h('td',{colSpan:6,style:{textAlign:'center',padding:'32px 16px',color:'var(--tf)'}},'No hay cuentas que coincidan.')):null
+
+        )
+
+      )
+
+    ),
+
+    modal?h(Modal,{title:modal.mode==='new'?'Nueva Cuenta':'Editar Cuenta',onClose:function(){setModal(null)}},
+
+      h(AccForm,{account:modal.account,clients:data.clients,pmas:data.pmas,onSave:saveAcc,onCancel:function(){setModal(null)}})):null,
+
+    moveM?h(Modal,{title:'Mover '+moveM.name,onClose:function(){setMoveM(null)}},
+
+      h(MoveForm,{account:moveM,pmas:data.pmas,onMove:moveAcc,onCancel:function(){setMoveM(null)}})):null,
+
+    histFor?h(Modal,{title:'Historial de '+histFor.name,onClose:function(){setHistFor(null)}},
+
+      h(HistList,{account:histFor,movements:data.movements,pmas:data.pmas})):null,
+
+    delT?h(ConfirmDel,{label:delT.name,onConfirm:function(){delAcc(delT.id)},onCancel:function(){setDelT(null)}}):null
+
+  );
+
+}
+
+function AccForm(p){
+
+  var s=useState(p.account);var form=s[0],setForm=s[1];
+
+  function set(k,v){var n=Object.assign({},form);n[k]=v;setForm(n)}
+
+  return h('form',{onSubmit:function(e){e.preventDefault();p.onSave(form)}},
+
+    h(Field,{label:'Account ID (12 d\u00edgitos)'},h('input',{className:'ip',required:true,value:form.accountId,onChange:function(e){set('accountId',e.target.value)}})),
+
+    h(Field,{label:'Nombre'},h('input',{className:'ip',required:true,value:form.name,onChange:function(e){set('name',e.target.value)}})),
+
+    h(Field,{label:'Cliente'},h('select',{className:'sl',required:true,value:form.clientId,onChange:function(e){set('clientId',e.target.value)}},
+
+      h('option',{value:''},'Selecciona un cliente'),p.clients.map(function(c){return h('option',{key:c.id,value:c.id},c.name)}))),
+
+    h(Field,{label:'PMA'},h('select',{className:'sl',value:form.pmaId||'',onChange:function(e){set('pmaId',e.target.value)}},
+
+      h('option',{value:''},'\u2014 sin asignar \u2014'),p.pmas.map(function(pm){return h('option',{key:pm.id,value:pm.id},pm.name)}))),
+
+    h(Field,{label:'Estado'},h('select',{className:'sl',value:form.status,onChange:function(e){set('status',e.target.value)}},
+
+      h('option',null,'Activa'),h('option',null,'Suspendida'),h('option',null,'Inactiva'))),
+
+    h('div',{className:'fe',style:{marginTop:16}},h(Btn,{variant:'ghost',onClick:p.onCancel},'Cancelar'),h(Btn,{type:'submit'},'Guardar'))
+
+  );
+
+}
+
+function MoveForm(p){
+
+  var s1=useState('');var toPma=s1[0],setToPma=s1[1];
+
+  var s2=useState('');var reason=s2[0],setReason=s2[1];
+
+  return h('form',{onSubmit:function(e){e.preventDefault();if(toPma)p.onMove(p.account.id,toPma,reason)}},
+
+    h(Field,{label:'PMA de destino'},h('select',{className:'sl',required:true,value:toPma,onChange:function(e){setToPma(e.target.value)}},
+
+      h('option',{value:''},'Selecciona una PMA'),p.pmas.filter(function(pm){return pm.id!==p.account.pmaId}).map(function(pm){return h('option',{key:pm.id,value:pm.id},pm.name)}))),
+
+    h(Field,{label:'Motivo del movimiento'},h('textarea',{className:'ta',required:true,value:reason,onChange:function(e){setReason(e.target.value)}})),
+
+    h('div',{className:'fe',style:{marginTop:16}},h(Btn,{variant:'ghost',onClick:p.onCancel},'Cancelar'),h(Btn,{type:'submit'},'Mover cuenta'))
+
+  );
+
+}
+
+function HistList(p){
+
+  function pn(id){var r=null;p.pmas.forEach(function(x){if(x.id===id)r=x});return r?r.name:'\u2014'}
+
+  var list=p.movements.filter(function(m){return m.accountId===p.account.id}).sort(function(a,b){return b.date>a.date?1:b.date<a.date?-1:0});
+
+  if(list.length===0)return h('p',{style:{fontSize:14,color:'var(--tf)'}},'Sin movimientos registrados.');
+
+  return h('div',null,list.map(function(m){
+
+    return h('div',{key:m.id,className:'mi'},
+
+      h('div',{className:'md-d'},ic('clock',11),' ',fmtDate(m.date)),
+
+      h('div',{className:'md-p'},pn(m.fromPmaId),' \u2192 ',pn(m.toPmaId)),
+
+      h('div',{className:'md-r'},m.reason)
+
+    );
+
+  }));
+
+}
+
+
+
+/* ===== CLIENTS ===== */
+
+function ClientsView(p){
+
+  var data=p.data,update=p.update;
+
+  var s1=useState(null);var modal=s1[0],setModal=s1[1];
+
+  var s2=useState(null);var delT=s2[0],setDelT=s2[1];
+
+
+
+  function accsFor(cid){return data.accounts.filter(function(a){return a.clientId===cid})}
+
+  function spendFor(cid){
+
+    var ids={};accsFor(cid).forEach(function(a){ids[a.id]=1});
+
+    var months=[];var seen={};data.costs.forEach(function(c){if(!seen[c.month]){seen[c.month]=1;months.push(c.month)}});months.sort();
+
+    var lm=months[months.length-1]||'';var t=0;
+
+    data.costs.forEach(function(c){if(ids[c.accountId]&&c.month===lm)t+=c.net});return t;
+
+  }
+
+
+
+  function saveCli(cli){
+
+    if(cli.id&&data.clients.some(function(x){return x.id===cli.id})){
+
+      update({clients:data.clients.map(function(x){return x.id===cli.id?cli:x})});
+
+    }else{update({clients:data.clients.concat([Object.assign({},cli,{id:uid()})])});}
+
+    setModal(null);
+
+  }
+
+  function delCli(id){update({clients:data.clients.filter(function(x){return x.id!==id})});setDelT(null)}
+
+
+
+  return h('div',null,
+
+    h('div',{className:'hr'},
+
+      h('div',null,h('h1',{style:{fontSize:18,fontWeight:600}},'Clientes'),h('p',{style:{fontSize:14,color:'var(--tm)'}},'Clientes con cuentas AWS gestionadas.')),
+
+      h(Btn,{onClick:function(){setModal({mode:'new',client:{name:'',contact:'',email:'',country:''}})}},ic('plus',14),' Nuevo Cliente')
+
+    ),
+
+    h('div',{className:'cd np'},
+
+      h('table',null,
+
+        h('thead',null,h('tr',null,['Nombre','Contacto','Email','Pa\u00eds','Cuentas','Gasto mes',''].map(function(x){return h('th',{key:x},x)}))),
+
+        h('tbody',null,
+
+          data.clients.map(function(c){
+
+            return h('tr',{key:c.id},
+
+              h('td',{style:{color:'var(--tx)',fontWeight:500}},c.name),
+
+              h('td',{style:{color:'var(--tm)'}},c.contact),
+
+              h('td',{style:{color:'var(--tm)'}},c.email),
+
+              h('td',{style:{color:'var(--tm)'}},c.country),
+
+              h('td',null,h(Badge,{tone:'accent'},accsFor(c.id).length)),
+
+              h('td',{className:'mono',style:{color:'var(--tx)'}},fmtUSD(spendFor(c.id))),
+
+              h('td',null,h('div',{className:'ax'},
+
+                h('button',{className:'ib',style:{color:'var(--tm)'},onClick:function(){setModal({mode:'edit',client:Object.assign({},c)})}},ic('pen-to-square')),
+
+                h('button',{className:'ib',style:{color:'var(--er)'},onClick:function(){setDelT(c)}},ic('trash'))
+
+              ))
+
+            );
+
+          }),
+
+          data.clients.length===0?h('tr',null,h('td',{colSpan:7,style:{textAlign:'center',padding:'32px 16px',color:'var(--tf)'}},'No hay clientes registrados.')):null
+
+        )
+
+      )
+
+    ),
+
+    modal?h(Modal,{title:modal.mode==='new'?'Nuevo Cliente':'Editar Cliente',onClose:function(){setModal(null)}},
+
+      h(CliForm,{client:modal.client,onSave:saveCli,onCancel:function(){setModal(null)}})):null,
+
+    delT?h(ConfirmDel,{label:delT.name,onConfirm:function(){delCli(delT.id)},onCancel:function(){setDelT(null)}}):null
+
+  );
+
+}
+
+function CliForm(p){
+
+  var s=useState(p.client);var form=s[0],setForm=s[1];
+
+  function set(k,v){var n=Object.assign({},form);n[k]=v;setForm(n)}
+
+  return h('form',{onSubmit:function(e){e.preventDefault();p.onSave(form)}},
+
+    h(Field,{label:'Nombre'},h('input',{className:'ip',required:true,value:form.name,onChange:function(e){set('name',e.target.value)}})),
+
+    h(Field,{label:'Contacto'},h('input',{className:'ip',value:form.contact,onChange:function(e){set('contact',e.target.value)}})),
+
+    h(Field,{label:'Email'},h('input',{className:'ip',type:'email',value:form.email,onChange:function(e){set('email',e.target.value)}})),
+
+    h(Field,{label:'Pa\u00eds'},h('input',{className:'ip',value:form.country,onChange:function(e){set('country',e.target.value)}})),
+
+    h('div',{className:'fe',style:{marginTop:16}},h(Btn,{variant:'ghost',onClick:p.onCancel},'Cancelar'),h(Btn,{type:'submit'},'Guardar'))
+
+  );
+
+}
+
+
+
+/* ===== COSTS ===== */
+
+function CostsView(p){
+
+  var data=p.data,update=p.update;
+
+  var s1=useState(null);var modal=s1[0],setModal=s1[1];
+
+  var s2=useState('');var filterAcc=s2[0],setFilterAcc=s2[1];
+
+
+
+  function accName(id){var r=null;data.accounts.forEach(function(a){if(a.id===id)r=a});return r?r.name:id}
+
+  var filtered=filterAcc?data.costs.filter(function(c){return c.accountId===filterAcc}):data.costs;
+
+  var sorted=filtered.slice().sort(function(a,b){return b.month>a.month?1:b.month<a.month?-1:a.accountId>b.accountId?1:-1});
+
+
+
+  function saveCost(cost){
+
+    if(cost.id&&data.costs.some(function(x){return x.id===cost.id})){
+
+      update({costs:data.costs.map(function(x){return x.id===cost.id?cost:x})});
+
+    }else{update({costs:data.costs.concat([Object.assign({},cost,{id:uid()})])});}
+
+    setModal(null);
+
+  }
+
+
+
+  return h('div',null,
+
+    h('div',{className:'hr'},
+
+      h('div',null,h('h1',{style:{fontSize:18,fontWeight:600}},'Costos'),h('p',{style:{fontSize:14,color:'var(--tm)'}},'Registro mensual de costos por cuenta.')),
+
+      h(Btn,{onClick:function(){setModal({mode:'new',cost:{accountId:'',month:'',gross:0,sppPct:8,sppUsd:0,activateCredits:0,net:0}})}},ic('plus',14),' Nuevo Registro')
+
+    ),
+
+    h('div',{className:'fb'},
+
+      h('select',{className:'sl',style:{maxWidth:300},value:filterAcc,onChange:function(e){setFilterAcc(e.target.value)}},
+
+        h('option',{value:''},'Todas las cuentas'),
+
+        data.accounts.map(function(a){return h('option',{key:a.id,value:a.id},a.name+' ('+a.accountId+')')})
+
+      )
+
+    ),
+
+    h('div',{className:'cd np'},
+
+      h('table',null,
+
+        h('thead',null,h('tr',null,['Mes','Cuenta','Bruto','SPP %','SPP USD','Cr\u00e9ditos','Neto'].map(function(x){return h('th',{key:x},x)}))),
+
+        h('tbody',null,
+
+          sorted.slice(0,50).map(function(c){
+
+            return h('tr',{key:c.id},
+
+              h('td',{className:'mono',style:{color:'var(--tm)'}},c.month),
+
+              h('td',{style:{color:'var(--tx)'}},accName(c.accountId)),
+
+              h('td',{className:'mono'},fmtUSD(c.gross)),
+
+              h('td',{className:'mono',style:{color:'var(--tm)'}},c.sppPct+'%'),
+
+              h('td',{className:'mono',style:{color:'var(--er)'}},'-'+fmtUSD(c.sppUsd)),
+
+              h('td',{className:'mono',style:{color:'var(--ok)'}},c.activateCredits>0?'-'+fmtUSD(c.activateCredits):'\u2014'),
+
+              h('td',{className:'mono',style:{fontWeight:600}},fmtUSD(c.net))
+
+            );
+
+          }),
+
+          sorted.length===0?h('tr',null,h('td',{colSpan:7,style:{textAlign:'center',padding:'32px',color:'var(--tf)'}},'No hay registros de costos.')):null
+
+        )
+
+      )
+
+    ),
+
+    modal?h(Modal,{title:'Nuevo Registro de Costo',onClose:function(){setModal(null)}},
+
+      h(CostForm,{cost:modal.cost,accounts:data.accounts,onSave:saveCost,onCancel:function(){setModal(null)}})):null
+
+  );
+
+}
+
+function CostForm(p){
+
+  var s=useState(p.cost);var form=s[0],setForm=s[1];
+
+  function set(k,v){
+
+    var n=Object.assign({},form);n[k]=v;
+
+    if(k==='gross'||k==='sppPct'||k==='activateCredits'){
+
+      var g=Number(n.gross)||0;var sp=Number(n.sppPct)||0;
+
+      var su=Math.round(g*(sp/100)*100)/100;var cr=Number(n.activateCredits)||0;
+
+      var nt=Math.round((g-(cr>0?0:su)-cr)*100)/100;
+
+      n.sppUsd=su;n.net=nt;
+
+    }
+
+    setForm(n);
+
+  }
+
+  return h('form',{onSubmit:function(e){e.preventDefault();p.onSave(form)}},
+
+    h(Field,{label:'Cuenta'},h('select',{className:'sl',required:true,value:form.accountId,onChange:function(e){set('accountId',e.target.value)}},
+
+      h('option',{value:''},'Selecciona una cuenta'),p.accounts.map(function(a){return h('option',{key:a.id,value:a.id},a.name)}))),
+
+    h(Field,{label:'Mes (YYYY-MM)'},h('input',{className:'ip',required:true,placeholder:'2026-09',value:form.month,onChange:function(e){set('month',e.target.value)}})),
+
+    h(Field,{label:'Consumo Bruto (USD)'},h('input',{className:'ip',type:'number',step:'0.01',required:true,value:form.gross,onChange:function(e){set('gross',e.target.value)}})),
+
+    h(Field,{label:'Tasa SPP (%)'},h('input',{className:'ip',type:'number',step:'0.1',value:form.sppPct,onChange:function(e){set('sppPct',e.target.value)}})),
+
+    h(Field,{label:'Cr\u00e9ditos Activate (USD)'},h('input',{className:'ip',type:'number',step:'0.01',value:form.activateCredits,onChange:function(e){set('activateCredits',e.target.value)}})),
+
+    h('div',{style:{padding:12,background:'var(--sa)',borderRadius:6,marginBottom:16,fontSize:13}},
+
+      h('div',{style:{color:'var(--tm)'}},'SPP USD: ',h('span',{className:'mono'},fmtUSD(form.sppUsd))),
+
+      h('div',{style:{color:'var(--tx)',fontWeight:600,marginTop:4}},'Neto: ',h('span',{className:'mono'},fmtUSD(form.net)))
+
+    ),
+
+    h('div',{className:'fe'},h(Btn,{variant:'ghost',onClick:p.onCancel},'Cancelar'),h(Btn,{type:'submit'},'Guardar'))
+
+  );
+
+}
+
+
+
+/* ===== CREDITS ===== */
+
+function CreditsView(p){
+
+  var data=p.data,update=p.update;
+
+  var s1=useState(null);var modal=s1[0],setModal=s1[1];
+
+
+
+  function accName(id){var r=null;data.accounts.forEach(function(a){if(a.id===id)r=a});return r?r.name:id}
+
+
+
+  function saveCred(c){
+
+    if(c.id&&data.credits.some(function(x){return x.id===c.id})){
+
+      update({credits:data.credits.map(function(x){return x.id===c.id?c:x})});
+
+    }else{update({credits:data.credits.concat([Object.assign({},c,{id:uid()})])});}
+
+    setModal(null);
+
+  }
+
+
+
+  return h('div',null,
+
+    h('div',{className:'hr'},
+
+      h('div',null,h('h1',{style:{fontSize:18,fontWeight:600}},'Cr\u00e9ditos AWS Activate'),h('p',{style:{fontSize:14,color:'var(--tm)'}},'Control de cr\u00e9ditos asignados por cuenta.')),
+
+      h(Btn,{onClick:function(){setModal({mode:'new',credit:{accountId:'',total:0,startDate:'',endDate:'',consumed:0}})}},ic('plus',14),' Nuevo Cr\u00e9dito')
+
+    ),
+
+    h('div',{style:{display:'flex',flexDirection:'column',gap:12}},
+
+      data.credits.map(function(c){
+
+        var pctUsed=c.total>0?(c.consumed/c.total)*100:0;
+
+        var remaining=c.total-c.consumed;
+
+        var dLeft=daysUntil(c.endDate);
+
+        var barColor=pctUsed>80?'var(--er)':pctUsed>50?'var(--ac)':'var(--ok)';
+
+        return h('div',{key:c.id,className:'cd'},
+
+          h('div',{style:{display:'flex',justifyContent:'space-between',alignItems:'center',marginBottom:12}},
+
+            h('div',null,
+
+              h('div',{style:{fontSize:15,fontWeight:600}},accName(c.accountId)),
+
+              h('div',{style:{fontSize:12,color:'var(--tf)'}},fmtDate(c.startDate)+' \u2192 '+fmtDate(c.endDate))
+
+            ),
+
+            h('div',{style:{textAlign:'right'}},
+
+              dLeft<=30?h(Badge,{tone:dLeft<0?'danger':'accent'},dLeft<0?'VENCIDO':dLeft+' d\u00edas'):h(Badge,{tone:'success'},dLeft+' d\u00edas')
+
+            )
+
+          ),
+
+          h('div',{style:{display:'flex',justifyContent:'space-between',fontSize:13,marginBottom:8}},
+
+            h('span',{style:{color:'var(--tm)'}},'Consumido: ',h('span',{className:'mono',style:{color:'var(--tx)'}},fmtUSD(c.consumed))),
+
+            h('span',{style:{color:'var(--tm)'}},'Saldo: ',h('span',{className:'mono',style:{color:remaining/c.total<.2?'var(--er)':'var(--ok)'}},fmtUSD(remaining))),
+
+            h('span',{style:{color:'var(--tm)'}},'Total: ',h('span',{className:'mono'},fmtUSD(c.total)))
+
+          ),
+
+          h('div',{className:'pb'},h('div',{className:'pf',style:{width:Math.min(pctUsed,100)+'%',background:barColor}})),
+
+          h('div',{style:{fontSize:12,color:'var(--tf)',marginTop:4,textAlign:'right'}},pctUsed.toFixed(1)+'% consumido')
+
+        );
+
+      }),
+
+      data.credits.length===0?h('div',{className:'cd',style:{textAlign:'center',color:'var(--tf)',padding:40}},'No hay cr\u00e9ditos registrados.'):null
+
+    ),
+
+    modal?h(Modal,{title:'Nuevo Cr\u00e9dito Activate',onClose:function(){setModal(null)}},
+
+      h(CredForm,{credit:modal.credit,accounts:data.accounts,onSave:saveCred,onCancel:function(){setModal(null)}})):null
+
+  );
+
+}
+
+function CredForm(p){
+
+  var s=useState(p.credit);var form=s[0],setForm=s[1];
+
+  function set(k,v){var n=Object.assign({},form);n[k]=v;setForm(n)}
+
+  return h('form',{onSubmit:function(e){e.preventDefault();p.onSave(form)}},
+
+    h(Field,{label:'Cuenta'},h('select',{className:'sl',required:true,value:form.accountId,onChange:function(e){set('accountId',e.target.value)}},
+
+      h('option',{value:''},'Selecciona una cuenta'),p.accounts.map(function(a){return h('option',{key:a.id,value:a.id},a.name)}))),
+
+    h(Field,{label:'Monto Total (USD)'},h('input',{className:'ip',type:'number',step:'0.01',required:true,value:form.total,onChange:function(e){set('total',e.target.value)}})),
+
+    h(Field,{label:'Consumido (USD)'},h('input',{className:'ip',type:'number',step:'0.01',value:form.consumed,onChange:function(e){set('consumed',e.target.value)}})),
+
+    h(Field,{label:'Fecha Inicio'},h('input',{className:'ip',type:'date',required:true,value:form.startDate,onChange:function(e){set('startDate',e.target.value)}})),
+
+    h(Field,{label:'Fecha Expiraci\u00f3n'},h('input',{className:'ip',type:'date',required:true,value:form.endDate,onChange:function(e){set('endDate',e.target.value)}})),
+
+    h('div',{className:'fe',style:{marginTop:16}},h(Btn,{variant:'ghost',onClick:p.onCancel},'Cancelar'),h(Btn,{type:'submit'},'Guardar'))
+
+  );
+
+}
+
+
+
+
+
+/* ===== CONTROL CUENTAS ===== */
+
+function ControlView(p){
+
+  var data=p.data,update=p.update;
+
+  var s1=useState('');var search=s1[0],setSearch=s1[1];
+
+  var s2=useState('');var filterPma=s2[0],setFilterPma=s2[1];
+
+  var s3=useState('all');var filterEstado=s3[0],setFilterEstado=s3[1];
+
+  var s4=useState(null);var modal=s4[0],setModal=s4[1];
+
+  var s5=useState(null);var delT=s5[0],setDelT=s5[1];
+
+
+
+  var cuentas=data.controlCuentas||[];
+
+
+
+  /* get unique PMAs and estados */
+
+  var pmaSet={};var estadoSet={};
+
+  cuentas.forEach(function(c){if(c.pma)pmaSet[c.pma]=1;if(c.estado)estadoSet[c.estado]=1});
+
+  var pmaList=Object.keys(pmaSet).sort();
+
+  var estadoList=Object.keys(estadoSet).sort();
+
+
+
+  var filtered=cuentas.filter(function(c){
+
+    if(filterPma&&c.pma!==filterPma)return false;
+
+    if(filterEstado!=='all'&&c.estado!==filterEstado)return false;
+
+    if(search){
+
+      var q=search.toLowerCase();
+
+      if((c.alias+' '+c.cuentaAws+' '+c.accountId+' '+c.gmail+' '+c.obs).toLowerCase().indexOf(q)<0)return false;
+
+    }
+
+    return true;
+
+  });
+
+
+
+  /* stats */
+
+  var totalActivas=0,totalElim=0,totalOtras=0;
+
+  cuentas.forEach(function(c){
+
+    if(c.estado==='Activa')totalActivas++;
+
+    else if(c.estado==='Eliminada')totalElim++;
+
+    else totalOtras++;
+
+  });
+
+
+
+  function saveCuenta(cuenta){
+
+    var arr=cuentas.slice();
+
+    if(cuenta.id){
+
+      var idx=-1;arr.forEach(function(c,i){if(c.id===cuenta.id)idx=i});
+
+      if(idx>=0)arr[idx]=cuenta;
+
+      else arr.push(cuenta);
+
+    }else{
+
+      cuenta.id='ctrl-'+uid();
+
+      arr.push(cuenta);
+
+    }
+
+    update({controlCuentas:arr});
+
+    setModal(null);
+
+  }
+
+  function delCuenta(id){
+
+    update({controlCuentas:cuentas.filter(function(c){return c.id!==id})});
+
+    setDelT(null);
+
+  }
+
+
+
+  var emptyC={gmail:'',alias:'',cuentaAws:'',pma:'',accountId:'',estado:'Activa',obs:''};
+
+
+
+  function estadoBadge(est){
+
+    var tone='muted';
+
+    if(est==='Activa')tone='success';
+
+    else if(est==='Eliminada')tone='danger';
+
+    else if(est==='Migrada'||est==='BT')tone='accent';
+
+    else if(est==='Suspendida'||est==='Revisar')tone='danger';
+
+    return h(Badge,{tone:tone},est);
+
+  }
+
+
+
+  return h('div',null,
+
+    h('div',{className:'hr'},
+
+      h('div',null,
+
+        h('h1',{style:{fontSize:18,fontWeight:600}},'Control de Cuentas'),
+
+        h('p',{style:{fontSize:14,color:'var(--tm)'}},'Registro de cuentas AWS — '+totalActivas+' activas, '+totalElim+' eliminadas, '+totalOtras+' otras')
+
+      ),
+
+      h(Btn,{onClick:function(){setModal({mode:'new',cuenta:emptyC})}},ic('plus',14),' Nueva Cuenta')
+
+    ),
+
+    /* Filtros */
+
+    h('div',{className:'fb',style:{flexWrap:'wrap'}},
+
+      h('input',{className:'ip',style:{maxWidth:250},placeholder:'Buscar alias, cuenta, ID\u2026',value:search,onChange:function(e){setSearch(e.target.value)}}),
+
+      h('select',{className:'sl',style:{maxWidth:180},value:filterPma,onChange:function(e){setFilterPma(e.target.value)}},
+
+        h('option',{value:''},'Todas las PMAs'),
+
+        pmaList.map(function(p){return h('option',{key:p,value:p},p)})
+
+      ),
+
+      h('select',{className:'sl',style:{maxWidth:160},value:filterEstado,onChange:function(e){setFilterEstado(e.target.value)}},
+
+        h('option',{value:'all'},'Todos los estados'),
+
+        estadoList.map(function(e){return h('option',{key:e,value:e},e)})
+
+      ),
+
+      h('span',{style:{fontSize:12,color:'var(--tm)',marginLeft:8}},filtered.length+' de '+cuentas.length+' cuentas')
+
+    ),
+
+    /* Tabla */
+
+    h('div',{className:'cd np'},
+
+      h('div',{style:{overflowX:'auto'}},
+
+        h('table',null,
+
+          h('thead',null,h('tr',null,
+
+            h('th',null,'Gmail'),h('th',null,'Alias'),h('th',null,'Cuenta AWS'),h('th',null,'PMA'),h('th',{style:{width:120}},'Account ID'),h('th',{style:{width:90}},'Estado'),h('th',null,'Obs'),h('th',{style:{width:60}},'')
+
+          )),
+
+          h('tbody',null,
+
+            filtered.map(function(c){
+
+              return h('tr',{key:c.id,style:{opacity:c.estado==='Eliminada'?0.5:1}},
+
+                h('td',{style:{color:'var(--tm)',fontSize:13}},c.gmail),
+
+                h('td',{style:{color:'var(--tx)',fontWeight:500}},c.alias),
+
+                h('td',{style:{color:'var(--tx)'}},c.cuentaAws),
+
+                h('td',null,h(Badge,{tone:'accent'},c.pma||'\u2014')),
+
+                h('td',{className:'mono',style:{color:'var(--tm)',fontSize:12}},c.accountId||'\u2014'),
+
+                h('td',null,estadoBadge(c.estado)),
+
+                h('td',{style:{fontSize:12,color:'var(--tm)',maxWidth:200,overflow:'hidden',textOverflow:'ellipsis',whiteSpace:'nowrap'},title:c.obs},c.obs||''),
+
+                h('td',null,h('div',{className:'ax'},
+
+                  h('button',{className:'ib',style:{color:'var(--tm)'},onClick:function(){setModal({mode:'edit',cuenta:Object.assign({},c)})}},ic('pen-to-square')),
+
+                  h('button',{className:'ib',style:{color:'var(--er)'},onClick:function(){setDelT(c)}},ic('trash'))
+
+                ))
+
+              );
+
+            }),
+
+            filtered.length===0?h('tr',null,h('td',{colSpan:8,style:{textAlign:'center',padding:'32px 16px',color:'var(--tf)'}},'No hay cuentas que coincidan.')):null
+
+          )
+
+        )
+
+      )
+
+    ),
+
+    modal?h(Modal,{title:modal.mode==='new'?'Nueva Cuenta':'Editar Cuenta',onClose:function(){setModal(null)}},
+
+      h(CtrlForm,{cuenta:modal.cuenta,pmaList:pmaList,onSave:saveCuenta,onCancel:function(){setModal(null)}})):null,
+
+    delT?h(ConfirmDel,{label:delT.alias||delT.cuentaAws,onConfirm:function(){delCuenta(delT.id)},onCancel:function(){setDelT(null)}}):null
+
+  );
+
+}
+
+function CtrlForm(p){
+
+  var s=useState(p.cuenta);var form=s[0],setForm=s[1];
+
+  function set(k,v){var n=Object.assign({},form);n[k]=v;setForm(n)}
+
+  return h('form',{onSubmit:function(e){e.preventDefault();p.onSave(form)}},
+
+    h(Field,{label:'Cuenta Gmail'},h('input',{className:'ip',value:form.gmail,onChange:function(e){set('gmail',e.target.value)}})),
+
+    h(Field,{label:'Alias'},h('input',{className:'ip',required:true,value:form.alias,onChange:function(e){set('alias',e.target.value)}})),
+
+    h(Field,{label:'Cuenta AWS'},h('input',{className:'ip',value:form.cuentaAws,onChange:function(e){set('cuentaAws',e.target.value)}})),
+
+    h(Field,{label:'PMA'},h('select',{className:'sl',value:form.pma,onChange:function(e){set('pma',e.target.value)}},
+
+      h('option',{value:''},'Sin PMA'),
+
+      p.pmaList.map(function(pm){return h('option',{key:pm,value:pm},pm)})
+
+    )),
+
+    h(Field,{label:'Account ID'},h('input',{className:'ip',value:form.accountId,onChange:function(e){set('accountId',e.target.value)}})),
+
+    h(Field,{label:'Estado'},h('select',{className:'sl',value:form.estado,onChange:function(e){set('estado',e.target.value)}},
+
+      ['Activa','Eliminada','Suspendida','Migrada','BT','Revisar','Retirada'].map(function(e){return h('option',{key:e,value:e},e)})
+
+    )),
+
+    h(Field,{label:'Observaci\u00f3n'},h('textarea',{className:'ta',value:form.obs,onChange:function(e){set('obs',e.target.value)}})),
+
+    h('div',{className:'fe',style:{marginTop:16}},h(Btn,{variant:'ghost',onClick:p.onCancel},'Cancelar'),h(Btn,{type:'submit'},'Guardar'))
+
+  );
+
+}
+
+
+
+/* ===== CHECKLIST FACTURACION ===== */
+
+var DEFAULT_CHECKLIST_TEMPLATE = {
+
+  consumos: [
+
+    {cliente:'Clientes MA Colombia',aws:false,factura:false,obs:'Sumar Disaster Recovery'},
+
+    {cliente:'Clientes MA Peru',aws:false,factura:false,obs:''},
+
+    {cliente:'Cliente MA Atlas',aws:false,factura:false,obs:''},
+
+    {cliente:'Cliente MA Crediminuto',aws:false,factura:false,obs:''},
+
+    {cliente:'Cliente MA Puppis',aws:false,factura:false,obs:''},
+
+    {cliente:'Cliente MA Mintic',aws:false,factura:false,obs:''},
+
+    {cliente:'Cliente MA Infotic',aws:false,factura:false,obs:'Descuento'},
+
+    {cliente:'Cliente MA GPTFY',aws:false,factura:false,obs:'Cr\u00e9ditos'},
+
+    {cliente:'Cliente MA Toyota',aws:false,factura:false,obs:'Prepagado'},
+
+    {cliente:'Cliente MA Global Connect',aws:false,factura:false,obs:''},
+
+    {cliente:'Cliente MA BlindCreator',aws:false,factura:false,obs:''},
+
+    {cliente:'Cliente MA Natclar',aws:false,factura:false,obs:'Descuento'},
+
+    {cliente:'Cliente Billing Transfer Movii',aws:false,factura:false,obs:'Descuento'},
+
+    {cliente:'Cliente Billing Transfer Sumimas',aws:false,factura:false,obs:'Descuento'},
+
+    {cliente:'Cliente Billing Transfer Infodec',aws:false,factura:false,obs:''},
+
+    {cliente:'Biia',aws:false,factura:false,obs:'COST EXPLORER'},
+
+    {cliente:'Ingenieriavozip',aws:false,factura:false,obs:'COST EXPLORER'}
+
+  ],
+
+  facturas: [
+
+    {ma:'Colombia',done:false,obs:''},{ma:'Peru',done:false,obs:''},{ma:'Atlas',done:false,obs:''},
+
+    {ma:'Crediminuto',done:false,obs:''},{ma:'Puppis',done:false,obs:''},{ma:'Mintic',done:false,obs:''},
+
+    {ma:'Infotic',done:false,obs:''},{ma:'GPTFY',done:false,obs:''},{ma:'Toyota',done:false,obs:''},
+
+    {ma:'Global Connect',done:false,obs:''},{ma:'BlindCreator',done:false,obs:''},{ma:'Natclar',done:false,obs:''},
+
+    {ma:'Movii',done:false,obs:''},{ma:'Sumimas',done:false,obs:''},{ma:'Infodec',done:false,obs:''},
+
+    {ma:'CNID_INT',done:false,obs:'Creditos'},{ma:'Marketplace',done:false,obs:''},{ma:'Billing_Transfer',done:false,obs:''}
+
+  ],
+
+  proformas: [
+
+    {item:'Mintic',done:false,obs:''},{item:'Toyota',done:false,obs:''},{item:'SGC',done:false,obs:''},{item:'Crusardi',done:false,obs:''}
+
+  ],
+
+  correos: [
+
+    {item:'Enviar proformas y facturas a Carlos Vargas del cliente Mintic',done:false},
+
+    {item:'Enviar proformas y facturas a Cristian Doncel del cliente Toyota',done:false},
+
+    {item:'Enviar proformas a Victor Cortazar del cliente Crusardi',done:false},
+
+    {item:'Enviar proformas a Victor Cortazar del cliente SGC',done:false},
+
+    {item:'Enviar todas las facturas a Billing especificando cuales son las de Peru',done:false},
+
+    {item:'Enviar confirmacion de que esta listo el archivo de facturacion a Billing',done:false}
+
+  ],
+
+  descuentos: [
+
+    {cliente:'Movii',tiene:true},
+
+    {cliente:'Sumimas',tiene:true},
+
+    {cliente:'Infotic',tiene:true},
+
+    {cliente:'Natclar',tiene:true}
+
+  ],
+
+  servicios: [
+
+    {cliente:'Cemue',pct:4},{cliente:'Crusardi',pct:4},{cliente:'Infotrack',pct:4},
+
+    {cliente:'Lissa',pct:4},{cliente:'Opensky',pct:4},{cliente:'Unidad C',pct:3},
+
+    {cliente:'Union T',pct:4},{cliente:'Hunter',pct:3},{cliente:'Piwi',pct:4},
+
+    {cliente:'iAlert',pct:2}
+
+  ],
+  notas: []
+
+};
+
+
+
+function ChecklistView(p){
+
+  var data=p.data,update=p.update;
+
+  var today=new Date();
+
+  var defMonth=today.getFullYear()+'-'+(today.getMonth()+1<10?'0':'')+(today.getMonth()+1);
+
+  var s1=useState(defMonth);var selMonth=s1[0],setSelMonth=s1[1];
+
+
+
+  /* asegurar que checklists existe en data */
+
+  var checklists=data.checklists;
+
+  if(!checklists || typeof checklists!=='object'){
+
+    checklists={};
+
+  }
+
+  var cl=checklists[selMonth];
+
+  /* si el checklist existe pero tiene arrays vacios, rellenarlo */
+
+  if(cl && cl.consumos && cl.consumos.length===0){
+
+    cl=null; /* forzar recreacion */
+
+  }
+
+
+
+  function createMonth(){
+
+    var tpl=data.checklistTemplate||DEFAULT_CHECKLIST_TEMPLATE;
+
+    var copy=JSON.parse(JSON.stringify(tpl));
+
+    var next=Object.assign({},checklists);
+
+    next[selMonth]=copy;
+
+    update({checklists:next});
+
+  }
+
+
+
+  function updateCL(patch){
+
+    var next=Object.assign({},checklists);
+
+    next[selMonth]=Object.assign({},cl,patch);
+
+    update({checklists:next});
+
+  }
+
+
+
+  /* toggle helpers */
+
+  function toggleConsumo(idx,field){
+
+    var arr=cl.consumos.slice();
+
+    arr[idx]=Object.assign({},arr[idx]);arr[idx][field]=!arr[idx][field];
+
+    updateCL({consumos:arr});
+
+  }
+
+  function setConsumoObs(idx,val){
+
+    var arr=cl.consumos.slice();
+
+    arr[idx]=Object.assign({},arr[idx]);arr[idx].obs=val;
+
+    updateCL({consumos:arr});
+
+  }
+
+  function toggleFactura(idx){
+
+    var arr=cl.facturas.slice();
+
+    arr[idx]=Object.assign({},arr[idx]);arr[idx].done=!arr[idx].done;
+
+    updateCL({facturas:arr});
+
+  }
+
+  function setFacturaObs(idx,val){
+
+    var arr=cl.facturas.slice();
+
+    arr[idx]=Object.assign({},arr[idx]);arr[idx].obs=val;
+
+    updateCL({facturas:arr});
+
+  }
+
+  function toggleProforma(idx){
+
+    var arr=cl.proformas.slice();
+
+    arr[idx]=Object.assign({},arr[idx]);arr[idx].done=!arr[idx].done;
+
+    updateCL({proformas:arr});
+
+  }
+
+  function toggleCorreo(idx){
+
+    var arr=cl.correos.slice();
+
+    arr[idx]=Object.assign({},arr[idx]);arr[idx].done=!arr[idx].done;
+
+    updateCL({correos:arr});
+
+  }
+
+
+
+  /* progress */
+
+  function calcProgress(cl){
+
+    if(!cl)return{done:0,total:0,pct:0};
+
+    var done=0,total=0;
+
+    cl.consumos.forEach(function(c){total+=2;if(c.aws)done++;if(c.factura)done++});
+
+    cl.facturas.forEach(function(f){total++;if(f.done)done++});
+
+    cl.proformas.forEach(function(f){total++;if(f.done)done++});
+
+    cl.correos.forEach(function(f){total++;if(f.done)done++});
+
+    return{done:done,total:total,pct:total>0?Math.round(done/total*100):0};
+
+  }
+
+  var prog=calcProgress(cl);
+
+
+
+  /* month selector options */
+
+  var allMonths=Object.keys(checklists).slice();
+
+  if(allMonths.indexOf(selMonth)<0)allMonths.push(selMonth);
+
+  allMonths.sort();
+
+
+
+  function checkbox(checked,onClick){
+
+    return h('button',{onClick:onClick,style:{
+
+      width:20,height:20,borderRadius:4,border:'1px solid '+(checked?'var(--ok)':'var(--bl)'),
+
+      background:checked?'var(--ok)':'transparent',cursor:'pointer',display:'flex',alignItems:'center',justifyContent:'center',flexShrink:0,padding:0
+
+    }},checked?h('i',{className:'fa-solid fa-check',style:{fontSize:11,color:'#fff'}}):null);
+
+  }
+
+
+
+  /* section header with count */
+
+  function secHead(title,icon,doneCount,totalCount){
+
+    return h('div',{style:{display:'flex',alignItems:'center',gap:8,marginBottom:12,marginTop:20}},
+
+      ic(icon,16),
+
+      h('span',{style:{fontSize:15,fontWeight:600}},title),
+
+      h('span',{className:'bg bg-ac',style:{marginLeft:8}},doneCount+'/'+totalCount)
+
+    );
+
+  }
+
+
+
+  if(!cl){
+
+    return h('div',null,
+
+      h('div',{className:'hr'},
+
+        h('div',null,h('h1',{style:{fontSize:18,fontWeight:600}},'Checklist de Facturaci\u00f3n'),h('p',{style:{fontSize:14,color:'var(--tm)'}},'Control mensual del proceso de facturaci\u00f3n.')),
+
+        h('div',{style:{display:'flex',gap:8,alignItems:'center'}},
+
+          h('input',{className:'ip',type:'month',value:selMonth,onChange:function(e){setSelMonth(e.target.value)},style:{width:180}}),
+
+          h(Btn,{onClick:createMonth},ic('plus',14),' Crear mes '+selMonth)
+
+        )
+
+      ),
+
+      h('div',{className:'cd',style:{textAlign:'center',padding:60,color:'var(--tf)'}},
+
+        ic('calendar-xmark',32),
+
+        h('p',{style:{marginTop:12,fontSize:14}},'No hay checklist para '+selMonth+'. Crea uno para empezar.')
+
+      )
+
+    );
+
+  }
+
+
+
+  var cDone=0;cl.consumos.forEach(function(c){if(c.aws)cDone++;if(c.factura)cDone++});
+
+  var fDone=0;cl.facturas.forEach(function(f){if(f.done)fDone++});
+
+  var pDone=0;cl.proformas.forEach(function(f){if(f.done)pDone++});
+
+  var eDone=0;cl.correos.forEach(function(f){if(f.done)eDone++});
+
+
+
+  return h('div',null,
+
+    h('div',{className:'hr'},
+
+      h('div',null,
+
+        h('h1',{style:{fontSize:18,fontWeight:600}},'Checklist de Facturaci\u00f3n'),
+
+        h('p',{style:{fontSize:14,color:'var(--tm)'}},'Mes: '+selMonth+' \u2014 Progreso: '+prog.pct+'%')
+
+      ),
+
+      h('div',{style:{display:'flex',gap:8,alignItems:'center'}},
+
+        h('input',{className:'ip',type:'month',value:selMonth,onChange:function(e){setSelMonth(e.target.value)},style:{width:180}}),
+
+        !checklists[selMonth]?h(Btn,{onClick:createMonth},ic('plus',14),' Crear'):null
+
+      )
+
+    ),
+
+    /* Progress bar */
+
+    h('div',{className:'cd',style:{marginBottom:16,padding:16}},
+
+      h('div',{style:{display:'flex',justifyContent:'space-between',fontSize:13,marginBottom:6}},
+
+        h('span',{style:{color:'var(--tm)'}},'Progreso general'),
+
+        h('span',{style:{fontWeight:600}},prog.done+'/'+prog.total+' ('+prog.pct+'%)')
+
+      ),
+
+      h('div',{className:'pb',style:{height:12}},h('div',{className:'pf',style:{width:prog.pct+'%',background:prog.pct===100?'var(--ok)':prog.pct>50?'var(--ac)':'var(--in)'}}))
+
+    ),
+
+
+
+    /* Secci\u00f3n 1: Consumos */
+    /* Sección 6: Notas y Pendientes */
+    h('div',{style:{marginBottom:16}},
+      h('div',{style:{display:'flex',alignItems:'center',gap:8,marginBottom:12}},
+        ic('clipboard-list',16),h('span',{style:{fontSize:15,fontWeight:600}},'Notas y Pendientes'),
+        h('button',{className:'ib',style:{color:'var(--ok)',marginLeft:'auto'},onClick:function(){
+          var arr=(cl.notas||[]).slice();arr.push({id:uid(),text:'',done:false,date:new Date().toISOString().slice(0,10)});updateCL({notas:arr});
+        }},ic('plus',14),' ',h('span',{style:{fontSize:12}},'Agregar nota'))
+      ),
+      h('div',{className:'cd',style:{padding:(cl.notas&&cl.notas.length>0)?0:20}},
+        (cl.notas&&cl.notas.length>0)?h('div',{style:{padding:0}},
+          (cl.notas||[]).map(function(n,i){
+            return h('div',{key:n.id||i,style:{display:'flex',alignItems:'flex-start',gap:10,padding:'12px 16px',borderBottom:'1px solid var(--bd)',opacity:n.done?0.5:1}},
+              h('button',{onClick:function(){
+                var arr=(cl.notas||[]).slice();arr[i]=Object.assign({},arr[i],{done:!arr[i].done});updateCL({notas:arr});
+              },style:{
+                width:20,height:20,borderRadius:4,border:'1px solid '+(n.done?'var(--ok)':'var(--bl)'),
+                background:n.done?'var(--ok)':'transparent',cursor:'pointer',display:'flex',alignItems:'center',justifyContent:'center',flexShrink:0,padding:0,marginTop:2
+              }},n.done?h('i',{className:'fa-solid fa-check',style:{fontSize:11,color:'#fff'}}):null),
+              h('div',{style:{flex:1}},
+                h('textarea',{className:'ta',value:n.text,placeholder:'Escribe una nota o pendiente…',style:{background:'transparent',border:'none',padding:0,fontSize:14,color:n.done?'var(--tm)':'var(--tx)',textDecoration:n.done?'line-through':'none',minHeight:32,resize:'vertical'},onChange:function(e){
+                  var arr=(cl.notas||[]).slice();arr[i]=Object.assign({},arr[i],{text:e.target.value});updateCL({notas:arr});
+                }}),
+                h('div',{style:{fontSize:11,color:'var(--tf)',marginTop:2}},n.date||'')
+              ),
+              h('button',{className:'ib',style:{color:'var(--er)',flexShrink:0,marginTop:2},onClick:function(){
+                var arr=(cl.notas||[]).slice();arr.splice(i,1);updateCL({notas:arr});
+              }},ic('xmark',12))
+            );
+          })
+        ):h('div',{style:{textAlign:'center',color:'var(--tf)',fontSize:13}},'Sin notas. Haz clic en + para agregar.')
+      )
+    ),
+
+    /* Sección 5: Descuentos y Servicios Profesionales — EDITABLE */
+    h('div',{style:{display:'grid',gridTemplateColumns:'1fr 1fr',gap:16,marginBottom:16}},
+      /* Descuentos */
+      h('div',null,
+        h('div',{style:{display:'flex',alignItems:'center',gap:8,marginBottom:12}},
+          ic('tag',16),h('span',{style:{fontSize:15,fontWeight:600}},'Descuentos'),
+          h('button',{className:'ib',style:{color:'var(--ok)',marginLeft:'auto'},onClick:function(){
+            var nombre=prompt('Nombre del cliente:');
+            if(nombre){var arr=(cl.descuentos||[]).slice();arr.push({cliente:nombre,tiene:true});updateCL({descuentos:arr})}
+          }},ic('plus',12))
+        ),
+        h('div',{className:'cd np'},
+          h('table',null,
+            h('thead',null,h('tr',null,h('th',null,'Cliente'),h('th',{style:{width:80,textAlign:'center'}},'Aplica'),h('th',{style:{width:40}}))),
+            h('tbody',null,(cl.descuentos||[]).map(function(d,i){
+              return h('tr',{key:i},
+                h('td',null,h('input',{className:'ip',value:d.cliente,style:{background:'transparent',border:'none',padding:'4px 0',fontSize:14,color:'var(--tx)',fontWeight:500},onChange:function(e){
+                  var arr=(cl.descuentos||[]).slice();arr[i]=Object.assign({},arr[i],{cliente:e.target.value});updateCL({descuentos:arr});
+                }})),
+                h('td',{style:{textAlign:'center'}},h('span',{style:{color:'var(--ok)',fontSize:16}},'✓')),
+                h('td',null,h('button',{className:'ib',style:{color:'var(--er)'},onClick:function(){
+                  var arr=(cl.descuentos||[]).slice();arr.splice(i,1);updateCL({descuentos:arr});
+                }},ic('xmark',12)))
+              );
+            }),
+            (cl.descuentos||[]).length===0?h('tr',null,h('td',{colSpan:3,style:{textAlign:'center',padding:16,color:'var(--tf)',fontSize:13}},'Sin descuentos')):null)
+          )
+        )
+      ),
+      /* Servicios Profesionales */
+      h('div',null,
+        h('div',{style:{display:'flex',alignItems:'center',gap:8,marginBottom:12}},
+          ic('percent',16),h('span',{style:{fontSize:15,fontWeight:600}},'Servicios Profesionales'),
+          h('button',{className:'ib',style:{color:'var(--ok)',marginLeft:'auto'},onClick:function(){
+            var nombre=prompt('Nombre del cliente:');
+            if(nombre){var pct=prompt('Porcentaje (%):','4');if(pct){var arr=(cl.servicios||[]).slice();arr.push({cliente:nombre,pct:Number(pct)});updateCL({servicios:arr})}}
+          }},ic('plus',12))
+        ),
+        h('div',{className:'cd np'},
+          h('table',null,
+            h('thead',null,h('tr',null,h('th',null,'Cliente'),h('th',{style:{width:80,textAlign:'center'}},'%'),h('th',{style:{width:40}}))),
+            h('tbody',null,(cl.servicios||[]).map(function(s,i){
+              return h('tr',{key:i},
+                h('td',null,h('input',{className:'ip',value:s.cliente,style:{background:'transparent',border:'none',padding:'4px 0',fontSize:14,color:'var(--tx)',fontWeight:500},onChange:function(e){
+                  var arr=(cl.servicios||[]).slice();arr[i]=Object.assign({},arr[i],{cliente:e.target.value});updateCL({servicios:arr});
+                }})),
+                h('td',null,h('input',{className:'ip mono',type:'number',step:'0.5',min:'0',max:'100',value:s.pct,style:{background:'transparent',border:'none',padding:'4px 0',fontSize:14,color:'var(--ac)',fontWeight:600,textAlign:'center',width:60},onChange:function(e){
+                  var arr=(cl.servicios||[]).slice();arr[i]=Object.assign({},arr[i],{pct:Number(e.target.value)});updateCL({servicios:arr});
+                }})),
+                h('td',null,h('button',{className:'ib',style:{color:'var(--er)'},onClick:function(){
+                  var arr=(cl.servicios||[]).slice();arr.splice(i,1);updateCL({servicios:arr});
+                }},ic('xmark',12)))
+              );
+            }),
+            (cl.servicios||[]).length===0?h('tr',null,h('td',{colSpan:3,style:{textAlign:'center',padding:16,color:'var(--tf)',fontSize:13}},'Sin servicios')):null)
+          )
+        )
+      )
+    ),
+
+
+    /* Sección 1: Consumos — EDITABLE */
+    h('div',{style:{display:'flex',alignItems:'center',gap:8,marginBottom:12,marginTop:20}},
+      ic('file-invoice-dollar',16),h('span',{style:{fontSize:15,fontWeight:600}},'Actualizar consumos por cliente'),
+      h('span',{className:'bg bg-ac',style:{marginLeft:8}},cDone+'/'+(cl.consumos.length*2)),
+      h('button',{className:'ib',style:{color:'var(--ok)',marginLeft:'auto'},onClick:function(){
+        var nombre=prompt('Nombre del cliente:');
+        if(nombre){var arr=(cl.consumos||[]).slice();arr.push({cliente:nombre,aws:false,factura:false,obs:''});updateCL({consumos:arr})}
+      }},ic('plus',12))
+    ),
+    h('div',{className:'cd np'},
+      h('table',null,
+        h('thead',null,h('tr',null,h('th',null,'Cliente'),h('th',{style:{width:70,textAlign:'center'}},'AWS'),h('th',{style:{width:70,textAlign:'center'}},'Factura'),h('th',null,'Obs'),h('th',{style:{width:40}}))),
+        h('tbody',null,(cl.consumos||[]).map(function(c,i){
+          return h('tr',{key:i},
+            h('td',null,h('input',{className:'ip',value:c.cliente,style:{background:'transparent',border:'none',padding:'4px 0',fontSize:14,color:'var(--tx)'},onChange:function(e){
+              var arr=(cl.consumos||[]).slice();arr[i]=Object.assign({},arr[i],{cliente:e.target.value});updateCL({consumos:arr});
+            }})),
+            h('td',{style:{textAlign:'center'}},checkbox(c.aws,function(){toggleConsumo(i,'aws')})),
+            h('td',{style:{textAlign:'center'}},checkbox(c.factura,function(){toggleConsumo(i,'factura')})),
+            h('td',null,h('input',{className:'ip',value:c.obs||'',placeholder:'...',onChange:function(e){setConsumoObs(i,e.target.value)},style:{background:'transparent',border:'none',padding:'4px 0',fontSize:13,color:'var(--tm)'}})),
+            h('td',null,h('button',{className:'ib',style:{color:'var(--er)'},onClick:function(){
+              var arr=(cl.consumos||[]).slice();arr.splice(i,1);updateCL({consumos:arr});
+            }},ic('xmark',12)))
+          );
+        }),
+        (cl.consumos||[]).length===0?h('tr',null,h('td',{colSpan:5,style:{textAlign:'center',padding:16,color:'var(--tf)',fontSize:13}},'Sin clientes')):null)
+      )
+    ),
+
+    /* Sección 2: Facturas — EDITABLE */
+    h('div',{style:{display:'flex',alignItems:'center',gap:8,marginBottom:12,marginTop:20}},
+      ic('download',16),h('span',{style:{fontSize:15,fontWeight:600}},'Descargar facturas de cada MA'),
+      h('span',{className:'bg bg-ac',style:{marginLeft:8}},fDone+'/'+cl.facturas.length),
+      h('button',{className:'ib',style:{color:'var(--ok)',marginLeft:'auto'},onClick:function(){
+        var nombre=prompt('Nombre del MA:');
+        if(nombre){var arr=(cl.facturas||[]).slice();arr.push({ma:nombre,done:false,obs:''});updateCL({facturas:arr})}
+      }},ic('plus',12))
+    ),
+    h('div',{className:'cd np'},
+      h('table',null,
+        h('thead',null,h('tr',null,h('th',null,'MA'),h('th',{style:{width:70,textAlign:'center'}},'Hecho'),h('th',null,'Obs'),h('th',{style:{width:40}}))),
+        h('tbody',null,(cl.facturas||[]).map(function(f,i){
+          return h('tr',{key:i},
+            h('td',null,h('input',{className:'ip',value:f.ma,style:{background:'transparent',border:'none',padding:'4px 0',fontSize:14,color:'var(--tx)'},onChange:function(e){
+              var arr=(cl.facturas||[]).slice();arr[i]=Object.assign({},arr[i],{ma:e.target.value});updateCL({facturas:arr});
+            }})),
+            h('td',{style:{textAlign:'center'}},checkbox(f.done,function(){toggleFactura(i)})),
+            h('td',null,h('input',{className:'ip',value:f.obs||'',placeholder:'...',onChange:function(e){setFacturaObs(i,e.target.value)},style:{background:'transparent',border:'none',padding:'4px 0',fontSize:13,color:'var(--tm)'}})),
+            h('td',null,h('button',{className:'ib',style:{color:'var(--er)'},onClick:function(){
+              var arr=(cl.facturas||[]).slice();arr.splice(i,1);updateCL({facturas:arr});
+            }},ic('xmark',12)))
+          );
+        }),
+        (cl.facturas||[]).length===0?h('tr',null,h('td',{colSpan:4,style:{textAlign:'center',padding:16,color:'var(--tf)',fontSize:13}},'Sin MAs')):null)
+      )
+    ),
+
+    /* Sección 3: Proformas — EDITABLE */
+    h('div',{style:{display:'flex',alignItems:'center',gap:8,marginBottom:12,marginTop:20}},
+      ic('file-contract',16),h('span',{style:{fontSize:15,fontWeight:600}},'Descargar proformas'),
+      h('span',{className:'bg bg-ac',style:{marginLeft:8}},pDone+'/'+cl.proformas.length),
+      h('button',{className:'ib',style:{color:'var(--ok)',marginLeft:'auto'},onClick:function(){
+        var nombre=prompt('Nombre del cliente:');
+        if(nombre){var arr=(cl.proformas||[]).slice();arr.push({item:nombre,done:false});updateCL({proformas:arr})}
+      }},ic('plus',12))
+    ),
+    h('div',{className:'cd np'},
+      h('table',null,
+        h('thead',null,h('tr',null,h('th',null,'Cliente'),h('th',{style:{width:70,textAlign:'center'}},'Hecho'),h('th',{style:{width:40}}))),
+        h('tbody',null,(cl.proformas||[]).map(function(f,i){
+          return h('tr',{key:i},
+            h('td',null,h('input',{className:'ip',value:f.item,style:{background:'transparent',border:'none',padding:'4px 0',fontSize:14,color:'var(--tx)'},onChange:function(e){
+              var arr=(cl.proformas||[]).slice();arr[i]=Object.assign({},arr[i],{item:e.target.value});updateCL({proformas:arr});
+            }})),
+            h('td',{style:{textAlign:'center'}},checkbox(f.done,function(){toggleProforma(i)})),
+            h('td',null,h('button',{className:'ib',style:{color:'var(--er)'},onClick:function(){
+              var arr=(cl.proformas||[]).slice();arr.splice(i,1);updateCL({proformas:arr});
+            }},ic('xmark',12)))
+          );
+        }),
+        (cl.proformas||[]).length===0?h('tr',null,h('td',{colSpan:3,style:{textAlign:'center',padding:16,color:'var(--tf)',fontSize:13}},'Sin proformas')):null)
+      )
+    ),
+
+    /* Sección 4: Correos — EDITABLE */
+    h('div',{style:{display:'flex',alignItems:'center',gap:8,marginBottom:12,marginTop:20}},
+      ic('envelope',16),h('span',{style:{fontSize:15,fontWeight:600}},'Envío de correos'),
+      h('span',{className:'bg bg-ac',style:{marginLeft:8}},eDone+'/'+cl.correos.length),
+      h('button',{className:'ib',style:{color:'var(--ok)',marginLeft:'auto'},onClick:function(){
+        var tarea=prompt('Descripción del correo:');
+        if(tarea){var arr=(cl.correos||[]).slice();arr.push({item:tarea,done:false});updateCL({correos:arr})}
+      }},ic('plus',12))
+    ),
+    h('div',{className:'cd np'},
+      h('table',null,
+        h('thead',null,h('tr',null,h('th',null,'Tarea'),h('th',{style:{width:70,textAlign:'center'}},'Hecho'),h('th',{style:{width:40}}))),
+        h('tbody',null,(cl.correos||[]).map(function(f,i){
+          return h('tr',{key:i,style:{textDecoration:f.done?'line-through':'none',opacity:f.done?0.6:1}},
+            h('td',null,h('input',{className:'ip',value:f.item,style:{background:'transparent',border:'none',padding:'4px 0',fontSize:14,color:'var(--tx)',textDecoration:f.done?'line-through':'none'},onChange:function(e){
+              var arr=(cl.correos||[]).slice();arr[i]=Object.assign({},arr[i],{item:e.target.value});updateCL({correos:arr});
+            }})),
+            h('td',{style:{textAlign:'center'}},checkbox(f.done,function(){toggleCorreo(i)})),
+            h('td',null,h('button',{className:'ib',style:{color:'var(--er)'},onClick:function(){
+              var arr=(cl.correos||[]).slice();arr.splice(i,1);updateCL({correos:arr});
+            }},ic('xmark',12)))
+          );
+        }),
+        (cl.correos||[]).length===0?h('tr',null,h('td',{colSpan:3,style:{textAlign:'center',padding:16,color:'var(--tf)',fontSize:13}},'Sin correos')):null)
+      )
+    ),
+
+  );
+
+}
+
+
+
+
+/* ===== TAREAS (Google Tasks style) ===== */
+function TasksView(p){
+  var data=p.data,update=p.update;
+  var s1=useState(null);var modal=s1[0],setModal=s1[1];
+  var s2=useState('all');var filterList=s2[0],setFilterList=s2[1];
+  var s3=useState(false);var showDone=s3[0],setShowDone=s3[1];
+  var s4=useState(null);var listModal=s4[0],setListModal=s4[1];
+  var s5=useState(null);var delT=s5[0],setDelT=s5[1];
+
+  var lists=data.taskLists||[];
+  var tasks=data.tasks||[];
+
+  var filtered=tasks.filter(function(t){
+    if(filterList!=='all'&&t.listId!==filterList)return false;
+    if(!showDone&&t.done)return false;
+    return true;
+  });
+
+  /* Sort: incomplete first, then by priority, then by dueDate */
+  var prioOrder={alta:0,media:1,baja:2,'':3};
+  filtered.sort(function(a,b){
+    if(a.done!==b.done)return a.done?1:-1;
+    var pa=prioOrder[a.priority]||3,pb=prioOrder[b.priority]||3;
+    if(pa!==pb)return pa-pb;
+    if(a.dueDate&&b.dueDate)return a.dueDate>b.dueDate?1:-1;
+    if(a.dueDate)return -1;if(b.dueDate)return 1;
+    return 0;
+  });
+
+  function toggleTask(id){
+    update({tasks:tasks.map(function(t){return t.id===id?Object.assign({},t,{done:!t.done}):t})});
+  }
+  function saveTask(task){
+    if(task.id&&tasks.some(function(t){return t.id===task.id})){
+      update({tasks:tasks.map(function(t){return t.id===task.id?task:t})});
+    }else{
+      task.id='tsk-'+uid();task.createdAt=new Date().toISOString().slice(0,10);
+      update({tasks:tasks.concat([task])});
+    }
+    setModal(null);
+  }
+  function delTask(id){update({tasks:tasks.filter(function(t){return t.id!==id})});setDelT(null)}
+  function saveList(list){
+    if(list.id&&lists.some(function(l){return l.id===list.id})){
+      update({taskLists:lists.map(function(l){return l.id===list.id?list:l})});
+    }else{
+      list.id='tl-'+uid();
+      update({taskLists:lists.concat([list])});
+    }
+    setListModal(null);
+  }
+  function delList(id){
+    update({taskLists:lists.filter(function(l){return l.id!==id}),tasks:tasks.filter(function(t){return t.listId!==id})});
+    if(filterList===id)setFilterList('all');
+    setListModal(null);
+  }
+
+  function listName(id){var l=null;lists.forEach(function(x){if(x.id===id)l=x});return l?l.name:'Sin lista'}
+  function listColor(id){var l=null;lists.forEach(function(x){if(x.id===id)l=x});return l?l.color:'var(--tm)'}
+
+  function prioBadge(p){
+    var tone=p==='alta'?'danger':p==='media'?'accent':'muted';
+    var label=p==='alta'?'Alta':p==='media'?'Media':p==='baja'?'Baja':'';
+    return label?h(Badge,{tone:tone},label):null;
+  }
+
+  var pendientes=0,completadas=0;
+  tasks.forEach(function(t){if(t.done)completadas++;else pendientes++});
+
+  var emptyTask={listId:filterList!=='all'?filterList:(lists[0]?lists[0].id:''),title:'',desc:'',priority:'media',dueDate:'',done:false};
+
+  return h('div',null,
+    h('div',{className:'hr'},
+      h('div',null,
+        h('h1',{style:{fontSize:18,fontWeight:600}},'Tareas'),
+        h('p',{style:{fontSize:14,color:'var(--tm)'}},pendientes+' pendientes \u00b7 '+completadas+' completadas')
+      ),
+      h('div',{style:{display:'flex',gap:8}},
+        h(Btn,{variant:'ghost',onClick:function(){setListModal({mode:'new',list:{name:'',color:'var(--ac)'}})}},ic('folder-plus',14),' Lista'),
+        h(Btn,{onClick:function(){setModal({mode:'new',task:emptyTask})}},ic('plus',14),' Tarea')
+      )
+    ),
+
+    /* Filtros */
+    h('div',{className:'fb',style:{flexWrap:'wrap'}},
+      h('button',{className:'bt '+(filterList==='all'?'bt-p':'bt-g'),style:{fontSize:13,padding:'6px 12px'},onClick:function(){setFilterList('all')}},'Todas'),
+      lists.map(function(l){
+        return h('button',{key:l.id,className:'bt '+(filterList===l.id?'bt-p':'bt-g'),style:{fontSize:13,padding:'6px 12px',borderColor:filterList===l.id?l.color:'var(--bd)',color:filterList===l.id?'#1A1204':l.color,background:filterList===l.id?l.color:'transparent'},onClick:function(){setFilterList(l.id)}},
+          l.name,
+          h('button',{className:'ib',style:{color:'inherit',marginLeft:4,fontSize:10},onClick:function(e){e.stopPropagation();setListModal({mode:'edit',list:Object.assign({},l)})}},ic('pen',10))
+        );
+      }),
+      h('label',{style:{display:'flex',alignItems:'center',gap:6,fontSize:13,color:'var(--tm)',marginLeft:'auto',cursor:'pointer'}},
+        h('input',{type:'checkbox',checked:showDone,onChange:function(){setShowDone(!showDone)},style:{accentColor:'var(--ac)'}}),
+        'Mostrar completadas'
+      )
+    ),
+
+    /* Task list */
+    h('div',{style:{display:'flex',flexDirection:'column',gap:8,marginTop:8}},
+      filtered.length===0?h('div',{className:'cd',style:{textAlign:'center',padding:40,color:'var(--tf)'}},
+        ic('clipboard-check',28),h('p',{style:{marginTop:8,fontSize:14}},showDone?'No hay tareas.':'No hay tareas pendientes.')
+      ):null,
+      filtered.map(function(t){
+        var isOverdue=t.dueDate&&!t.done&&t.dueDate<new Date().toISOString().slice(0,10);
+        return h('div',{key:t.id,className:'cd',style:{padding:'14px 16px',opacity:t.done?0.55:1,borderLeft:'3px solid '+listColor(t.listId)}},
+          h('div',{style:{display:'flex',alignItems:'flex-start',gap:12}},
+            h('button',{onClick:function(){toggleTask(t.id)},style:{
+              width:22,height:22,borderRadius:6,border:'2px solid '+(t.done?'var(--ok)':'var(--bl)'),
+              background:t.done?'var(--ok)':'transparent',cursor:'pointer',display:'flex',alignItems:'center',justifyContent:'center',flexShrink:0,padding:0,marginTop:1
+            }},t.done?h('i',{className:'fa-solid fa-check',style:{fontSize:12,color:'#fff'}}):null),
+            h('div',{style:{flex:1,minWidth:0}},
+              h('div',{style:{display:'flex',alignItems:'center',gap:8,flexWrap:'wrap'}},
+                h('span',{style:{fontSize:15,fontWeight:500,color:t.done?'var(--tm)':'var(--tx)',textDecoration:t.done?'line-through':'none'}},t.title),
+                prioBadge(t.priority),
+                h('span',{className:'bg bg-mt',style:{fontSize:11}},listName(t.listId))
+              ),
+              t.desc?h('p',{style:{fontSize:13,color:'var(--tm)',marginTop:4}},t.desc):null,
+              t.dueDate?h('div',{style:{fontSize:12,marginTop:6,display:'flex',alignItems:'center',gap:4,color:isOverdue?'var(--er)':'var(--tf)'}},
+                ic('calendar',11),h('span',null,t.dueDate),isOverdue?h('span',{style:{color:'var(--er)',fontWeight:600}},' \u00b7 Vencida'):null
+              ):null
+            ),
+            h('div',{style:{display:'flex',gap:4,flexShrink:0}},
+              h('button',{className:'ib',style:{color:'var(--tm)'},onClick:function(){setModal({mode:'edit',task:Object.assign({},t)})}},ic('pen-to-square',13)),
+              h('button',{className:'ib',style:{color:'var(--er)'},onClick:function(){setDelT(t)}},ic('trash',13))
+            )
+          )
+        );
+      })
+    ),
+
+    modal?h(Modal,{title:modal.mode==='new'?'Nueva Tarea':'Editar Tarea',onClose:function(){setModal(null)}},
+      h(TaskForm,{task:modal.task,lists:lists,onSave:saveTask,onCancel:function(){setModal(null)}})):null,
+    listModal?h(Modal,{title:listModal.mode==='new'?'Nueva Lista':'Editar Lista',onClose:function(){setListModal(null)}},
+      h(ListForm,{list:listModal.list,onSave:saveList,onDelete:listModal.mode==='edit'?function(){delList(listModal.list.id)}:null,onCancel:function(){setListModal(null)}})):null,
+    delT?h(ConfirmDel,{label:delT.title,onConfirm:function(){delTask(delT.id)},onCancel:function(){setDelT(null)}}):null
+  );
+}
+function TaskForm(p){
+  var s=useState(p.task);var form=s[0],setForm=s[1];
+  function set(k,v){var n=Object.assign({},form);n[k]=v;setForm(n)}
+  return h('form',{onSubmit:function(e){e.preventDefault();if(form.title)p.onSave(form)}},
+    h(Field,{label:'T\u00edtulo'},h('input',{className:'ip',required:true,value:form.title,placeholder:'Qu\u00e9 necesitas hacer?',onChange:function(e){set('title',e.target.value)}})),
+    h(Field,{label:'Descripci\u00f3n (opcional)'},h('textarea',{className:'ta',value:form.desc,placeholder:'Detalles adicionales...',onChange:function(e){set('desc',e.target.value)}})),
+    h('div',{style:{display:'grid',gridTemplateColumns:'1fr 1fr',gap:12}},
+      h(Field,{label:'Lista'},h('select',{className:'sl',value:form.listId,onChange:function(e){set('listId',e.target.value)}},
+        p.lists.map(function(l){return h('option',{key:l.id,value:l.id},l.name)})
+      )),
+      h(Field,{label:'Prioridad'},h('select',{className:'sl',value:form.priority,onChange:function(e){set('priority',e.target.value)}},
+        h('option',{value:'alta'},'Alta'),h('option',{value:'media'},'Media'),h('option',{value:'baja'},'Baja')
+      ))
+    ),
+    h(Field,{label:'Fecha l\u00edmite (opcional)'},h('input',{className:'ip',type:'date',value:form.dueDate,onChange:function(e){set('dueDate',e.target.value)}})),
+    h('div',{className:'fe',style:{marginTop:16}},h(Btn,{variant:'ghost',onClick:p.onCancel},'Cancelar'),h(Btn,{type:'submit'},'Guardar'))
+  );
+}
+function ListForm(p){
+  var s=useState(p.list);var form=s[0],setForm=s[1];
+  function set(k,v){var n=Object.assign({},form);n[k]=v;setForm(n)}
+  var colors=['var(--ac)','var(--ok)','var(--in)','var(--er)','#9b59b6','#1abc9c','#e67e22','#95a5a6'];
+  return h('form',{onSubmit:function(e){e.preventDefault();if(form.name)p.onSave(form)}},
+    h(Field,{label:'Nombre de la lista'},h('input',{className:'ip',required:true,value:form.name,onChange:function(e){set('name',e.target.value)}})),
+    h(Field,{label:'Color'},h('div',{style:{display:'flex',gap:8,flexWrap:'wrap'}},
+      colors.map(function(c){
+        return h('button',{key:c,type:'button',onClick:function(){set('color',c)},style:{
+          width:28,height:28,borderRadius:6,background:c,border:form.color===c?'2px solid var(--tx)':'2px solid transparent',cursor:'pointer'
+        }});
+      })
+    )),
+    h('div',{className:'fe',style:{marginTop:16}},
+      p.onDelete?h(Btn,{variant:'danger',onClick:p.onDelete},'Eliminar lista'):null,
+      h(Btn,{variant:'ghost',onClick:p.onCancel},'Cancelar'),
+      h(Btn,{type:'submit'},'Guardar')
+    )
+  );
+}
+
+/* ===== MAIN APP ===== */
+
+function App(){
+
+  var initial = loadData() || buildDemo();
+
+  var s1=useState(initial);var data=s1[0],setData=s1[1];
+
+  var s2=useState('dashboard');var tab=s2[0],setTab=s2[1];
+
+  var s3=useState(null);var pmaFilter=s3[0],setPmaFilter=s3[1];
+
+  var s9=useState(false);var ready=s9[0],setReady=s9[1];
+
+  var s10=useState(sb?'sync':'local');var cloudStatus=s10[0],setCloudStatus=s10[1];
+
+  /* Al iniciar: cargar desde la nube (Supabase). Si hay datos, usarlos. */
+  useEffect(function(){
+    if(!sb){ setCloudStatus('local'); return; }
+    (async function(){
+      try{
+        var cloud = await loadFromCloud();
+        if(cloud){ setData(cloud); }
+        else { await saveToCloud(initial); } /* sembrar la nube con los datos base la primera vez */
+        setCloudStatus('ok');
+      }catch(e){ setCloudStatus('error'); }
+    })();
+  },[]);
+
+
+
+  /* Guardar automáticamente cada vez que cambian los datos — en localStorage Y en la nube */
+
+  useEffect(function(){
+    if(!ready){setReady(true);return;}
+    saveData(data);
+    if(sb){ setCloudStatus('saving'); saveToCloud(data).then(function(){ setCloudStatus('ok'); }).catch(function(){ setCloudStatus('error'); }); }
+  },[data]);
+
+
+
+  function update(patch){setData(function(prev){var next=Object.assign({},prev,patch);return next})}
+
+  function goAccPma(id){setPmaFilter(id);setTab('accounts')}
+
+
+
+  function exportJSON(){
+
+    var blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});
+
+    var url=URL.createObjectURL(blob);var a=document.createElement('a');
+
+    a.href=url;a.download='cnid-cloud-backup-'+new Date().toISOString().slice(0,10)+'.json';
+
+    a.click();URL.revokeObjectURL(url);
+
+  }
+
+  function importJSON(e){
+
+    var file=e.target.files&&e.target.files[0];if(!file)return;
+
+    var reader=new FileReader();
+
+    reader.onload=function(ev){
+      try{
+        var imported=JSON.parse(ev.target.result);
+        var base=buildDemo();
+        /* Combinar: PMAs, cuentas y costos del HTML base + progreso del JSON importado */
+        var merged=Object.assign({},base);
+        /* Mantener PMAs/cuentas/costos del base (HTML) */
+        /* Traer checklists, notas, controlCuentas y clientes del JSON importado */
+        if(imported.checklists)merged.checklists=imported.checklists;
+        if(imported.checklistTemplate)merged.checklistTemplate=imported.checklistTemplate;
+        if(imported.controlCuentas&&imported.controlCuentas.length>0)merged.controlCuentas=imported.controlCuentas;
+        if(imported.clients&&imported.clients.length>0)merged.clients=imported.clients;
+        if(imported.credits&&imported.credits.length>0)merged.credits=imported.credits;
+        if(imported.taskLists)merged.taskLists=imported.taskLists;
+        if(imported.tasks)merged.tasks=imported.tasks;
+        if(imported.movements&&imported.movements.length>0)merged.movements=imported.movements;
+        /* Si el JSON tiene PMAs propias (agregadas por el usuario), combinarlas */
+        if(imported.pmas){
+          var baseIds={};merged.pmas.forEach(function(p){baseIds[p.id]=1});
+          imported.pmas.forEach(function(p){if(!baseIds[p.id])merged.pmas.push(p)});
+        }
+        if(imported.accounts){
+          var baseAccIds={};merged.accounts.forEach(function(a){baseAccIds[a.id]=1});
+          imported.accounts.forEach(function(a){if(!baseAccIds[a.id])merged.accounts.push(a)});
+        }
+        setData(merged);
+        alert('Importado correctamente. Se combinaron los datos del JSON con las PMAs base.');
+      }catch(err){alert('El archivo no es un JSON v\u00e1lido.')}
+    };
+
+    reader.readAsText(file);e.target.value='';
+
+  }
+
+  function doReset(){
+
+    if(confirm('\u00bfResetear todos los datos y cargar los datos base? Los cambios no guardados con Exportar se perder\u00e1n.')){
+
+      var fresh=resetData();setData(fresh);
+
+    }
+
+  }
+
+
+
+  return h('div',{className:'app'},
+
+    h('aside',{className:'sb'},
+
+      h('div',{className:'sb-hd'},
+
+        h('div',{className:'sb-t'},'CNID Cloud Ops'),
+
+        h('div',{className:'sb-st'},'Gesti\u00f3n de cuentas AWS \u00b7 SPP')
+        ,
+        h('div',{style:{marginTop:8,fontSize:11,display:'flex',alignItems:'center',gap:5,color:cloudStatus==='error'?'var(--er)':cloudStatus==='ok'?'var(--ok)':'var(--tm)'}},
+          ic(cloudStatus==='saving'?'cloud-arrow-up':cloudStatus==='error'?'cloud-bolt':cloudStatus==='local'?'hard-drive':'cloud',11),
+          h('span',null, cloudStatus==='saving'?'Guardando…':cloudStatus==='ok'?'Sincronizado':cloudStatus==='error'?'Error de conexión':cloudStatus==='local'?'Solo local':'Conectando…')
+        )
+
+      ),
+
+      h('nav',{className:'sb-nav'},
+
+        NAV.map(function(n){
+
+          return h('button',{key:n.key,className:'nb'+(tab===n.key?' on':''),onClick:function(){setTab(n.key);if(n.key!=='accounts')setPmaFilter(null)}},
+
+            ic(n.icon,16),h('span',{className:'nl'},n.label));
+
+        })
+
+      ),
+
+      h('div',{className:'sb-ft'},
+
+        h(Btn,{variant:'ghost',onClick:exportJSON,style:{justifyContent:'center',width:'100%'}},ic('download',14),' Exportar'),
+
+        h('label',{style:{display:'inline-flex',alignItems:'center',justifyContent:'center',gap:6,fontSize:14,fontWeight:500,padding:'8px 12px',borderRadius:6,border:'1px solid var(--bd)',color:'var(--tx)',cursor:'pointer',width:'100%'}},
+
+          ic('upload',14),' Importar',
+
+          h('input',{type:'file',accept:'application/json',style:{display:'none'},onChange:importJSON})
+
+        ),
+
+        h(Btn,{variant:'ghost',onClick:doReset,style:{justifyContent:'center',width:'100%',fontSize:12,color:'var(--er)'}},ic('rotate',12),' Reset datos')
+
+      )
+
+    ),
+
+    h('main',{className:'mn'},
+
+      tab==='dashboard'?h(DashboardView,{data:data,onNav:setTab}):null,
+
+      tab==='pmas'?h(PmasView,{data:data,update:update,onViewAccounts:goAccPma}):null,
+
+      tab==='accounts'?h(AccountsView,{data:data,update:update,pmaFilter:pmaFilter,clearFilter:function(){setPmaFilter(null)}}):null,
+
+      tab==='clients'?h(ClientsView,{data:data,update:update}):null,
+
+      tab==='costs'?h(CostsView,{data:data,update:update}):null,
+
+      tab==='credits'?h(CreditsView,{data:data,update:update}):null,
+
+      tab==='checklist'?h(ChecklistView,{data:data,update:update}):null,
+
+      tab==='control'?h(ControlView,{data:data,update:update}):null,
+      tab==='tasks'?h(TasksView,{data:data,update:update}):null
+
+    )
+
+  );
+
+}
+
+
+
+ReactDOM.createRoot(document.getElementById('root')).render(h(App));
+
+</script>
+
+
+
+</body></html>
